@@ -2,10 +2,14 @@
   "name": "nextjs",
   "version": "0.1.0",
   "private": true,
+  "author": "iduk <iduk.design@gmail.com>",
+  "homepage": "https://iduk.github.io/js",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "export": "next export",
+    "deploy": "next build && next export && touch out/.nojekyll && git add out/ && git commit -m 'deploy to gh-pages' && git subtree push --prefix out origin gh-pages"
   },
   "dependencies": {
     "next": "9.1.1",
@@ -15,6 +19,7 @@
   "devDependencies": {
     "@zeit/next-css": "^1.0.1",
     "@zeit/next-sass": "^1.0.1",
-    "node-sass": "^4.12.0"
+    "node-sass": "^4.12.0",
+    "gh-pages": "^2.1.1"
   }
 }

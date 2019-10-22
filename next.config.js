@@ -11,4 +11,6 @@ module.exports = withSass({
   postcssLoaderOptions: {
     parser: true,
   },
+  assetPrefix:
+    process.env.NODE_ENV === 'production' ? 'https://iduk.github.io/js' : '',
 })
