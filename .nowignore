@@ -15,10 +15,9 @@
 .env
 .env.build
 .venv
-.vscode
 npm-debug.log
 config.gypi
-node_modules/
+node_modules
 __pycache__/
 venv/
 CVS

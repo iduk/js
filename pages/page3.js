@@ -1,16 +1,13 @@
 import React from 'react'
+import Head from 'next/head'
 import Link from 'next/link'
 import Layout from '../components/layout'
 
-class Page2 extends React.Component {
+class Page3 extends React.Component {
   render() {
     return (
       <Layout>
-        <h1>Page2</h1>
-        <p>
-          Notice how a loading spinner showed up while my content was "loading"?
-          Pretty neat, huh?
-        </p>
+        <p>? ??? ????</p>
         <Link href="/">
           <a className="btn btn-light">Go back home</a>
         </Link>
@@ -18,4 +15,4 @@ class Page2 extends React.Component {
     )
   }
 }
-export default Page2
+export default Page3

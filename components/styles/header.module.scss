@@ -1,0 +1,56 @@
+.nav {
+  position: sticky;
+  top: 0;
+  background-color: black;
+  color: white;
+
+  .navList {
+    width: 100%;
+    max-width: 960px;
+    margin: auto;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    padding: 0;
+
+    li > a {
+      display: block;
+      padding: 1rem 2rem;
+      color: inherit;
+      text-decoration: none;
+      text-align: center;
+
+      &.active,
+      &:active,
+      &:hover,
+      &:focus {
+        background: rgba(255, 255, 255, 0.1);
+      }
+    }
+  }
+}
+.logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  width: 50px;
+  margin: auto;
+
+  &:active,
+  &:hover,
+  &:focus {
+    transition: all 1s ease-in-out;
+    animation: SpinLogo 10s infinite;
+    transform-origin: center;
+  }
+
+  @keyframes SpinLogo {
+    0% {
+      transform: rotate(0deg);
+    }
+    0% {
+      transform: rotate(360deg);
+    }
+  }
+}

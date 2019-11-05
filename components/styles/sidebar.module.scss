@@ -1,0 +1,28 @@
+// Sidebar scss
+@charset 'utf-8';
+
+.sideNav {
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 1;
+  height: 100%;
+  width: 72px;
+  background: black;
+}
+.sideNav ul {
+  overflow: hidden;
+}
+.sideNav ul > li {
+  display: block;
+  width: 100%;
+  text-align: center;
+
+  // icon
+  .sidebar-icons {
+    display: inline-block;
+    width: 32px;
+    height: 32px;
+    padding: 1rem;
+  }
+}
