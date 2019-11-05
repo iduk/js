@@ -9,9 +9,10 @@ const Footer = () => (
     <div className={cx('wrap')}>
       <Link href="/">
         <a className={cx('logo')}>
-          <img src="/img/logo.svg" width="80" />
+          <img src="/img/symbol.svg" />
         </a>
       </Link>
+      <strong>Openfloor 오픈플로어</strong>
     </div>
   </footer>
 )

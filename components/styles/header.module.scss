@@ -1,56 +1,64 @@
+// header scss
 .nav {
   position: sticky;
   top: 0;
-  background-color: black;
-  color: white;
+  background-color: white;
+  border-bottom: 1px solid #eee;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: auto;
+  height: 10vh;
+  box-shadow: 0 8px 32px -8px rgba(0, 0, 0, 0.03);
 
   .navList {
     width: 100%;
-    max-width: 960px;
-    margin: auto;
-    list-style: none;
     display: flex;
-    justify-content: space-between;
-    padding: 0;
+    justify-content: flex-end;
+    align-items: center;
+    list-style: none;
+    margin-bottom: 0;
+    overflow: hidden;
 
-    li > a {
+    li {
+      padding: 0 0.5rem;
+    }
+
+    li .navLink {
       display: block;
       padding: 1rem 2rem;
       color: inherit;
       text-decoration: none;
       text-align: center;
+      border: 2px solid transparent;
 
       &.active,
       &:active,
       &:hover,
       &:focus {
-        background: rgba(255, 255, 255, 0.1);
+        border-color: black;
+        transition: all 0.5s ease-in-out;
       }
     }
   }
 }
+
 .logo {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 1rem;
-  width: 50px;
+  padding: 1rem 2rem;
   margin: auto;
 
   &:active,
   &:hover,
   &:focus {
-    transition: all 1s ease-in-out;
-    animation: SpinLogo 10s infinite;
-    transform-origin: center;
+    // animation: SpinLogo 10s infinite;
   }
+}
 
-  @keyframes SpinLogo {
-    0% {
-      transform: rotate(0deg);
-    }
-    0% {
-      transform: rotate(360deg);
-    }
+@keyframes SpinLogo {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
   }
 }

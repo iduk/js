@@ -5,10 +5,10 @@ const withSass = require('@zeit/next-sass')
 const autoprefixer = require('autoprefixer')
 const withFonts = require('next-fonts')
 const withImages = require('next-images')
-const reactCssModules = require('babel-plugin-react-css-modules')
 const withBundleAnalyzer = require('@next/bundle-analyzer')({
   enabled: process.env.ANALYZE === 'true',
 })
+const isProd = process.env.NODE_ENV === 'production'
 
 // modules
 module.exports = withBundleAnalyzer()
@@ -16,11 +16,7 @@ module.exports = withFonts()
 module.exports = {
   target: 'serverless',
   pageExtensions: ['mdx', 'jsx', 'js'],
-  exportPathMap: async function(defaultPathMap) {
-    return {
-      '/auth/index.html': { page: '/auth' },
-    }
-  },
+  assetPrefix: isProd ? 'https://iduk.github.io/js' : '',
 }
 module.exports = withCSS(
   withSass({
@@ -37,11 +33,6 @@ module.exports = withCSS(
       },
       parser: true,
       sourceMap: true,
-      config: {
-        ctx: {
-          theme: JSON.stringify(process.env.REACT_APP_THEME),
-        },
-      },
     },
     // astroturf
     webpack: config => {
@@ -63,7 +54,6 @@ module.exports = withCSS(
     },
   }),
   withImages({
-    exclude: path.resolve(__dirname, 'public/img'),
     webpack(config, options) {
       return config
     },

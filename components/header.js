@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react'
 import Head from 'next/head'
-import Link from 'next/link'
+import Link from './Link'
 import Image from './image'
 import styles from './styles/header.module.scss'
 import classNames from 'classnames/bind'
@@ -20,18 +20,22 @@ const Header = props => (
     <Head>
       <title>{props.title}</title>
     </Head>
+
+    <div className={'container'}>asdf</div>
     <header className={cx('nav')}>
-      <Link href="/">
+      {/* logo */}
+      <Link href="/" as="/">
         <a className={cx('logo')}>
-          <Image src="/img/symbol.svg" width="80" alt="openfloor" />
-          adsfadf
+          <Image src="/img/symbol.svg" alt="openfloor" />
         </a>
       </Link>
+
+      {/* menu */}
       <ul className={cx('navList')}>
         {links.map(({ key, href, label }) => (
           <li key={key}>
-            <Link href={href}>
-              <a>{label}</a>
+            <Link activeClassName="active" href={href}>
+              <a className={cx('navLink')}>{label}</a>
             </Link>
           </li>
         ))}

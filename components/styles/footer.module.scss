@@ -1,26 +1,32 @@
+// footer scss
 .container {
-  position: sticky;
+  position: fixed;
   bottom: 0;
-  background-color: #eee;
-  color: white;
+  width: 100%;
+  background-color: #ccc;
   padding: 1rem;
+  height: 10vh;
 }
 .wrap {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
 
   .logo {
-    display: block;
+    display: inline-block;
+    width: 40px;
+    overflow: hidden;
+    margin-right: 1rem;
+    > img {
+      width: 100%;
+    }
   }
-
-  ul {
-    width: 200px;
-    list-style: none;
-  }
-  ul > li > a {
-    display: block;
-    padding: 0.5rem;
-    color: #555;
-    background: rgba(255, 255, 255, 0.1);
+  > strong {
+    font-size: 1.25rem;
+    vertical-align: middle;
+    font-weight: normal;
   }
 }

@@ -5,13 +5,13 @@ import classNames from 'classnames/bind'
 const cx = classNames.bind(styles)
 
 const links = [
-  { href: './page1', img: '/img/icons-dashboard.svg' },
-  { href: './page2', img: '/img/icons-laptop.svg' },
-  { href: './page3', img: '/img/icons-folder.svg' },
-  { href: './page3', img: '/img/icons-email.svg' },
-  { href: './page3', img: '/img/icons-location.svg' },
+  { href: '/', img: '/img/icons-dashboard.svg' },
+  { href: '/', img: '/img/icons-laptop.svg' },
+  { href: '/', img: '/img/icons-folder.svg' },
+  { href: '/', img: '/img/icons-email.svg' },
+  { href: '/', img: '/img/icons-location.svg' },
 ].map(link => {
-  link.key = `nav-link-${link.href}-${link.img}`
+  link.key = `sidebar-link-${link.href}-${link.img}`
   return link
 })
 

@@ -18,7 +18,11 @@ class MyDocument extends Document {
           />
           <link
             rel="stylesheet"
-            href="https://fonts.googleapis.com/earlyaccess/notosanskr.css"
+            href="https://fonts.googleapis.com/css?family=Source+Code+Pro:300,400,700&display=swap"
+          />
+          <link
+            rel="stylesheet"
+            href="https://fonts.googleapis.com/css?family=Gothic+A1:300,400,700&display=swap"
           />
         </Head>
         <body>
