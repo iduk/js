@@ -14,7 +14,6 @@ const isProd = process.env.NODE_ENV === 'production'
 module.exports = withBundleAnalyzer()
 module.exports = withFonts()
 module.exports = {
-  target: 'serverless',
   pageExtensions: ['mdx', 'jsx', 'js'],
   assetPrefix: isProd ? 'https://iduk.github.io/js' : '',
 }
@@ -32,15 +31,6 @@ module.exports = withCSS(
         },
       },
       parser: true,
-      sourceMap: true,
-    },
-    // astroturf
-    webpack: config => {
-      config.module.rules.push({
-        test: /\.js$/,
-        use: ['astroturf/loader'],
-      })
-      return config
     },
     // loader
     loader: {
