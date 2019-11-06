@@ -1,5 +1,8 @@
 import React from 'react'
 import Layout from '../components/layout'
+import styles from '../components/styles/global.scss'
+import classNames from 'classnames/bind'
+const cx = classNames.bind(styles)
 
 class IndexPage extends React.Component {
   static async getInitialProps({ req }) {
@@ -8,38 +11,56 @@ class IndexPage extends React.Component {
   }
   render() {
     return (
-      <Layout>
-        <p>
-          방황하여도, 영원히 없는 위하여 용기가 속에 따뜻한 있다. 만천하의
-          영원히 사는가 소금이라 끓는 얼음 것은 거선의 우리의 힘있다. 생명을 수
-          타오르고 눈에 따뜻한 그들은 전인 아름답고 칼이다. 꽃 풀밭에 그들은
-          트고, 불어 얼음에 찾아다녀도, 청춘에서만 것이다. 사랑의 유소년에게서
-          그들의 인생을 천고에 긴지라 있다. 못할 천자만홍이 능히 가진 꽃
-          위하여서 놀이 우리 영원히 봄바람이다. 있는 이상이 가치를 별과 그것을
-          예수는 그리하였는가? 품으며, 구하지 따뜻한 안고, 무한한 부패뿐이다.
-          기관과 커다란 같으며, 곧 보는 보라. 거선의 장식하는 인도하겠다는
-          듣기만 그들은 설레는 피다. 그들은 힘차게 것은 남는 뜨거운지라, 칼이다.
-          대한 그들의 심장의 끓는다. 그들의 이것을 석가는 이것이다. 살 놀이
-          하였으며, 낙원을 원대하고, 있는가? 따뜻한 우리 구하지 청춘에서만
-          우리의 무엇을 피가 거선의 교향악이다. 찾아다녀도, 대한 영원히 하는
-          청춘 얼마나 얼음이 들어 아름다우냐? 스며들어 품고 청춘의 피에 그들의
-          예수는 열매를 그들은 길을 이것이다. 어디 있는 피어나는 황금시대를
-          사랑의 굳세게 이상의 심장의 이것이다. 무한한 속잎나고, 이상이 인간의
-          구하지 바이며, 그들의 교향악이다. 바이며, 대한 싶이 듣기만 수 몸이
-          그들은 관현악이며, 약동하다. 그들의 석가는 밝은 기쁘며, 우리의 없으면,
-          구하기 가치를 피다. 끓는 많이 뭇 속에서 인도하겠다는 위하여,
-          관현악이며, 커다란 공자는 사막이다. 예수는 인류의 무한한 실현에 불어
-          그들의 속잎나고, 있는가? 쓸쓸한 무엇을 가슴이 기쁘며, 끓는 찾아다녀도,
-          봄바람이다. 무엇을 시들어 타오르고 힘있다. 긴지라 청춘의 기관과 품에
-          대고, 위하여서. 동력은 장식하는 무엇을 황금시대를 그들은 힘있다.
-          피부가 오아이스도 투명하되 풀이 이상의 우리의 때까지 우리 행복스럽고
-          약동하다. 불어 되려니와, 유소년에게서 어디 힘있다. 원대하고, 가슴이
-          설산에서 쓸쓸하랴?
-        </p>
-        <div style={{ paddingTop: 100 }}>
-          접속정보
-          <p style={{ fontSize: 12, color: '#999' }}>{this.props.userAgent}</p>
-        </div>
+      <Layout title="Openfloor Index" colors="bg-primary">
+        {/* index page */}
+        <section className={cx('index')}>
+          <article className={cx('container')}>
+            <div
+              className={cx('jumbotron', 'p-4', 'pt-lg-5', 'rounded', 'row')}
+              style={{ height: 400 }}
+            >
+              <div className={cx('col-12', 'col-lg-10', 'px-0', 'mx-auto')}>
+                <h1 className={cx('display-4', 'font-weight-bold')}>
+                  Openfloor solutions for everyone.
+                </h1>
+                <p className={cx('lead', 'my-4')}>
+                  Duis vel massa aliquet, pretium nunc ac, viverra augue. Morbi
+                  ultricies metus ac lorem tincidunt consectetur.
+                </p>
+              </div>
+            </div>
+          </article>
+
+          <article className={cx('container-fluid')}>
+            <div className={cx('row')}>
+              <figure className={cx('figure', 'col-10', 'p-4', 'mx-auto')}>
+                <img
+                  src="https://images.unsplash.com/photo-1457612928689-a1ab27da0dad?ixlib=rb-1.2.1&auto=format&fit=crop&w=3300&q=80"
+                  className={cx('figure-img', 'img-fluid', 'rounded')}
+                  alt="bla bla"
+                />
+                <figcaption className={cx('figure-caption', 'sr-only')}>
+                  A caption for the above image.
+                </figcaption>
+              </figure>
+            </div>
+          </article>
+
+          <div className={cx('container')}>
+            <article className={cx('row')}>
+              <div className={cx('col-12', 'col-lg-6')}>글을 막 쓰는거야</div>
+              <div className={cx('col-12', 'col-lg-6')}>여긴 사진</div>
+            </article>
+          </div>
+
+          {/* 일단숨김 */}
+          <div className={cx('d-none')}>
+            접속정보
+            <p style={{ fontSize: 12, color: '#999' }}>
+              {this.props.userAgent}
+            </p>
+          </div>
+        </section>
       </Layout>
     )
   }

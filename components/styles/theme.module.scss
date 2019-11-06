@@ -2,10 +2,7 @@
 * bootstrap 4.x theme custom
 *  
 **/
-
-@import 'node_modules/bootstrap/scss/functions';
-@import 'node_modules/bootstrap/scss/variables';
-@import 'node_modules/bootstrap/scss/mixins';
+@import 'node_modules/bootstrap/scss/bootstrap';
 
 // Brand Colors
 $blue: #456cff;
@@ -48,7 +45,7 @@ $theme-colors: (
   warning: $yellow,
   danger: $red,
   light: $gray-100,
-  dark: $gray-800,
+  dark: $gray-900,
 );
 $colors: (
   blue: $blue,
@@ -63,9 +60,12 @@ $colors: (
   cyan: $cyan,
   white: $white,
   gray: $gray-600,
-  gray-dark: $gray-800,
+  gray-dark: $gray-900,
 );
 $theme-color-interval: 8%;
+
+/********************************
+ */
 
 // Spacing
 $spacer: 1rem;
@@ -117,13 +117,13 @@ $grid-breakpoints: (
   sm: 576px,
   md: 768px,
   lg: 992px,
-  xl: 1200px,
+  xl: 1440px,
 );
 $container-max-widths: (
   sm: 540px,
   md: 720px,
   lg: 960px,
-  xl: 1140px,
+  xl: 1440px,
 );
 $grid-columns: 12;
 $grid-gutter-width: 30px;
@@ -421,7 +421,7 @@ $pagination-disabled-border-color: #ddd;
 
 // Jumbotron
 $jumbotron-padding: 2rem;
-$jumbotron-bg: $gray-200;
+$jumbotron-bg: $white;
 
 // Cards
 $card-spacer-y: 0.75rem;
@@ -560,35 +560,11 @@ $breadcrumb-divider-color: $gray-600;
 $breadcrumb-active-color: $gray-600;
 $breadcrumb-divider: '/';
 
-// Carousel
-$carousel-control-color: $white;
-$carousel-control-width: 15%;
-$carousel-control-opacity: 0.5;
-$carousel-indicator-width: 30px;
-$carousel-indicator-height: 3px;
-$carousel-indicator-spacer: 3px;
-$carousel-indicator-active-bg: $white;
-$carousel-caption-width: 70%;
-$carousel-caption-color: $white;
-$carousel-control-icon-width: 20px;
-$carousel-transition: transform 0.6s ease;
-
 // Close
 $close-font-size: $font-size-base * 1.5;
 $close-font-weight: $font-weight-bold;
 $close-color: $black;
 $close-text-shadow: 0 1px 0 $white;
-
-// Code
-$code-font-size: 90%;
-$code-padding-y: 0.2rem;
-$code-padding-x: 0.4rem;
-$code-color: #bd4147;
-$code-bg: $gray-100;
-$kbd-color: $white;
-$kbd-bg: $gray-900;
-$pre-color: $gray-900;
-$pre-scrollable-max-height: 340px;
 
 // Options
 $enable-rounded: true;
@@ -599,14 +575,9 @@ $enable-hover-media-query: false;
 $enable-grid-classes: true;
 $enable-print-styles: true;
 
-// 재사용에 필요한 요소
-@import 'node_modules/bootstrap/scss/utilities/borders';
-@import 'node_modules/bootstrap/scss/utilities/background';
-@import 'node_modules/bootstrap/scss/utilities/text';
-@import 'node_modules/bootstrap/scss/utilities/flex';
-@import 'node_modules/bootstrap/scss/utilities/position';
-@import 'node_modules/bootstrap/scss/utilities/float';
-@import 'node_modules/bootstrap/scss/utilities/align';
-@import 'node_modules/bootstrap/scss/utilities/display';
-@import 'node_modules/bootstrap/scss/utilities/spacing';
-@import 'node_modules/bootstrap/scss/utilities/sizing';
+// css variable
+:root {
+  @each $theme-colors, $color in $colors {
+    --#{$theme-colors}: #{$color};
+  }
+}

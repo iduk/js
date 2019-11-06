@@ -7,6 +7,10 @@
   "dependencies": {
     "bootstrap": "^4.3.1"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/iduk/js"
+  },
   "devDependencies": {
     "@next/bundle-analyzer": "^9.1.2",
     "@zeit/next-css": "^1.0.1",

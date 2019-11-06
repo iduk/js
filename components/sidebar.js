@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react'
 import Link from 'next/link'
-import styles from './styles/sidebar.module.scss'
+import styles from './styles/global.scss'
 import classNames from 'classnames/bind'
 const cx = classNames.bind(styles)
 
