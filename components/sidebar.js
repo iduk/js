@@ -17,7 +17,7 @@ const links = [
 
 const Sidebar = props => (
   <Fragment>
-    <aside className={cx('sideNav', `${props.theme}`)}>
+    <aside className={cx('sideNav', 'shadow-lg', `${props.theme}`)}>
       <ul>
         {links.map(({ key, href, img }) => (
           <li key={key}>

@@ -19,7 +19,7 @@ const Header = props => (
   <>
     <Fragment>
       <header className={cx('headerMenu')}>
-        <nav>
+        <nav className={cx('container', 'py-2')}>
           {/* logo */}
           <Link href="/" as="/">
             <a className={cx('brand-logo')}>
@@ -30,7 +30,7 @@ const Header = props => (
           {/* menu toggle */}
           <div className={cx('d-block', 'd-lg-none')}>
             <a href="#" className={cx('menu-toggle')}>
-              <i class="la la-stream"></i>
+              <i className={cx('la', 'la-stream')}></i>
             </a>
           </div>
           {/* headerMenu */}

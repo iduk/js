@@ -8,7 +8,7 @@ const cx = classNames.bind(styles)
 class Page1 extends Component {
   render() {
     return (
-      <Layout title="Page1" theme="bg-warning" text="text-black">
+      <Layout title="Page1" theme="bg-dark" color="text-white">
         <div className={cx('container', 'mx-auto')}>
           <div className={cx('pb-2')} style={{ paddingTop: 100 }}>
             <h1 className={cx('font-weight-bold')}>Project Latest</h1>
@@ -16,6 +16,27 @@ class Page1 extends Component {
               Our products help startups, designers, and agencies working faster
               than ever before.
             </p>
+            <button
+              type="button"
+              className={cx('btn', 'btn-primary')}
+              data-toggle="modal"
+              data-target="#exampleModal"
+            >
+              Launch demo modal
+            </button>
+          </div>
+
+          <div
+            className={cx('modal', 'fade')}
+            id="exampleModal"
+            tabindex="-1"
+            role="dialog"
+            aria-labelledby="exampleModalLabel"
+            aria-hidden="true"
+          >
+            <div className={cx('modal-dialog')} role="document">
+              <div className={cx('modal-content')}>asdfasdfasdfa</div>
+            </div>
           </div>
           <article className={cx('row', 'w-100')}>
             <div className={cx('col-12', 'col-lg-12', 'my-4')}>
@@ -25,12 +46,7 @@ class Page1 extends Component {
                   <li className={cx('col-6', 'col-lg-4', 'mb-4', 'p-3')}>
                     <a
                       href="#"
-                      className={cx(
-                        'text-dark',
-                        'd-block',
-                        'p-4',
-                        'position-relative'
-                      )}
+                      className={cx('d-block', 'p-4', 'position-relative')}
                     >
                       <img
                         src="/img/portfolio-item-1.jpg"
@@ -53,12 +69,7 @@ class Page1 extends Component {
                   <li className={cx('col-6', 'col-lg-4', 'mb-4', 'p-3')}>
                     <a
                       href="#"
-                      className={cx(
-                        'text-dark',
-                        'd-block',
-                        'p-4',
-                        'position-relative'
-                      )}
+                      className={cx('d-block', 'p-4', 'position-relative')}
                     >
                       <img
                         src="/img/portfolio-item-2.jpg"
@@ -81,12 +92,7 @@ class Page1 extends Component {
                   <li className={cx('col-6', 'col-lg-4', 'mb-4', 'p-3')}>
                     <a
                       href="#"
-                      className={cx(
-                        'text-dark',
-                        'd-block',
-                        'p-4',
-                        'position-relative'
-                      )}
+                      className={cx('d-block', 'p-4', 'position-relative')}
                     >
                       <img
                         src="/img/portfolio-item-3.jpg"

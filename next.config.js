@@ -8,14 +8,23 @@ const withImages = require('next-images')
 const withBundleAnalyzer = require('@next/bundle-analyzer')({
   enabled: process.env.ANALYZE === 'true',
 })
-const isProd = process.env.NODE_ENV === 'production'
+const debug = process.env.NODE_ENV !== 'production'
 
 // modules
 module.exports = withBundleAnalyzer()
 module.exports = withFonts()
 module.exports = {
   pageExtensions: ['mdx', 'jsx', 'js'],
-  assetPrefix: isProd ? 'https://iduk.github.io/js' : '',
+  exportPathMap: function() {
+    return {
+      '/': { page: '/' },
+      '/index': { page: '/index' },
+      '/page1': { page: '/page1' },
+      '/page2': { page: '/page2' },
+      '/page3': { page: '/page3' },
+    }
+  },
+  assetPrefix: !debug ? 'https://iduk.github.io/js/' : '',
 }
 module.exports = withCSS(
   withSass({

@@ -9,7 +9,7 @@ const cx = classNames.bind(styles)
 class Page2 extends React.Component {
   render() {
     return (
-      <Layout title="Page2" theme="bg-warning" color="text-black">
+      <Layout title="Page2" theme="bg-info" color="text-white">
         <div className={cx('container', 'mx-auto', 'pt-6')}>
           <div style={{ textAlign: 'center' }}>
             <h1 className={cx('display-3')}>Coming Soon</h1>
@@ -119,7 +119,7 @@ class Page2 extends React.Component {
                         data-original-title="..."
                       >
                         <i
-                          class="la la-pinterest-square"
+                          className={cx('la', 'la-pinterest-square')}
                           style={{ fontSize: 48 }}
                         ></i>
                       </a>
@@ -134,7 +134,10 @@ class Page2 extends React.Component {
                         data-placement="bottom"
                         data-original-title="..."
                       >
-                        <i class="la la-github" style={{ fontSize: 48 }}></i>
+                        <i
+                          className={cx('la', 'la-github')}
+                          style={{ fontSize: 48 }}
+                        ></i>
                       </a>
                     </li>
                     <li className={cx('mr-4')}>
@@ -147,7 +150,10 @@ class Page2 extends React.Component {
                         data-placement="bottom"
                         data-original-title="..."
                       >
-                        <i class="la la-apple" style={{ fontSize: 48 }}></i>
+                        <i
+                          className={cx('la', 'la-apple')}
+                          style={{ fontSize: 48 }}
+                        ></i>
                       </a>
                     </li>
                     <li className={cx('mr-4')}>
@@ -160,7 +166,10 @@ class Page2 extends React.Component {
                         data-placement="bottom"
                         data-original-title="..."
                       >
-                        <i class="la la-chrome" style={{ fontSize: 48 }}></i>
+                        <i
+                          className={cx('la', 'la-chrome')}
+                          style={{ fontSize: 48 }}
+                        ></i>
                       </a>
                     </li>
                   </ul>

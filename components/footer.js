@@ -8,11 +8,11 @@ const Footer = () => (
   <footer className={cx('footer')} style={{ marginTop: '2.5rem' }}>
     <div className={cx('wrap')}>
       <p className={cx('copyright')}>
-        <strong>Openfloor</strong> <br />
+        <strong>Openfloor, Inc.</strong> <br />
         Beautiful, projects gifted by the world’s most generous of perfact
         teams.
         <br />
-        @Create by. iduk
+        <span className={cx('text-muted')}>@Create by. iduk</span>
       </p>
       <Link href="/">
         <a className={cx('logo', 'mt-2')}>

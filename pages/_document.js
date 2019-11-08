@@ -1,22 +1,23 @@
-import Document from 'next/document'
+import Document, { Html, Head, Main, NextScript } from 'next/document'
 
-class MyDocument extends Document {
+class Custom_Document extends Document {
   static async getInitialProps(ctx) {
-    const originalRenderPage = ctx.renderPage
-
-    ctx.renderPage = () =>
-      originalRenderPage({
-        // useful for wrapping the whole react tree
-        enhanceApp: App => App,
-        // useful for wrapping in a per-page basis
-        enhanceComponent: Component => Component,
-      })
-
-    // Run the parent `getInitialProps` using `ctx` that now includes our custom `renderPage`
     const initialProps = await Document.getInitialProps(ctx)
+    return { ...initialProps }
+  }
 
-    return initialProps
+  render() {
+    return (
+      <Html>
+        <Head />
+        <body>
+          <Main />
+          <NextScript />
+          <script src="/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js" />
+        </body>
+      </Html>
+    )
   }
 }
 
-export default MyDocument
+export default Custom_Document

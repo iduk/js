@@ -9,10 +9,8 @@ body {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  font-family: 'Source Code Pro', 'Gothic A1', sans-serif;
+  font-family: 'Quicksand', 'Gothic A1', sans-serif;
   font-size: 14px;
-  font-weight: 400;
-  letter-spacing: -0.3px;
 }
 
 ul,
@@ -39,11 +37,6 @@ p {
   background-color: inherit;
 
   > nav {
-    max-width: 1440px;
-    padding-top: 1rem;
-    padding-bottom: 1rem;
-    padding-left: calc(1440px * (1 / 24));
-    padding-right: calc(1440px * (1 / 24));
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -93,7 +86,7 @@ p {
       &:active,
       &:hover,
       &:focus {
-        border-color: var(--gray-dark);
+        border-color: inherit;
         transition: all 0.5s ease-in-out;
       }
     }
@@ -159,11 +152,10 @@ p {
     padding: 8px;
     overflow: hidden;
     border-radius: 0.3rem;
-    border: 2px solid transparent;
 
     &:focus,
     &:active {
-      border-color: #c70000;
+      background-color: var(--danger);
     }
   }
 }

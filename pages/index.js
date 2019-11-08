@@ -15,14 +15,22 @@ class IndexPage extends React.Component {
         {/* index page */}
         <section className={cx('index')}>
           <article className={cx('container')}>
-            <div
-              className={cx('jumbotron', 'p-4', 'rounded', 'row')}
-              style={{ height: 400 }}
-            >
+            <div className={cx('jumbotron', 'p-4', 'rounded', 'row')}>
               <div className={cx('col-12', 'col-lg-10', 'px-0', 'mx-auto')}>
                 <h1 className={cx('display-4', 'font-weight-bold')}>
-                  Openfloor solutions for everyone.
+                  Openfloor makes Quality.
                 </h1>
+                <h3>
+                  <span className={cx('mr-1', 'badge', 'badge-primary')}>
+                    colors1
+                  </span>
+                  <span className={cx('mr-1', 'badge', 'badge-danger')}>
+                    colors2
+                  </span>
+                  <span className={cx('mr-1', 'badge', 'badge-cream')}>
+                    colors3
+                  </span>
+                </h3>
                 <p className={cx('lead', 'my-4')}>
                   Duis vel massa aliquet, pretium nunc ac, viverra augue. Morbi
                   ultricies metus ac lorem tincidunt consectetur.
@@ -34,14 +42,14 @@ class IndexPage extends React.Component {
                     className={cx('btn', 'btn-lg', 'btn-danger')}
                   >
                     <span className={cx('mr-3')}>Openfloor Projects</span>
-                    <i class="la la-long-arrow-alt-right"></i>
+                    <i className={cx('la', 'la-long-arrow-alt-right')}></i>
                   </a>
                 </p>
               </div>
             </div>
           </article>
 
-          <article className={cx('container-fluid', 'pb-6')}>
+          <article className={cx('container-fluid', 'py-3')}>
             <div className={cx('row')}>
               <figure className={cx('figure', 'col-10', 'px-4', 'mx-auto')}>
                 <img
