@@ -22,13 +22,19 @@ const Header = props => (
         <nav>
           {/* logo */}
           <Link href="/" as="/">
-            <a className={cx('logo')}>
+            <a className={cx('brand-logo')}>
               <Image src="/img/symbol.svg" alt="openfloor" />
             </a>
           </Link>
 
+          {/* menu toggle */}
+          <div className={cx('d-block', 'd-lg-none')}>
+            <a href="#" className={cx('menu-toggle')}>
+              <i class="la la-stream"></i>
+            </a>
+          </div>
           {/* headerMenu */}
-          <ul className={cx('menuList')}>
+          <ul className={cx('menuList', 'd-none', 'd-lg-flex')}>
             {links.map(({ key, href, label }) => (
               <li key={key}>
                 <Link href={href} as={href}>
@@ -42,5 +48,4 @@ const Header = props => (
     </Fragment>
   </>
 )
-
 export default Header

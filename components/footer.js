@@ -5,7 +5,7 @@ import classNames from 'classnames/bind'
 const cx = classNames.bind(styles)
 
 const Footer = () => (
-  <footer className={cx('footer')}>
+  <footer className={cx('footer')} style={{ marginTop: '2.5rem' }}>
     <div className={cx('wrap')}>
       <p className={cx('copyright')}>
         <strong>Openfloor</strong> <br />

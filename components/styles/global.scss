@@ -1,6 +1,8 @@
 // layout(<main>) scss
 @charset 'utf-8';
-@import './theme.module.scss';
+
+// custom theme
+@import './theme.scss';
 
 *,
 body {
@@ -8,9 +10,11 @@ body {
   margin: 0;
   box-sizing: border-box;
   font-family: 'Source Code Pro', 'Gothic A1', sans-serif;
+  font-size: 14px;
   font-weight: 400;
   letter-spacing: -0.3px;
 }
+
 ul,
 li,
 ol,
@@ -20,26 +24,49 @@ p {
   padding: 0;
   list-style: none;
 }
+
 /********************* 
   Header 
   - 
 *********************/
 .headerMenu {
-  position: fixed;
+  position: sticky;
   top: 0;
   left: 0;
   width: 100%;
   z-index: 1;
   box-shadow: 0 8px 32px -8px rgba(0, 0, 0, 0.1);
+  background-color: inherit;
 
   > nav {
     max-width: 1440px;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
     padding-left: calc(1440px * (1 / 24));
     padding-right: calc(1440px * (1 / 24));
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin: 1rem auto;
+    margin: auto;
+    // header brand logo
+    .brand-logo {
+      display: block;
+      padding: 1rem;
+
+      &:active,
+      &:hover,
+      &:focus {
+        animation: Wiggle 1s ease-in-out;
+      }
+    }
+    // toggle button
+    .menu-toggle {
+      display: inline-block;
+      font-size: 32px;
+      > i {
+        font-size: inherit;
+      }
+    }
   }
   .menuList {
     width: 100%;
@@ -66,28 +93,31 @@ p {
       &:active,
       &:hover,
       &:focus {
-        border-color: black;
+        border-color: var(--gray-dark);
         transition: all 0.5s ease-in-out;
       }
     }
   }
-  > .logo {
-    padding: 1rem 2rem;
-    margin: auto;
 
-    &:active,
-    &:hover,
-    &:focus {
-      // animation: SpinLogo 10s infinite;
+  @keyframes Wiggle {
+    20% {
+      transform: rotate(10deg);
     }
-  }
 
-  @keyframes SpinLogo {
-    0% {
-      transform: rotate(0deg);
+    40% {
+      transform: rotate(-15deg);
     }
+
+    60% {
+      transform: rotate(5deg);
+    }
+
+    80% {
+      transform: rotate(-5deg);
+    }
+
     100% {
-      transform: rotate(360deg);
+      transform: rotate(0deg);
     }
   }
 }
@@ -103,7 +133,8 @@ p {
   z-index: 10;
   height: 100%;
   width: 72px;
-  background: var(--gray-dark);
+  background: inherit;
+  color: inherit;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -125,13 +156,14 @@ p {
     display: inline-block;
     width: 52px;
     height: 52px;
-    padding: 10px;
+    padding: 8px;
     overflow: hidden;
     border-radius: 0.3rem;
+    border: 2px solid transparent;
 
     &:focus,
     &:active {
-      background-color: #c70000;
+      border-color: #c70000;
     }
   }
 }
@@ -196,12 +228,12 @@ p {
 *********************/
 #wrap {
   transition: all 0.2s ease-in-out;
+  position: relative;
+  min-height: 100vh;
 }
 .main {
   width: 100%;
-  min-height: 100vh;
   margin: auto;
-  padding-top: 92px;
 }
 
 /********************* 
@@ -218,9 +250,90 @@ p {
 
 /* page1 */
 .imgList {
+  > ul > li {
+    overflow: hidden;
+  }
   > ul > li > a {
     display: block;
     width: 100%;
-    height: 100%;
+    height: 480px;
+    overflow: hidden;
+    margin-bottom: 1rem;
+  }
+}
+
+/********************* 
+  media query 
+*********************/
+
+// mobile =<
+@media (min-width: 576px) {
+  html {
+    font-size: 14px;
+  }
+  h1 {
+    font-size: 1.602em;
+  }
+  h2 {
+    font-size: 1.424em;
+  }
+  h3 {
+    font-size: 1.266em;
+  }
+  h4 {
+    font-size: 1.125em;
+  }
+  h5 {
+    font-size: 0.889em;
+  }
+  h6 {
+    font-size: 0.79em;
+  }
+  .display-1 {
+    font-size: 3.906em;
+  }
+  .display-2 {
+    font-size: 3.125em;
+  }
+  .display-3 {
+    font-size: 2.5em;
+  }
+  .display-4 {
+    font-size: 2em;
+  }
+}
+// tablet =<
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+  h1 {
+    font-size: 2.441em;
+  }
+  h2 {
+    font-size: 1.953em;
+  }
+  h3 {
+    font-size: 1.563em;
+  }
+  h4 {
+    font-size: 1.25em;
+  }
+  .display-1 {
+    font-size: 6em;
+  }
+  .display-2 {
+    font-size: 5.5em;
+  }
+  .display-3 {
+    font-size: 4.5em;
+  }
+  .display-4 {
+    font-size: 3.5em;
+  }
+}
+@media (min-width: 992px) {
+  html {
+    font-size: 1rem;
   }
 }

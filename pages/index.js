@@ -11,12 +11,12 @@ class IndexPage extends React.Component {
   }
   render() {
     return (
-      <Layout title="Openfloor Index" colors="bg-primary">
+      <Layout title="Openfloor Index" theme="bg-cream" color="text-black">
         {/* index page */}
         <section className={cx('index')}>
           <article className={cx('container')}>
             <div
-              className={cx('jumbotron', 'p-4', 'pt-lg-5', 'rounded', 'row')}
+              className={cx('jumbotron', 'p-4', 'rounded', 'row')}
               style={{ height: 400 }}
             >
               <div className={cx('col-12', 'col-lg-10', 'px-0', 'mx-auto')}>
@@ -27,16 +27,31 @@ class IndexPage extends React.Component {
                   Duis vel massa aliquet, pretium nunc ac, viverra augue. Morbi
                   ultricies metus ac lorem tincidunt consectetur.
                 </p>
+                <p className={cx('text-right')}>
+                  <a
+                    role="button"
+                    href="/"
+                    className={cx('btn', 'btn-lg', 'btn-danger')}
+                  >
+                    <span className={cx('mr-3')}>Openfloor Projects</span>
+                    <i class="la la-long-arrow-alt-right"></i>
+                  </a>
+                </p>
               </div>
             </div>
           </article>
 
-          <article className={cx('container-fluid')}>
+          <article className={cx('container-fluid', 'pb-6')}>
             <div className={cx('row')}>
-              <figure className={cx('figure', 'col-10', 'p-4', 'mx-auto')}>
+              <figure className={cx('figure', 'col-10', 'px-4', 'mx-auto')}>
                 <img
-                  src="https://images.unsplash.com/photo-1457612928689-a1ab27da0dad?ixlib=rb-1.2.1&auto=format&fit=crop&w=3300&q=80"
-                  className={cx('figure-img', 'img-fluid', 'rounded')}
+                  src="https://images.unsplash.com/photo-1532619031801-97b02fb2de1b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=3300&q=80"
+                  className={cx(
+                    'figure-img',
+                    'img-fluid',
+                    'rounded',
+                    'shadow-lg'
+                  )}
                   alt="bla bla"
                 />
                 <figcaption className={cx('figure-caption', 'sr-only')}>
@@ -46,12 +61,53 @@ class IndexPage extends React.Component {
             </div>
           </article>
 
-          <div className={cx('container')}>
+          <section className={cx('container', 'section', 'py-6')}>
             <article className={cx('row')}>
-              <div className={cx('col-12', 'col-lg-6')}>글을 막 쓰는거야</div>
-              <div className={cx('col-12', 'col-lg-6')}>여긴 사진</div>
+              <div className={cx('col-12', 'col-lg-5')}>
+                <div className={cx('p-4')}>
+                  <h3>Openfloor's Founder</h3>
+                  <h1 className={cx('mb-4')}>Lee Byung Yoon</h1>
+                  <p className={cx('text-sm', 'text-black-50')}>
+                    모든 국민은 그 보호하는 자녀에게 적어도 초등교육과 법률이
+                    정하는 교육을 받게 할 의무를 진다. 국회의원은 그 지위를
+                    남용하여 국가·공공단체 또는 기업체와의 계약이나 그 처분에
+                    의하여 재산상의 권리·이익 또는 직위를 취득하거나 타인을
+                    위하여 그 취득을 알선할 수 없다.
+                  </p>
+                </div>
+              </div>
+              <div className={cx('col-12', 'col-lg-7')}>
+                <article className={cx('row')}>
+                  <figure className={cx('figure', 'col-6', 'p-4', 'mx-auto')}>
+                    <img
+                      src="https://images.unsplash.com/photo-1497752531616-c3afd9760a11?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=3300&q=80"
+                      className={cx(
+                        'figure-img',
+                        'img-fluid',
+                        'rounded',
+                        'rounded-lg',
+                        'shadow'
+                      )}
+                      alt="bla bla"
+                    />
+                  </figure>
+                  <figure className={cx('figure', 'col-6', 'p-4', 'mx-auto')}>
+                    <img
+                      src="https://images.unsplash.com/photo-1572981872666-80a4bd158524?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=3300&q=80"
+                      className={cx(
+                        'figure-img',
+                        'img-fluid',
+                        'rounded',
+                        'rounded-lg',
+                        'shadow'
+                      )}
+                      alt="bla bla"
+                    />
+                  </figure>
+                </article>
+              </div>
             </article>
-          </div>
+          </section>
 
           {/* 일단숨김 */}
           <div className={cx('d-none')}>

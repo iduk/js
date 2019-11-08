@@ -33,6 +33,7 @@
     "node-sass": "^4.13.0",
     "postcss-scss": "^2.0.0",
     "react": "16.11.0",
+    "react-bootstrap": "^1.0.0-beta.14",
     "react-dom": "16.11.0",
     "react-router-dom": "^5.1.2",
     "sass-loader": "^8.0.0"
@@ -45,7 +46,11 @@
     "now": "now --prod",
     "deploy": "touch out/.nojekyll && git add out/ && git commit -m \"Deploy Next.js to gh-pages\" && git subtree push --prefix out origin gh-pages"
   },
-  "browserslist": ["> 0.5%", "Edge 16", "IE 9"],
+  "browserslist": [
+    "> 0.5%",
+    "Edge 16",
+    "IE 9"
+  ],
   "postcss": {
     "plugins": {
       "postcss-normalize": {},

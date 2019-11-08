@@ -6,7 +6,7 @@ import Layout from '../components/layout'
 class Page3 extends React.Component {
   render() {
     return (
-      <Layout title="Page3">
+      <Layout title="Page3" theme="bg-gray" color="text-black">
         <p>123</p>
         <Link href="/">
           <a className="btn btn-light">Go back home</a>

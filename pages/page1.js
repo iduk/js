@@ -8,95 +8,102 @@ const cx = classNames.bind(styles)
 class Page1 extends Component {
   render() {
     return (
-      <Layout title="Page1" colors="bg-warning">
-        <div
-          className={cx(
-            'container-fluid',
-            'mx-auto',
-            'd-flex',
-            'justify-content-between',
-            'align-items-center'
-          )}
-          style={{ height: 800 }}
-        >
+      <Layout title="Page1" theme="bg-warning" text="text-black">
+        <div className={cx('container', 'mx-auto')}>
+          <div className={cx('pb-2')} style={{ paddingTop: 100 }}>
+            <h1 className={cx('font-weight-bold')}>Project Latest</h1>
+            <p className={cx('lead', 'my-3')}>
+              Our products help startups, designers, and agencies working faster
+              than ever before.
+            </p>
+          </div>
           <article className={cx('row', 'w-100')}>
-            <div className={cx('col-12', 'col-lg-10', 'mx-auto', 'h-100')}>
+            <div className={cx('col-12', 'col-lg-12', 'my-4')}>
               {/* photo */}
-              <section className={cx('imgList')} style={{ height: 600 }}>
+              <section className={cx('imgList')}>
                 <ul className={cx('row')}>
-                  <li
-                    className={cx(
-                      'col-6',
-                      'col-lg-4',
-                      'mb-4',
-                      'p-3',
-                      'position-relative'
-                    )}
-                  >
+                  <li className={cx('col-6', 'col-lg-4', 'mb-4', 'p-3')}>
                     <a
                       href="#"
-                      className={cx('text-dark', 'd-block', 'p-4')}
-                      style={{ position: 'absolute', left: 0, top: 0 }}
+                      className={cx(
+                        'text-dark',
+                        'd-block',
+                        'p-4',
+                        'position-relative'
+                      )}
                     >
                       <img
                         src="/img/portfolio-item-1.jpg"
                         alt="project"
-                        className={cx('rounded', 'mb-3', 'img-fluid')}
+                        className={cx(
+                          'rounded-lg',
+                          'mb-3',
+                          'img-fluid',
+                          'shadow'
+                        )}
+                        style={{ position: 'absolute', left: 0, top: 0 }}
                       />
-                      <h4 className={cx('font-weight-bold')}>
-                        Volkswagen Australia
-                      </h4>
-                      <p>Branding</p>
                     </a>
+                    <h4 className={cx('font-weight-bold')}>
+                      Project 'Only Young' 🥑
+                    </h4>
+                    <p>Branding</p>
                   </li>
 
-                  <li
-                    className={cx(
-                      'col-6',
-                      'col-lg-4',
-                      'mb-4',
-                      'position-relative'
-                    )}
-                  >
+                  <li className={cx('col-6', 'col-lg-4', 'mb-4', 'p-3')}>
                     <a
                       href="#"
-                      className={cx('text-dark', 'd-block', 'p-4')}
-                      style={{ position: 'absolute', left: 0, top: 0 }}
+                      className={cx(
+                        'text-dark',
+                        'd-block',
+                        'p-4',
+                        'position-relative'
+                      )}
                     >
                       <img
-                        src="/img/portfolio-item-1.jpg"
+                        src="/img/portfolio-item-2.jpg"
                         alt="project"
-                        className={cx('rounded', 'mb-3', 'img-fluid')}
+                        className={cx(
+                          'rounded-lg',
+                          'mb-3',
+                          'img-fluid',
+                          'shadow'
+                        )}
+                        style={{ position: 'absolute', left: 0, top: 0 }}
                       />
-                      <h4 className={cx('font-weight-bold')}>
-                        Volkswagen Australia
-                      </h4>
-                      <p>Branding</p>
                     </a>
+                    <h4 className={cx('font-weight-bold')}>
+                      Project 'Water SW' 🤓
+                    </h4>
+                    <p>React</p>
                   </li>
-                  <li
-                    className={cx(
-                      'col-6',
-                      'col-lg-4',
-                      'mb-4',
-                      'position-relative'
-                    )}
-                  >
+
+                  <li className={cx('col-6', 'col-lg-4', 'mb-4', 'p-3')}>
                     <a
                       href="#"
-                      className={cx('text-dark', 'd-block', 'p-4')}
-                      style={{ position: 'absolute', left: 0, top: 0 }}
+                      className={cx(
+                        'text-dark',
+                        'd-block',
+                        'p-4',
+                        'position-relative'
+                      )}
                     >
                       <img
-                        src="/img/portfolio-item-1.jpg"
+                        src="/img/portfolio-item-3.jpg"
                         alt="project"
-                        className={cx('rounded', 'mb-3', 'img-fluid')}
+                        className={cx(
+                          'rounded-lg',
+                          'mb-3',
+                          'img-fluid',
+                          'shadow'
+                        )}
+                        style={{ position: 'absolute', left: 0, top: 0 }}
                       />
-                      <h4 className={cx('font-weight-bold')}>
-                        Volkswagen Australia
-                      </h4>
-                      <p>Branding</p>
                     </a>
+                    <h4 className={cx('font-weight-bold')}>
+                      Project 'FirstSteps' 🐖🐄
+                    </h4>
+                    <p>Javascript, Sass</p>
                   </li>
                 </ul>
               </section>
