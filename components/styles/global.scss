@@ -27,7 +27,7 @@ p {
   Header 
   - 
 *********************/
-.headerMenu {
+.headerNav {
   position: sticky;
   top: 0;
   left: 0;
@@ -37,6 +37,7 @@ p {
   background-color: inherit;
 
   > nav {
+    position: relative;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -50,44 +51,6 @@ p {
       &:hover,
       &:focus {
         animation: Wiggle 1s ease-in-out;
-      }
-    }
-    // toggle button
-    .menu-toggle {
-      display: inline-block;
-      font-size: 32px;
-      > i {
-        font-size: inherit;
-      }
-    }
-  }
-  .menuList {
-    width: 100%;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    list-style: none;
-    margin-bottom: 0;
-    overflow: hidden;
-
-    li {
-      padding: 0 0.5rem;
-    }
-
-    li .menuLink {
-      display: block;
-      padding: 1rem 2rem;
-      color: inherit;
-      text-decoration: none;
-      text-align: center;
-      border: 2px solid transparent;
-
-      &.active,
-      &:active,
-      &:hover,
-      &:focus {
-        border-color: inherit;
-        transition: all 0.5s ease-in-out;
       }
     }
   }
@@ -157,28 +120,6 @@ p {
     &:active {
       background-color: var(--danger);
     }
-  }
-}
-
-@media (min-width: 768px) {
-  .sideNav {
-    width: 72px;
-  }
-  // Push Container
-  .main,
-  .headerMenu {
-    padding-left: 72px;
-  }
-}
-
-@media (max-width: 767px) {
-  .sideNav {
-    width: 0;
-  }
-  // Push Container
-  .main,
-  .headerMenu {
-    padding-left: 0;
   }
 }
 
@@ -254,12 +195,12 @@ p {
   }
 }
 
-/********************* 
-  media query 
-*********************/
+/************************************************************************************
+                                  media query 
+************************************************************************************/
 
-// mobile =<
-@media (min-width: 576px) {
+// mobile
+@media (max-width: 767px) {
   html {
     font-size: 14px;
   }
@@ -294,7 +235,7 @@ p {
     font-size: 2em;
   }
 }
-// tablet =<
+// min-width Tablet
 @media (min-width: 768px) {
   html {
     font-size: 16px;
@@ -324,8 +265,120 @@ p {
     font-size: 3.5em;
   }
 }
+
+/* min-width Desktop */
 @media (min-width: 992px) {
-  html {
-    font-size: 1rem;
+  .sideNav {
+    width: 72px;
+  }
+  /* Contents => Push */
+  .main,
+  .headerNav {
+    padding-left: 72px;
+  }
+
+  // Top Menu
+  .menuList {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    list-style: none;
+    margin-bottom: 0;
+    overflow: hidden;
+
+    li {
+      padding: 0 0.5rem;
+    }
+
+    li .menuLink {
+      display: block;
+      padding: 1rem 2rem;
+      color: inherit;
+      text-decoration: none;
+      text-align: center;
+      border: 2px solid transparent;
+
+      &.active,
+      &:active,
+      &:hover,
+      &:focus {
+        border-color: inherit;
+        transition: all 0.5s ease-in-out;
+      }
+    }
+  }
+}
+
+/* max-width Desktop */
+@media (max-width: 991px) {
+  .sideNav {
+    width: 0;
+  }
+  /* Contents => hidden */
+  .main,
+  .headerNav {
+    padding-left: 0;
+  }
+
+  // toggle button
+  .menu-toggle {
+    z-index: 200;
+    position: fixed;
+    top: 0;
+    right: 1rem;
+    display: inline-block;
+    font-size: 32px;
+    padding: 1rem 1.5rem;
+    color: inherit;
+    > i {
+      color: inherit;
+      font-size: inherit;
+    }
+  }
+  /* Top Menu */
+
+  .collapse {
+    display: none;
+  }
+  .collapse.show {
+    display: block;
+  }
+
+  .menuList {
+    z-index: 100;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 250px;
+    background: var(--white);
+    color: black;
+    font-size: 1.2rem;
+    height: calc(100vh);
+    padding-top: 6em;
+    box-shadow: 0 8px 24px -16px rgba(0, 0, 0, 0.5);
+    transition: all 0.3s ease-in-out;
+
+    li {
+      padding: 0.5rem 2rem;
+    }
+
+    li .menuLink {
+      display: block;
+      padding: 0.75rem 1rem;
+      color: inherit;
+      text-decoration: none;
+      text-align: center;
+      font-size: 1.25rem;
+      border: 2px solid transparent;
+
+      &.active,
+      &:active,
+      &:hover,
+      &:focus {
+        border-color: inherit;
+        transition: all 0.2s ease-in-out;
+      }
+    }
   }
 }

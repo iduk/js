@@ -11,6 +11,7 @@ const cx = classNames.bind(styles)
 const Layout = props => (
   <Fragment>
     <Head>
+      <title>{props.title}</title>
       <meta charSet="utf-8" />
       <meta
         name="viewport"
@@ -24,12 +25,10 @@ const Layout = props => (
         href="https://fonts.googleapis.com/css?family=Gothic+A1:300,400,700&display=swap"
         rel="stylesheet"
       />
-      >
       <link
         rel="stylesheet"
         href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.1.0/css/line-awesome.min.css"
       />
-      <title>{props.title}</title>
     </Head>
     <div id={cx('wrap')} className={cx(`${props.theme}`, `${props.color}`)}>
       <Sidebar theme="bg-dark" />

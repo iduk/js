@@ -1,5 +1,6 @@
 import React, { Fragment } from 'react'
 import Link from 'next/link'
+import { useRouter } from 'next/router'
 import Image from './image'
 import styles from './styles/global.scss'
 import classNames from 'classnames/bind'
@@ -15,10 +16,20 @@ const links = [
   return link
 })
 
-const Header = props => (
-  <>
+export const isToggle = () => {
+  var Menu = document.getElementById(`menuList`)
+
+  if (Menu.style.display == 'block' || '') {
+    Menu.style.display = 'none'
+  } else {
+    Menu.style.display = 'block'
+  }
+}
+
+const Header = props => {
+  return (
     <Fragment>
-      <header className={cx('headerMenu')}>
+      <header className={cx('headerNav')}>
         <nav className={cx('container', 'py-2')}>
           {/* logo */}
           <Link href="/" as={process.env.BACKEND_URL + '/'}>
@@ -27,14 +38,23 @@ const Header = props => (
             </a>
           </Link>
 
-          {/* menu toggle */}
+          {/* toggle */}
           <div className={cx('d-block', 'd-lg-none')}>
-            <a href="#" className={cx('menu-toggle')}>
+            <button
+              type="button"
+              className={cx('menu-toggle')}
+              onClick={isToggle}
+            >
               <i className={cx('la', 'la-stream')}></i>
-            </a>
+            </button>
           </div>
-          {/* headerMenu */}
-          <ul className={cx('menuList', 'd-none', 'd-lg-flex')}>
+
+          {/* Menu */}
+          <ul
+            id="menuList"
+            className={cx('menuList', 'd-lg-flex')}
+            style={{ display: `none` }}
+          >
             {links.map(({ key, href, label }) => (
               <li key={key}>
                 <Link href={href} as={process.env.BACKEND_URL + `${href}`}>
@@ -46,6 +66,6 @@ const Header = props => (
         </nav>
       </header>
     </Fragment>
-  </>
-)
+  )
+}
 export default Header

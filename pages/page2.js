@@ -81,104 +81,13 @@ class Page2 extends React.Component {
         </section>
 
         {/* Cards */}
-        <section className={cx('container')}>
-          <div
-            className={cx(
-              'row',
-              'position-relative',
-              'align-items-center',
-              'no-gutters',
-              'p-5'
-            )}
-          >
+        {/* <section className={cx('container')}>
+          <div className={cx('row', 'position-relative', 'align-items-center')}>
             <article className={cx('col')}>
-              <div
-                className={cx(
-                  'card',
-                  'border-left-md',
-                  'border-soft',
-                  'py-4',
-                  'px-lg-5'
-                )}
-              >
-                <div className={cx('card-body')}>
-                  <h3>Follow us</h3>
-                  <p className={cx('my-3')}>
-                    Our products help startups, designers, and agencies working
-                    faster than ever before.
-                  </p>
-                  <ul className={cx('d-flex', 'flow-row', 'list-style-none')}>
-                    <li className={cx('mr-4')}>
-                      <a
-                        href="#"
-                        rel="nofollow noopener"
-                        target="_blank"
-                        className={cx('btn', 'btn-link')}
-                        data-toggle="tooltip"
-                        data-placement="bottom"
-                        data-original-title="..."
-                      >
-                        <i
-                          className={cx('la', 'la-pinterest-square')}
-                          style={{ fontSize: 48 }}
-                        ></i>
-                      </a>
-                    </li>
-                    <li className={cx('mr-4')}>
-                      <a
-                        href="#"
-                        rel="nofollow noopener"
-                        target="_blank"
-                        className={cx('btn', 'btn-link')}
-                        data-toggle="tooltip"
-                        data-placement="bottom"
-                        data-original-title="..."
-                      >
-                        <i
-                          className={cx('la', 'la-github')}
-                          style={{ fontSize: 48 }}
-                        ></i>
-                      </a>
-                    </li>
-                    <li className={cx('mr-4')}>
-                      <a
-                        href="#"
-                        rel="nofollow noopener"
-                        target="_blank"
-                        className={cx('btn', 'btn-link')}
-                        data-toggle="tooltip"
-                        data-placement="bottom"
-                        data-original-title="..."
-                      >
-                        <i
-                          className={cx('la', 'la-apple')}
-                          style={{ fontSize: 48 }}
-                        ></i>
-                      </a>
-                    </li>
-                    <li className={cx('mr-4')}>
-                      <a
-                        href="#"
-                        rel="nofollow noopener"
-                        target="_blank"
-                        className={cx('btn', 'btn-link')}
-                        data-toggle="tooltip"
-                        data-placement="bottom"
-                        data-original-title="..."
-                      >
-                        <i
-                          className={cx('la', 'la-chrome')}
-                          style={{ fontSize: 48 }}
-                        ></i>
-                      </a>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-              {/* card end */}
+              <div className={cx('card')}>Card</div>
             </article>
           </div>
-        </section>
+        </section> */}
       </Layout>
     )
   }

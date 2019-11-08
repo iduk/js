@@ -14,11 +14,14 @@ const debug = process.env.NODE_ENV !== 'production'
 module.exports = withBundleAnalyzer()
 module.exports = withFonts()
 module.exports = {
+  crossOrigin: 'anonymous',
   pageExtensions: ['mdx', 'jsx', 'js'],
-  exportPathMap: function() {
+  exportPathMap: async function(
+    defaultPathMap,
+    { dev, dir, outDir, distDir, buildId }
+  ) {
     return {
-      '/': { page: '/' },
-      '/index': { page: '/index' },
+      '/': { page: '/index' },
       '/page1': { page: '/page1' },
       '/page2': { page: '/page2' },
       '/page3': { page: '/page3' },
@@ -54,6 +57,7 @@ module.exports = withCSS(
   }),
   withImages({
     webpack(config, options) {
+      config.optimization.minimize = false
       return config
     },
   })
