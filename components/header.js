@@ -21,7 +21,7 @@ const Header = props => (
       <header className={cx('headerMenu')}>
         <nav className={cx('container', 'py-2')}>
           {/* logo */}
-          <Link href="/" as="/">
+          <Link href="/" as={process.env.BACKEND_URL + '/'}>
             <a className={cx('brand-logo')}>
               <Image src="/img/symbol.svg" alt="openfloor" />
             </a>
@@ -37,7 +37,7 @@ const Header = props => (
           <ul className={cx('menuList', 'd-none', 'd-lg-flex')}>
             {links.map(({ key, href, label }) => (
               <li key={key}>
-                <Link href={href} as={href}>
+                <Link href={href} as={process.env.BACKEND_URL + `${href}`}>
                   <a className={cx('menuLink')}>{label}</a>
                 </Link>
               </li>
