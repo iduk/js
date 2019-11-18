@@ -29,7 +29,7 @@ module.exports = {
 			'/page3': { page: '/page3' },
 		}
 	},
-	assetPrefix: !debug ? '' : '',
+	assetPrefix: !debug ? '/js' : '',
 }
 
 
