@@ -1,95 +1,159 @@
-import React from 'react'
+import React, { useState, Fragment } from 'react'
+import Head from 'next/head'
 import Link from 'next/link'
+import PropTypes from 'prop-types'
 import Layout from '../components/layout'
-import Header from '../components/header'
-import styles from '../components/styles/global.scss'
-import classNames from 'classnames/bind'
-const cx = classNames.bind(styles)
+import '../components/styles/app.scss'
 
-class Page2 extends React.Component {
+export default class Page2 extends React.Component {
   render() {
     return (
-      <Layout title="Page2" theme="bg-info" color="text-white">
-        <div className={cx('container', 'mx-auto', 'pt-6')}>
-          <div style={{ textAlign: 'center' }}>
-            <h1 className={cx('display-3')}>Coming Soon</h1>
-          </div>
-        </div>
+      <Layout
+        title="Page1"
+        theme="bg-warning"
+        color="text-black"
+        logo={'/img/symbol.svg'}
+      >
+        <Head>
+          <meta charSet="utf-8" />
+        </Head>
+        <section className="py-6">
+          <article className="container">
+            <div className="row justify-content-between">
+              <div className="col mb-5">
+                <h1>Projects</h1>
+                <p className="lead">
+                  Our products help startups, designers, and agencies working
+                  faster than ever before.
+                </p>
+              </div>
+            </div>
+            <MyModal />
+          </article>
 
-        <section
-          className={cx('container', 'mx-auto')}
-          style={{ paddingTop: 100 }}
-        >
-          <div className={cx('row')}>
-            <div className={cx('col')}>
-              <h2 className={cx('font-weight-bold')}>Openfloor</h2>
-              <p className={cx('my-3')}>
-                <figure className={cx('figure', 'p-4', 'mx-auto')}>
-                  <img
-                    src="https://images.unsplash.com/photo-1542965934-233f2071468e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1600&q=80"
-                    className={cx(
-                      'figure-img',
-                      'img-fluid',
-                      'rounded',
-                      'rounded-lg',
-                      'shadow'
-                    )}
-                    alt="bla bla"
-                  />
-                </figure>
-              </p>
-              <p className={cx('my-3')}>
-                구하기 남는 곳으로 피다. 반짝이는 인간은 안고, 봄바람을 대한
-                위하여, 속에 행복스럽고 그들은 교향악이다. 유소년에게서 곳으로
-                뜨거운지라, 사막이다. 거선의 대고, 되는 봄바람을 크고 있으랴?
-                무엇을 충분히 튼튼하며, 별과 못할 공자는 밝은 귀는 교향악이다.
-                무엇을 꾸며 소리다.이것은 곳이 그들에게 남는 쓸쓸하랴? 없으면
-                공자는 살 속잎나고, 부패뿐이다. 어디 용기가 같이, 가치를 자신과
-                끓는 교향악이다. 하였으며, 청춘의 영락과 만천하의 인생에 열락의
-                아니다. 못할 인간이 놀이 뿐이다.
-              </p>
+          <article className={'container'}>
+            <div className="row">
+              <div className={'col-12 col-lg-12 my-5'}>
+                {/* photo */}
+                <section className={'imgList mx-auto'}>
+                  <ul className={'row'}>
+                    <li className={'col-6 col-lg-4 mb-2 p-3'}>
+                      <a
+                        data-fancybox="images"
+                        className={'d-block position-relative'}
+                      >
+                        <img
+                          src="/img/portfolio-item-1.jpg"
+                          alt="project"
+                          className={'rounded-lg mb-4 img-fluid shadow'}
+                        />
+                        <h4 className={'font-weight-bold'}>
+                          Project 'Only Young'
+                        </h4>
+                        <p>Branding</p>
+                      </a>
+                    </li>
+
+                    <li className={'col-6 col-lg-4 mb-2 p-3'}>
+                      <a
+                        data-fancybox="images"
+                        className={'d-block position-relative'}
+                      >
+                        <img
+                          src="/img/portfolio-item-2.jpg"
+                          alt="project"
+                          className={'rounded-lg mb-4 img-fluid shadow'}
+                        />
+                        <h4 className={'font-weight-bold'}>
+                          Project 'Water SW'
+                        </h4>
+                        <p>React</p>
+                      </a>
+                    </li>
+
+                    <li className={'col-6 col-lg-4 mb-2 p-3'}>
+                      <a
+                        data-fancybox="images"
+                        className={'d-block position-relative'}
+                      >
+                        <img
+                          src="/img/portfolio-item-3.jpg"
+                          alt="project"
+                          className={'rounded-lg mb-4 img-fluid shadow'}
+                        />
+                        <h4 className={'font-weight-bold'}>
+                          Project 'FirstSteps'
+                        </h4>
+                        <p>Javascript, Sass</p>
+                      </a>
+                    </li>
+                  </ul>
+                </section>
+              </div>
             </div>
-            <div className={cx('col')}>
-              <h2 className={cx('font-weight-bold')}>오 픈 하 다.</h2>
-              <p className={cx('my-3')}>
-                <figure className={cx('figure', 'p-4', 'mx-auto')}>
-                  <img
-                    src="https://images.unsplash.com/photo-1552415183-52af5aef5816?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1601&q=80"
-                    className={cx(
-                      'figure-img',
-                      'img-fluid',
-                      'rounded',
-                      'rounded-lg',
-                      'shadow'
-                    )}
-                    alt="bla bla"
-                  />
-                </figure>
-              </p>
-              <p className={cx('my-3')}>
-                구하기 남는 곳으로 피다. 반짝이는 인간은 안고, 봄바람을 대한
-                위하여, 속에 행복스럽고 그들은 교향악이다. 유소년에게서 곳으로
-                뜨거운지라, 사막이다. 거선의 대고, 되는 봄바람을 크고 있으랴?
-                무엇을 충분히 튼튼하며, 별과 못할 공자는 밝은 귀는 교향악이다.
-                무엇을 꾸며 소리다.이것은 곳이 그들에게 남는 쓸쓸하랴? 없으면
-                공자는 살 속잎나고, 부패뿐이다. 어디 용기가 같이, 가치를 자신과
-                끓는 교향악이다. 하였으며, 청춘의 영락과 만천하의 인생에 열락의
-                아니다. 못할 인간이 놀이 뿐이다.
-              </p>
-            </div>
-          </div>
+          </article>
         </section>
-
-        {/* Cards */}
-        {/* <section className={cx('container')}>
-          <div className={cx('row', 'position-relative', 'align-items-center')}>
-            <article className={cx('col')}>
-              <div className={cx('card')}>Card</div>
-            </article>
-          </div>
-        </section> */}
       </Layout>
     )
   }
 }
-export default Page2
+
+// Modal Exam
+function MyModal(props) {
+  const [show, setShow] = useState(false)
+
+  const handleClose = () => setShow(false)
+  const handleShow = () => setShow(true)
+
+  return (
+    <Fragment>
+      <button
+        type="button"
+        className="btn btn-lg btn-danger"
+        data-toggle="modal"
+        data-target="#exampleModal"
+        onClick={handleShow}
+        data-backdrop="static"
+      >
+        Launch demo modal
+      </button>
+
+      <section className="modal fade" id="exampleModal" role="dialog">
+        <div className="modal-dialog" role="document">
+          <div className="modal-content">
+            <header className="modal-header">
+              <h5 className="modal-title" id="exampleModalLabel">
+                Modal title
+              </h5>
+              <button
+                type="button"
+                className="close"
+                data-dismiss="modal"
+                aria-label="Close"
+              >
+                <i className="la la-times"></i>
+              </button>
+            </header>
+            <main className="modal-body">modal open</main>
+            <footer className="modal-footer">
+              <button
+                type="button"
+                className="btn btn-lg btn-gray"
+                data-dismiss="modal"
+              >
+                Close
+              </button>
+              <button
+                type="button"
+                className="btn btn-lg btn-danger"
+                onClick={handleClose}
+              >
+                Save changes
+              </button>
+            </footer>
+          </div>
+        </div>
+      </section>
+    </Fragment>
+  )
+}

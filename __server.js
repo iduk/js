@@ -1,33 +1,19 @@
-const express = require('express')
+// server.js
 const next = require('next')
+const routes = require('./routes')
+const app = next({ dev: process.env.NODE_ENV !== 'production' })
+const handler = routes.getRequestHandler(app)
 
-const PORT = process.env.PORT || 3000
-const dev = process.env.NODE_ENV !== 'production'
-const app = next({ dev })
-const handle = app.getRequestHandler()
-
+// With express
+const express = require('express')
 app.prepare().then(() => {
-  const server = express()
+	express()
+		.use(handler)
+		.listen(3000)
+})
 
-  server.get('*', (req, res) => {
-    return handle(req, res)
-  })
-
-  server
-    .listen(PORT, err => {
-      if (err) throw err
-      console.log(`> Ready on ${PORT}`)
-    })
-    .catch(ex => {
-      console.error(ex.stack)
-      process.exit(1)
-    })
-
-  server.get('/api/shows', (req, res) => {
-    return res.end('api shows')
-  })
-
-  server.get('*', (req, res) => {
-    return handle(req, res)
-  })
+// Without express
+const { createServer } = require('http')
+app.prepare().then(() => {
+	createServer(handler).listen(3000)
 })

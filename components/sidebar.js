@@ -1,8 +1,6 @@
 import React, { Fragment } from 'react'
 import Link from 'next/link'
-import styles from './styles/global.scss'
-import classNames from 'classnames/bind'
-const cx = classNames.bind(styles)
+import './styles/app.scss'
 
 const links = [
   { href: '/', img: '/img/icons-dashboard.svg' },
@@ -17,12 +15,12 @@ const links = [
 
 const Sidebar = props => (
   <Fragment>
-    <aside className={cx('sideNav', 'shadow-lg', `${props.theme}`)}>
+    <aside className={`${props.theme}` + ' sideNav shadow-lg'}>
       <ul>
         {links.map(({ key, href, img }) => (
           <li key={key}>
             <Link href={href}>
-              <a className={cx('sidebar-icons')}>
+              <a className="sidebar-icons">
                 <img src={img} alt="" />
               </a>
             </Link>

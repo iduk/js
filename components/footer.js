@@ -1,26 +1,28 @@
 import React from 'react'
 import Link from 'next/link'
-import styles from './styles/global.scss'
-import classNames from 'classnames/bind'
-const cx = classNames.bind(styles)
+import './styles/app.scss'
 
 const Footer = () => (
-  <footer className={cx('footer')} style={{ marginTop: '2.5rem' }}>
-    <div className={cx('wrap')}>
-      <p className={cx('copyright')}>
-        <strong>Openfloor, Inc.</strong> <br />
-        Beautiful, projects gifted by the world’s most generous of perfact
-        teams.
-        <br />
-        <span className={cx('text-muted')}>@Create by. iduk</span>
-      </p>
-      <Link href="/">
-        <a className={cx('logo', 'mt-2')}>
-          <img src="/img/symbol.svg" />
-        </a>
-      </Link>
-    </div>
-  </footer>
+	<footer className="footer py-6 mt-n6">
+		<div className="wrap container pt-6">
+			<div className="row">
+				<div className="copyright col-12 col-md-6 text-center text-md-left">
+					<h4>Openfloor, Inc.</h4>
+					<p>
+						Beautiful, projects gifted by the world's most generous of perfact
+						teams.
+					</p>
+				</div>
+				<div className="col-12 col-md-6 text-center text-md-right pt-3 pt-md-0 font-weight-lighter">
+					<a href="mailto:by.lee@openfloor.kr" target="_blank">
+						<i className="la la-envelope pr-2"></i>by.lee@openfloor.kr
+					</a>
+					<br />
+					create by. iduk
+				</div>
+			</div>
+		</div>
+	</footer>
 )
 
 export default Footer

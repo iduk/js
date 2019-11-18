@@ -1,71 +1,83 @@
-import React, { Fragment } from 'react'
+import React, { Fragment, useState } from 'react'
+import ActiveLink from './ActiveLink'
 import Link from 'next/link'
-import { useRouter } from 'next/router'
-import Image from './image'
-import styles from './styles/global.scss'
-import classNames from 'classnames/bind'
-const cx = classNames.bind(styles)
-
-const links = [
-  { href: './', label: 'Index' },
-  { href: './page1', label: 'page1' },
-  { href: './page2', label: 'page2' },
-  { href: './page3', label: 'page3' },
-].map(link => {
-  link.key = `nav-link-${link.href}-${link.label}`
-  return link
-})
-
-export const isToggle = () => {
-  var Menu = document.getElementById(`menuList`)
-
-  if (Menu.style.display == 'block' || '') {
-    Menu.style.display = 'none'
-  } else {
-    Menu.style.display = 'block'
-  }
-}
+import './styles/app.scss'
 
 const Header = props => {
+  const [collapsed, setCollapsed] = useState(true)
+  const toggleNavbar = () => setCollapsed(!collapsed)
+
   return (
-    <Fragment>
-      <header className={cx('headerNav')}>
-        <nav className={cx('container', 'py-2')}>
-          {/* logo */}
-          <Link href="/" as={process.env.BACKEND_URL + '/'}>
-            <a className={cx('brand-logo')}>
-              <Image src="/img/symbol.svg" alt="openfloor" />
-            </a>
-          </Link>
+		<Fragment>
+			<header className="headerNav">
+				<nav>
+					{/* logo */}
+					<Link href="/" as={process.env.BACKEND_URL + '/'}>
+						<a className="brand-logo">
+							<img src={props.src} alt="Openfloor Logo" className="img-fluid" />
+						</a>
+					</Link>
 
-          {/* toggle */}
-          <div className={cx('d-block', 'd-lg-none')}>
-            <button
-              type="button"
-              className={cx('menu-toggle')}
-              onClick={isToggle}
-            >
-              <i className={cx('la', 'la-stream')}></i>
-            </button>
-          </div>
-
-          {/* Menu */}
-          <ul
-            id="menuList"
-            className={cx('menuList', 'd-lg-flex')}
-            style={{ display: `none` }}
+					{/* toggle */}
+					<button
+						onClick={toggleNavbar}
+						type="button"
+						data-toggle="collapse"
+						data-target="#navbar"
+						className="navbar-toggler d-inline-block d-lg-none m-0 menu-toggle"
           >
-            {links.map(({ key, href, label }) => (
-              <li key={key}>
-                <Link href={href} as={process.env.BACKEND_URL + `${href}`}>
-                  <a className={cx('menuLink')}>{label}</a>
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </nav>
-      </header>
-    </Fragment>
-  )
+            <i className="la"></i>
+					</button>
+
+					{/* Menu */}
+					<div
+						id="navbar"
+						role="dialog"
+						className="menuList collapse d-lg-flex"
+					>
+						<ul>
+							<li>
+								<ActiveLink
+									activeClassName="active"
+									href="/index"
+									as={process.env.BACKEND_URL + `/`}
+								>
+									<a className="menuLink">Openfloor</a>
+								</ActiveLink>
+							</li>
+							<li>
+								<ActiveLink
+									activeClassName="active"
+									href="/page1"
+									as={process.env.BACKEND_URL + `/page1`}
+								>
+									<a className="menuLink">Experience</a>
+								</ActiveLink>
+							</li>
+							<li>
+								<ActiveLink
+									activeClassName="active"
+									href="/page2"
+									as={process.env.BACKEND_URL + `/page2`}
+								>
+									<a className="menuLink">Projects</a>
+								</ActiveLink>
+							</li>
+							<li>
+								<ActiveLink
+									activeClassName="active"
+									href="/page3"
+									as={process.env.BACKEND_URL + `/page3`}
+								>
+									<a className="menuLink">ContactUs</a>
+								</ActiveLink>
+							</li>
+						</ul>
+					</div>
+				</nav>
+			</header>
+		</Fragment>
+	)
 }
+
 export default Header
