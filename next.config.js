@@ -18,9 +18,6 @@ module.exports = withBundleAnalyzer()
 
 
 module.exports = {
-	pageExtensions: ['mdx', 'jsx', 'js'],
-	exportTrailingSlash: true,
-
 	exportPathMap: function() {
 		return {
 			'/': { page: '/' },
@@ -30,6 +27,7 @@ module.exports = {
 		}
 	},
 	assetPrefix: !debug ? 'https://github.com/iduk/js/' : '',
+	pageExtensions: ['mdx', 'jsx', 'js']
 }
 
 
