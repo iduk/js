@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="32px" height="32px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 59.1 (86144) - https://sketch.com -->
+    <title>icons-local / email</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M5.33333333,10.5818406 L5.33333333,24 L26.6666667,24 L26.6666667,10.5818406 L17.6658535,19.0414837 C16.6919371,19.8206168 15.3080629,19.8206168 14.3341465,19.0414837 L5.33333333,10.5818406 Z M7.88633581,9.33333333 L16,16.9591669 L24.1136642,9.33333333 L7.88633581,9.33333333 Z M5.33333333,6.66666667 L26.6666667,6.66666667 C28.139426,6.66666667 29.3333333,7.860574 29.3333333,9.33333333 L29.3333333,24 C29.3333333,25.4727593 28.139426,26.6666667 26.6666667,26.6666667 L5.33333333,26.6666667 C3.860574,26.6666667 2.66666667,25.4727593 2.66666667,24 L2.66666667,9.33333333 C2.66666667,7.860574 3.860574,6.66666667 5.33333333,6.66666667 Z" id="path-1"></path>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="main" transform="translate(-20.000000, -424.000000)">
+            <g id="Side-Nav">
+                <g id="menu" transform="translate(8.000000, 172.000000)">
+                    <g id="icons-local-/-email_export" transform="translate(12.000000, 252.000000)">
+                        <g id="icons-local-/-email">
+                            <mask id="mask-2" fill="white">
+                                <use xlink:href="#path-1"></use>
+                            </mask>
+                            <g id="Shape" fill-rule="nonzero"></g>
+                            <g id="color/white" mask="url(#mask-2)" fill="#FFFFFF" fill-rule="evenodd">
+                                <rect id="Change-Fill-Color" x="0" y="0" width="32" height="32"></rect>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

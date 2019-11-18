@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="32px" height="32px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 59.1 (86144) - https://sketch.com -->
+    <title>icons-local / folder</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M12,9.33333333 L12,25.3333333 L22.6666667,25.3333333 L22.6666667,9.33333333 L12,9.33333333 Z M12,6.66666667 L22.6666667,6.66666667 C24.139426,6.66666667 25.3333333,7.860574 25.3333333,9.33333333 L25.3333333,25.3333333 C25.3333333,26.8060927 24.139426,28 22.6666667,28 L12,28 C10.5272407,28 9.33333333,26.8060927 9.33333333,25.3333333 L9.33333333,9.33333333 C9.33333333,7.860574 10.5272407,6.66666667 12,6.66666667 Z M6.66666667,20 C6.66666667,20.7363797 6.069713,21.3333333 5.33333333,21.3333333 C4.59695367,21.3333333 4,20.7363797 4,20 L4,8 C4,4.31810167 6.98476833,1.33333333 10.6666667,1.33333333 L17.3333333,1.33333333 C18.069713,1.33333333 18.6666667,1.930287 18.6666667,2.66666667 C18.6666667,3.40304633 18.069713,4 17.3333333,4 L10.6666667,4 C8.45752767,4 6.66666667,5.790861 6.66666667,8 L6.66666667,20 Z" id="path-1"></path>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="main" transform="translate(-20.000000, -344.000000)">
+            <g id="Side-Nav">
+                <g id="menu" transform="translate(8.000000, 172.000000)">
+                    <g id="icons-local-/-folder_export" transform="translate(12.000000, 172.000000)">
+                        <g id="icons-local-/-duplicate">
+                            <mask id="mask-2" fill="white">
+                                <use xlink:href="#path-1"></use>
+                            </mask>
+                            <g id="Mask" fill-rule="nonzero"></g>
+                            <g id="color/white" mask="url(#mask-2)" fill="#FFFFFF" fill-rule="evenodd">
+                                <rect id="Change-Fill-Color" x="0" y="0" width="32" height="32"></rect>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
