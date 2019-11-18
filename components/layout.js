@@ -35,12 +35,12 @@ const Layout = props => (
 				href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css"
 			/>
 			<link
-				href={process.env.BACKEND_URL + `/css/line-awesome.min.css`}
+				href="/css/line-awesome.min.css"
 				rel="stylesheet"
 			/>
 			<link
+				href="/css/animate.min.css"
 				rel="stylesheet"
-				href={process.env.BACKEND_URL + `/css/animate.min.css`}
 			/>
 
 			<title>{props.title}</title>
