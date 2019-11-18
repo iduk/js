@@ -23,7 +23,7 @@ module.exports = {
 
 	exportPathMap: function() {
 		return {
-			'/': { page: '/index' },
+			'/': { page: '/' },
 			'/page1': { page: '/page1' },
 			'/page2': { page: '/page2' },
 			'/page3': { page: '/page3' },

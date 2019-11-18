@@ -21,8 +21,10 @@ const Layout = props => (
 				href="https://fonts.googleapis.com/css?family=Gothic+A1:300,400,700&display=swap"
 				rel="stylesheet"
 			/>
-			<link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/font-awesome-line-awesome/css/all.min.css" />
-			<link href="/css/line-awesome.min.css" rel="stylesheet" />
+			<link
+				rel="stylesheet"
+				href="https://maxst.icons8.com/vue-static/landings/line-awesome/font-awesome-line-awesome/css/all.min.css"
+			/>
 			<link
 				href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
 				rel="stylesheet"
@@ -32,7 +34,14 @@ const Layout = props => (
 				rel="stylesheet"
 				href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css"
 			/>
-			<link rel="stylesheet" href="/css/animate.min.css" />
+			<link
+				href={process.env.BACKEND_URL + `/css/line-awesome.min.css`}
+				rel="stylesheet"
+			/>
+			<link
+				rel="stylesheet"
+				href={process.env.BACKEND_URL + `/css/animate.min.css`}
+			/>
 
 			<title>{props.title}</title>
 
