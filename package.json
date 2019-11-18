@@ -60,7 +60,7 @@
 		"now": "now",
 		"build:now": "now --prod",
 		"export": "npm run build && next export",
-		"deploy": "rm -rf node_modules/.cache && next build && next export && touch out/.nojekyll && git add out/ && git commit -m \"Deploy Next.js to gh-pages\" && git subtree push --prefix out origin gh-pages",
+		"deploy": "rm -rf node_modules/.cache && next build && next export && touch out/.nojekyll && git add out/ && git commit -m \"Deploy Next.js to gh-pages\" && gh-pages -d out",
 		"deploy:git": "gh-pages -d out"
 	},
 	"browserslist": [
