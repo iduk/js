@@ -18,6 +18,10 @@ module.exports = withBundleAnalyzer()
 
 
 module.exports = {
+	crossOrigin: 'anonymous',
+	pageExtensions: ['mdx', 'jsx', 'js'],
+	assetPrefix: !debug ? 'https://github.com/iduk/js' : '',
+	
 	exportPathMap: function() {
 		return {
 			'/': { page: '/' },
@@ -26,8 +30,6 @@ module.exports = {
 			'/page3': { page: '/page3' },
 		}
 	},
-	assetPrefix: !debug ? 'https://github.com/iduk/js/' : '',
-	pageExtensions: ['mdx', 'jsx', 'js']
 }
 
 

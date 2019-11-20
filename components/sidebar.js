@@ -13,22 +13,23 @@ const links = [
   return link
 })
 
+
 const Sidebar = props => (
-  <Fragment>
-    <aside className={`${props.theme}` + ' sideNav shadow-lg'}>
-      <ul>
-        {links.map(({ key, href, img }) => (
-          <li key={key}>
-            <Link href={href}>
-              <a className="sidebar-icons">
-                <img src={img} alt="" />
-              </a>
-            </Link>
-          </li>
-        ))}
-      </ul>
-    </aside>
-  </Fragment>
+	<Fragment>
+		<aside className={`${props.theme}` + ' sideNav shadow-lg'}>
+			<ul>
+				{links.map(({ key, href, img }) => (
+					<li key={key}>
+						<Link href={href}>
+							<a className="sidebar-icons">
+								<img src={img} alt="" />
+							</a>
+						</Link>
+					</li>
+				))}
+			</ul>
+		</aside>
+	</Fragment>
 )
 
 export default Sidebar

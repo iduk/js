@@ -13,45 +13,86 @@ class Page3 extends React.Component {
 				logo={'/img/symbol-white.svg'}
 			>
 				<section className={'py-6'}>
-					<article className="container">
+					<div className="container">
 						<div className="row justify-content-between">
 							<div className="col mb-5">
-								<h1 className="">Contact Us</h1>
+								<h1>Contact Us</h1>
 							</div>
 						</div>
+					</div>
+
+					<div className="container">
+						<div className="row mb-8">
+							<article className="col-12 col-lg-4 mx-auto">
+								<div className="text-center p-4">
+									<i className="la la-3x la-map-marked"></i>
+									<h5 className="my-3">Address</h5>
+									<p className="lead my-1">
+										서울특별시 영등포구 국제금융로 8길 27-8, 403
+									</p>
+									<span>우편번호 14568</span>
+								</div>
+							</article>
+
+							<article className="col-12 col-lg-4 mt-lg-0 mt-4 mx-auto">
+								<div className="text-center p-4">
+									<i className="la la-3x la-phone"></i>
+									<h5 className="my-3">Contact</h5>
+									<p className="lead my-1">
+										<span className="d-inline-block mr-2">Tel.</span>
+										010-1234-4567
+									</p>
+									<p className="lead my-1">
+										<span className="d-inline-block mr-2">Fax.</span>
+										070-1234-5678(~9)
+									</p>
+									<p className="lead my-1">
+										<span className="d-inline-block mr-2">Email.</span>
+										<a href="mailto:by.lee@openfloor.kr" target="_blank">
+											by.lee@openfloor.kr
+										</a>
+									</p>
+								</div>
+							</article>
+
+							<article className="col-12 col-lg-4 mt-lg-0 mt-4 mx-auto">
+								<div className="text-center p-4">
+									<i className="la la-3x la-comment"></i>
+									<h5 className="my-3">Messenger</h5>
+									<p className="lead">
+										<i className="la la-facebook mr-2"></i>
+										<a href="#" target="_blank">
+											openfloor.facebook.com
+										</a>
+									</p>
+									<p className="lead">
+										<i className="la la-twitter mr-2"></i>
+										<a href="#" target="_blank">
+											twitter.com/openfloor
+										</a>
+									</p>
+									<p className="lead">
+										<i className="la la-github mr-2"></i>
+										<a href="#" target="_blank">
+											openfloor.github.io
+										</a>
+									</p>
+								</div>
+							</article>
+						</div>
+					</div>
+
+					<div className="container">
 						<div className="row">
-							<div className="col-10 col-lg-6 mx-auto">
-								<span>Address</span>
-								<p className="lead my-1">
-									(14568)
-									<br />
-									서울특별시 영등포구 국제금융로 8길 27-8, 403
-									<br />
-									Byung Yoon, Lee
-								</p>
-							</div>
-
-							<div className="col-10 col-lg-6 mt-lg-0 mt-4  mx-auto">
-								<span>Infomation</span>
-								<p className="lead my-1">
-									<span className="d-inline-block mr-2">Tel.</span>
-									010-1234-4567 / 070-1234-5678
-								</p>
-								<p className="lead my-1">
-									<span className="d-inline-block mr-2">Fax.</span>
-									010-1234-4567,8
-								</p>
-								<p className="lead my-1">
-									<span className="d-inline-block mr-2">Email.</span>
-									<a href="mailto:by.lee@openfloor.kr" target="_blank">
-										by.lee@openfloor.kr
-									</a>
-								</p>
-							</div>
-
-							<section className="col-10 col-md-8 mx-auto">
-								<hr className="my-4" />
-								<h3 className="pb-4">To mail</h3>
+							<article className="col-12 col-lg-8 mx-auto">
+								<div className="text-center py-5">
+									<h2 className="display-5">Ask Services</h2>
+									<p className="font-weight-light">
+										Whether you have questions or you would just like to say
+										hello,
+										<br /> contact us.
+									</p>
+								</div>
 								<form>
 									<div className="form-group">
 										<label for="formGroupExampleInput">Example label</label>
@@ -81,15 +122,15 @@ class Page3 extends React.Component {
 										/>
 									</div>
 									<div className="mt-4 d-flex justify-content-end">
-                    <button type="submit" className="btn btn-primary">
+										<button type="submit" className="btn btn-primary">
 											<i className="la la-mail-bulk mr-3"></i>
-                      메일 보내기
+											메일 보내기
 										</button>
 									</div>
 								</form>
-							</section>
+							</article>
 						</div>
-					</article>
+					</div>
 				</section>
 			</Layout>
 		)

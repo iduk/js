@@ -11,6 +11,7 @@ body {
 	box-sizing: border-box;
 	font-family: 'Lato', 'Gothic A1', sans-serif;
 	font-size: 14px;
+	word-wrap: keep-all;
 }
 
 ul,
@@ -49,6 +50,7 @@ a {
 	> nav {
 		position: relative;
 		max-width: 1140px;
+		padding: 1rem 0;
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
@@ -106,10 +108,11 @@ a {
 		display: inline-block;
 		width: 52px;
 		height: 52px;
-		padding: 8px;
+		padding: 10px;
 		overflow: hidden;
 		border-radius: 0.3rem;
 
+		&:hover,
 		&:focus,
 		&:active {
 			background-color: var(--danger);
@@ -409,5 +412,14 @@ a {
 				transition: all 0.2s ease-in-out;
 			}
 		}
+	}
+}
+
+/* avatar Img */
+.avatarImg {
+	display: block;
+	overflow: hidden;
+	> img {
+		width: 100%;
 	}
 }
