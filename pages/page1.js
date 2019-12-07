@@ -16,7 +16,7 @@ export default class Page1 extends React.Component {
 					<article className="container">
 						<div className="row justify-content-between">
 							<div className="col mb-5">
-								<h1 className="wow bounceInDown" data-wow-delay="0.2s">
+								<h1>
 									Experience
 								</h1>
 							</div>

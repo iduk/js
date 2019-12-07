@@ -7,41 +7,45 @@ import './styles/app.scss'
 
 
 const Layout = props => (
-	<Fragment>
-		<Head>
-			<meta
-				name="viewport"
-				content="width=device-width, initial-scale=1, shrink-to-fit=no"
-			/>
-			<link
-				href="https://fonts.googleapis.com/css?family=Lato:300,400,700&display=swap"
-				rel="stylesheet"
-			/>
-			<link
-				href="https://fonts.googleapis.com/css?family=Gothic+A1:300,400,700&display=swap"
-				rel="stylesheet"
-			/>
-			
-			<link rel="shortcut icon" href="/favicon.ico" /> 
-			<link href="/css/line-awesome.min.css" rel="stylesheet" />
-			<link href="/css/animate.min.css" rel="stylesheet" />
-			<link href="/css/jquery.fancybox.min.css" rel="stylesheet" />
+  <Fragment>
+    <Head>
+      <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1, shrink-to-fit=no"
+      />
+      <link
+        href="https://fonts.googleapis.com/css?family=Lato:300,400,700&display=swap"
+        rel="stylesheet"
+      />
+      <link
+        href="https://fonts.googleapis.com/css?family=Gothic+A1:300,400,700&display=swap"
+        rel="stylesheet"
+      />
+      <link
+        href="https://api.mapbox.com/mapbox-gl-js/v0.51.0/mapbox-gl.css"
+        rel="stylesheet"
+      />
 
-			<title>{props.title}</title>
+      <link rel="shortcut icon" href="/favicon.ico" />
+      <link href="/css/line-awesome.min.css" rel="stylesheet" />
+      <link href="/css/animate.min.css" rel="stylesheet" />
+      <link href="/css/jquery.fancybox.min.css" rel="stylesheet" />
 
-			<meta charSet="utf-8" />
-		</Head>
+      <title>{props.title}</title>
 
-		<div id="wrap" className={`${props.theme}` + ` ${props.color}`}>
-			<Sidebar theme="bg-dark" />
-			<Header src={props.logo} />
+      <meta charSet="utf-8" />
+    </Head>
 
-			<main className="main">
-				{props.children}
-				<Footer />
-			</main>
-		</div>
-	</Fragment>
+    <div id="wrap" className={`${props.theme}` + ` ${props.color}`}>
+      <Sidebar theme="bg-dark" />
+      <Header src={props.logo} />
+
+      <main className="main">
+        {props.children}
+        <Footer />
+      </main>
+    </div>
+  </Fragment>
 )
 
 export default Layout

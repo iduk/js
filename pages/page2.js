@@ -359,7 +359,7 @@ function MyModal(props) {
     <Fragment>
       <button
         type="button"
-        className="btn btn-lg btn-danger shadow wow tada"
+        className="btn btn-lg btn-danger shadow"
         data-toggle="modal"
         data-target="#exampleModal"
         onClick={handleShow}
