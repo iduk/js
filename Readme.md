@@ -1,16 +1,14 @@
-## NextJS project
+# Openfloor co,.ltd. Web Project
 
-Website: Openfloor Co,.ltd.
+### NextJS + React
 
-#### \*setup
-
-<code>
+## \*setup
 
     git clone https://github.com/iduk/js.git
     cd js
     yarn
     yarn dev (yarn build & start)
 
-</code>
-
-\*Ready On http://localhost:3000
+    ***
+    Ready On, http://localhost:3000
+    ***
