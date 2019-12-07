@@ -4,11 +4,13 @@ Website: Openfloor Co,.ltd.
 
 #### \*setup
 
-> <code>
->   git clone https://github.com/iduk/js.git <br/>
->   cd js<br />
->   yarn<br />
->   yarn dev (yarn build & start)<br /> 
-> </code>
+<code>
+
+    git clone https://github.com/iduk/js.git
+    cd js
+    yarn
+    yarn dev (yarn build & start)
+
+</code>
 
 \*Ready On http://localhost:3000
