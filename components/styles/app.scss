@@ -421,3 +421,16 @@ a {
   top: 1rem;
   right: 1rem;
 }
+
+.logos li {
+  animation: SlideLogos 40s linear infinite;
+
+  @keyframes SlideLogos {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-50%);
+    }
+  }
+}
