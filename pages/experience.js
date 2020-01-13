@@ -3,11 +3,12 @@ import Link from 'next/link'
 import Layout from '../components/layout'
 import '../components/styles/app.scss'
 
-export default class Page1 extends React.Component {
+
+class Experience extends React.Component {
   render() {
     return (
       <Layout
-        title="Page1"
+        title="Experience"
         theme="bg-dark"
         color="text-white"
         logo="/img/symbol-white.svg"
@@ -295,3 +296,4 @@ export default class Page1 extends React.Component {
     )
   }
 }
+export default Experience

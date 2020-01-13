@@ -9,7 +9,7 @@ class Index extends React.Component {
   render() {
     return (
       <Layout
-        title="Openfloor Index"
+        title="Openfloor"
         theme="bg-white"
         color="text-black"
         logo={"/img/symbol.svg"}

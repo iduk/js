@@ -3,6 +3,21 @@ import ActiveLink from './ActiveLink'
 import Link from 'next/link'
 import './styles/app.scss'
 
+
+const MenuLink = props => (
+  <li>
+    <ActiveLink
+      href={`/${props.id}`}
+      as={process.env.BACKEND_URL + `/${props.id}`}
+      activeClassName="active"
+      className="menuLink"
+    >
+      {props.id}
+    </ActiveLink>
+  </li>
+)
+
+
 const Header = props => {
   const [collapsed, setCollapsed] = useState(true)
   const toggleNavbar = () => setCollapsed(!collapsed)
@@ -36,42 +51,9 @@ const Header = props => {
             className="menuList collapse d-lg-flex"
           >
             <ul>
-              <li>
-                <ActiveLink
-                  activeClassName="active"
-                  href="/index"
-                  as={process.env.BACKEND_URL + `/`}
-                >
-                  <a className="menuLink">Openfloor</a>
-                </ActiveLink>
-              </li>
-              <li>
-                <ActiveLink
-                  activeClassName="active"
-                  href="/experience"
-                  as={process.env.BACKEND_URL + `/experience`}
-                >
-                  <a className="menuLink">Experience</a>
-                </ActiveLink>
-              </li>
-              <li>
-                <ActiveLink
-                  activeClassName="active"
-                  href="/projects"
-                  as={process.env.BACKEND_URL + `/projects`}
-                >
-                  <a className="menuLink">Projects</a>
-                </ActiveLink>
-              </li>
-              <li>
-                <ActiveLink
-                  activeClassName="active"
-                  href="/contact"
-                  as={process.env.BACKEND_URL + `/contact`}
-                >
-                  <a className="menuLink">ContactUs</a>
-                </ActiveLink>
-              </li>
+              <MenuLink id="Experience" />
+              <MenuLink id="Projects" />
+              <MenuLink id="Contact" />
             </ul>
           </div>
         </nav>

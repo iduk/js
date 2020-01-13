@@ -4,11 +4,11 @@ import ActiveLink from '../components/ActiveLink'
 import Map from '../components/Map'
 import '../components/styles/app.scss'
 
-class Page3 extends React.Component {
+class Contact extends React.Component {
   render() {
     return (
       <Layout
-        title="Page3"
+        title="Contact"
         theme="bg-info"
         color="text-white"
         logo={"/img/symbol-white.svg"}
@@ -101,7 +101,7 @@ class Page3 extends React.Component {
                 </div>
                 <form>
                   <div className="form-group">
-                    <label for="formGroupExampleInput">Example label</label>
+                    <label htmlFor="formGroupExampleInput">Example label</label>
                     <input
                       type="text"
                       className="form-control"
@@ -110,7 +110,7 @@ class Page3 extends React.Component {
                     />
                   </div>
                   <div className="form-group">
-                    <label for="formGroupExampleInput2">Another label</label>
+                    <label htmlFor="formGroupExampleInput2">Another label</label>
                     <input
                       type="text"
                       className="form-control"
@@ -119,7 +119,7 @@ class Page3 extends React.Component {
                     />
                   </div>
                   <div className="form-group">
-                    <label for="formGroupExampleInput2">Another label</label>
+                    <label htmlFor="formGroupExampleInput2">Another label</label>
                     <textarea
                       rows="8"
                       className="form-control"
@@ -142,4 +142,4 @@ class Page3 extends React.Component {
     )
   }
 }
-export default Page3
+export default Contact

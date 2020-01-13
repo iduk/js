@@ -18,9 +18,18 @@ module.exports = withBundleAnalyzer()
 
 
 module.exports = {
-	crossOrigin: 'anonymous',
-	pageExtensions: ['mdx', 'jsx', 'js']
-	// assetPrefix: !debug ? 'https://github.com/iduk/nextjs' : ''
+  crossOrigin: "anonymous",
+  pageExtensions: ["mdx", "jsx", "js"],
+  assetPrefix: !debug ? "http://openfloor.kr" : "",
+  exportTrailingSlash: true,
+  exportPathMap: function() {
+    return {
+      "/": { page: "/" },
+      "/Experience": { page: "/Experience" },
+      "/Projects": { page: "/Projects" },
+      "/Contact": { page: "/Contact" },
+    }
+  },
 }
 
 

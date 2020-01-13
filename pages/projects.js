@@ -5,11 +5,11 @@ import PropTypes from 'prop-types'
 import Layout from '../components/layout'
 import '../components/styles/app.scss'
 
-export default class Page2 extends React.Component {
+class Projects extends React.Component {
   render() {
     return (
 			<Layout
-				title="Page1"
+				title="Projects"
 				theme="bg-warning"
 				color="text-black"
 				logo={'/img/symbol.svg'}
@@ -319,3 +319,4 @@ function MyModal(props) {
     </Fragment>
   )
 }
+export default Projects
