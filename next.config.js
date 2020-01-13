@@ -19,17 +19,8 @@ module.exports = withBundleAnalyzer()
 
 module.exports = {
 	crossOrigin: 'anonymous',
-	pageExtensions: ['mdx', 'jsx', 'js'],
-	assetPrefix: !debug ? 'https://github.com/iduk/js' : '',
-	
-	exportPathMap: function() {
-		return {
-			'/': { page: '/' },
-			'/page1': { page: '/page1' },
-			'/page2': { page: '/page2' },
-			'/page3': { page: '/page3' },
-		}
-	},
+	pageExtensions: ['mdx', 'jsx', 'js']
+	// assetPrefix: !debug ? 'https://github.com/iduk/nextjs' : ''
 }
 
 

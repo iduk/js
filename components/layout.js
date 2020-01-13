@@ -2,7 +2,7 @@ import React, { Fragment } from 'react'
 import Head from 'next/head'
 import Header from './header'
 import Footer from './footer'
-import Sidebar from './sidebar'
+// import Sidebar from './sidebar'
 import './styles/app.scss'
 
 
@@ -37,7 +37,7 @@ const Layout = props => (
     </Head>
 
     <div id="wrap" className={`${props.theme}` + ` ${props.color}`}>
-      <Sidebar theme="bg-dark" />
+      {/* <Sidebar theme="bg-dark" /> */}
       <Header src={props.logo} />
 
       <main className="main">

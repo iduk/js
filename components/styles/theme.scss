@@ -16,7 +16,7 @@
 
 /* colors */
 $dark: #222120;
-$blue: #453acd;
+$blue: #1b2a4e;
 $red: #ea2340;
 $yellow: #f6cb18;
 $green: #6bbb05;
@@ -24,7 +24,7 @@ $orange: #f67d18;
 $white: #fff;
 
 $dark-soft: rgba(34, 33, 32, 0.5);
-$blue-soft: rgba(69, 58, 205, 0.5);
+$blue-soft: rgba(27, 42, 78, 0.5);
 $red-soft: rgba(234, 35, 64, 0.5);
 $yellow-soft: rgba(246, 203, 24, 0.5);
 $green-soft: rgba(107, 187, 5, 0.5);
@@ -73,18 +73,19 @@ $colors: map-merge(
   $colors
 );
 
-$primary: $dark;
+$primary: $blue;
 $secondary: $red;
 $info: $blue;
 $success: $green;
 $warning: $yellow;
 $danger: $red;
 $light: $gray-200;
+$lighter: $gray-100;
 $gray: $gray-600;
 $gray-dark: $gray-700;
 $dark: $dark;
 // soft colors
-$primary-soft: $dark-soft;
+$primary-soft: $blue-soft;
 $secondary-soft: $red-soft;
 $info-soft: $blue-soft;
 $warning-soft: $yellow-soft;
@@ -102,6 +103,7 @@ $theme-colors: map-merge(
     "warning": $warning,
     "danger": $danger,
     "light": $light,
+    "lighter": $lighter,
     "gray": $gray,
     "gray-dark": $gray-dark,
     "dark": $dark,
