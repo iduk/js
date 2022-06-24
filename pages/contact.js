@@ -1,15 +1,15 @@
-import React from 'react'
-import Layout from '../components/layout'
-import ActiveLink from '../components/ActiveLink'
-import Map from '../components/Map'
-import '../components/styles/app.scss'
+import React from "react"
+import Layout from "../components/layout"
+import ActiveLink from "../components/ActiveLink"
+import Map from "../components/Map"
+import "../components/styles/app.scss"
 
 class Contact extends React.Component {
   render() {
     return (
       <Layout
         title="Contact"
-        theme="bg-info"
+        theme="bg-gray"
         color="text-white"
         logo={"/img/symbol-white.svg"}
       >
@@ -110,7 +110,9 @@ class Contact extends React.Component {
                     />
                   </div>
                   <div className="form-group">
-                    <label htmlFor="formGroupExampleInput2">Another label</label>
+                    <label htmlFor="formGroupExampleInput2">
+                      Another label
+                    </label>
                     <input
                       type="text"
                       className="form-control"
@@ -119,7 +121,9 @@ class Contact extends React.Component {
                     />
                   </div>
                   <div className="form-group">
-                    <label htmlFor="formGroupExampleInput2">Another label</label>
+                    <label htmlFor="formGroupExampleInput2">
+                      Another label
+                    </label>
                     <textarea
                       rows="8"
                       className="form-control"

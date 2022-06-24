@@ -1,9 +1,9 @@
-import React from 'react'
-import App from 'next/app'
-import { PageTransition } from 'next-page-transitions'
+import React from "react"
+import App from "next/app"
+import { PageTransition } from "next-page-transitions"
 
-import Loader from '../components/Loader'
-import { Router } from 'next/router'
+import Loader from "../components/Loader"
+import { Router } from "next/router"
 
 const TIMEOUT = 200
 
@@ -26,7 +26,7 @@ export default class MyApp extends App {
           timeout={TIMEOUT}
           classNames="page-transition"
           loadingComponent={<Loader />}
-          loadingDelay={400}
+          loadingDelay={100}
           loadingTimeout={{
             enter: TIMEOUT,
             exit: 0,

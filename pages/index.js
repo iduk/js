@@ -1,8 +1,7 @@
-import React from 'react'
-import Layout from '../components/layout'
-import '../components/styles/app.scss'
-import ActiveLink from '../components/ActiveLink'
-
+import React from "react"
+import Layout from "../components/layout"
+import "../components/styles/app.scss"
+import ActiveLink from "../components/ActiveLink"
 
 // index
 class Index extends React.Component {
@@ -17,28 +16,27 @@ class Index extends React.Component {
         {/* index page */}
         <div className="index">
           {/* intro */}
-          <section className="feature text-white py-8">
-            <article className="container py-4 mt-8 mb-4">
+          <section className="feature py-8">
+            <article className="container py-4 mt-4 mb-4">
               <div className="row">
-                <div className="col-12 text-lg-right text-center">
-                  <h1 className="display-3 pb-3">Openfloor, Makes Quality</h1>
-                  {/* <p className="py-4">
-										"오픈플로어"는 고객사의 성공적인 오픈소스 플랫폼 기반의
-										차별화된 서비스를 제공하여 <br />
-										고객사와의 동반성장을 약속드립니다.
-									</p> */}
-                  <p className="pt-2">
+                <div className="col-12 text-center text-lg-left wow fadeIn">
+                  <h1 className="display-1 font-weight-bold pb-6">
+                    Openfloor <br />
+                    Makes Quality
+                  </h1>
+
+                  {/* <p className="pt-2">
                     <a
                       role="button"
-                      className="btn btn-lg btn-danger wow tada"
+                      className="btn btn-lg btn-danger"
                       data-wow-delay="0.5s"
                       href="/projects"
                       as={process.env.BACKEND_URL + `/projects`}
                     >
-                      Projects View
+                      Go Projects
                       <i className="la la-arrow-right pl-4"></i>
                     </a>
-                  </p>
+                  </p> */}
                 </div>
               </div>
             </article>
@@ -87,7 +85,7 @@ class Index extends React.Component {
                   />
                 </div>
               </li>
-              {/* <li className="col-3 col-md-2">
+              <li className="col-3 col-md-2">
                 <div className="text-center py-3">
                   <img
                     src="/img/partners-donggu.svg"
@@ -106,7 +104,7 @@ class Index extends React.Component {
                     alt="Partners logo"
                   />
                 </div>
-              </li> */}
+              </li>
             </ul>
           </section>
           <section className="container my-8">

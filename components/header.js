@@ -1,14 +1,13 @@
-import React, { Fragment, useState } from 'react'
-import ActiveLink from './ActiveLink'
-import Link from 'next/link'
-import './styles/app.scss'
+import React, { Fragment, useState } from "react"
+import ActiveLink from "./ActiveLink"
+import Link from "next/link"
+import "./styles/app.scss"
 
-
-const MenuLink = props => (
+const MenuLink = (props) => (
   <li>
     <ActiveLink
       href={`/${props.id}`}
-      as={process.env.BACKEND_URL + `/${props.id}`}
+      as={`${process.env.BACKEND_URL}/${props.id}`}
       activeClassName="active"
       className="menuLink"
     >
@@ -17,8 +16,7 @@ const MenuLink = props => (
   </li>
 )
 
-
-const Header = props => {
+const Header = (props) => {
   const [collapsed, setCollapsed] = useState(true)
   const toggleNavbar = () => setCollapsed(!collapsed)
 
@@ -47,13 +45,13 @@ const Header = props => {
           {/* Menu */}
           <div
             id="navbar"
-            role="dialog"
+            // role="dialog"
             className="menuList collapse d-lg-flex"
           >
             <ul>
-              <MenuLink id="Experience" />
-              <MenuLink id="Projects" />
-              <MenuLink id="Contact" />
+              <MenuLink id="experience" />
+              <MenuLink id="projects" />
+              <MenuLink id="contact" />
             </ul>
           </div>
         </nav>

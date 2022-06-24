@@ -1,8 +1,7 @@
-import React from 'react'
-import Link from 'next/link'
-import Layout from '../components/layout'
-import '../components/styles/app.scss'
-
+import React from "react"
+import Link from "next/link"
+import Layout from "../components/layout"
+import "../components/styles/app.scss"
 
 class Experience extends React.Component {
   render() {
@@ -28,12 +27,11 @@ class Experience extends React.Component {
               <div className="col-12 col-md-6">
                 <div className="pr-0 pr-lg-5">
                   <h6 className="text-uppercase font-weight-bold">loadview</h6>
-                  <h1 className="mb-4">
-                    데이터 분석부터 플랫폼 설계까지
-                  </h1>
+                  <h1 className="mb-4">데이터 분석부터 플랫폼 설계까지</h1>
                   <p className="mb-6 mb-md-8">
-                    오픈플로어는 사람과 사람, 사람과 기술을 한층 가깝게 연결함으로써 세상을
-                    어제보다 더 나은 곳으로 만들기 위해 노력하고 있습니다.
+                    오픈플로어는 사람과 사람, 사람과 기술을 한층 가깝게
+                    연결함으로써 세상을 어제보다 더 나은 곳으로 만들기 위해
+                    노력하고 있습니다.
                     <br />
                   </p>
                 </div>
@@ -61,9 +59,7 @@ class Experience extends React.Component {
                     <div className="row no-gutters align-items-center mb-md-5">
                       <div className="col-auto">
                         <h3>
-                          <span
-                            className="badge badge-pill badge-danger"
-                          >
+                          <span className="badge badge-pill badge-danger">
                             1
                           </span>
                         </h3>
@@ -90,9 +86,7 @@ class Experience extends React.Component {
                     <div className="row no-gutters align-items-center mb-md-5">
                       <div className="col-auto">
                         <h3>
-                          <span
-                            className="badge badge-pill badge-danger"
-                          >
+                          <span className="badge badge-pill badge-danger">
                             2
                           </span>
                         </h3>
@@ -121,9 +115,7 @@ class Experience extends React.Component {
                     <div className="row no-gutters align-items-center mb-md-5">
                       <div className="col-auto">
                         <h3>
-                          <span
-                            className="badge badge-pill badge-danger"
-                          >
+                          <span className="badge badge-pill badge-danger">
                             3
                           </span>
                         </h3>
@@ -173,7 +165,7 @@ class Experience extends React.Component {
                     className="nav-link-style text-nowrap"
                     href="mailto:openfloor@example.com"
                   >
-                    <i class="la la-mail-bulk mr-2"></i>
+                    <i className="la la-mail-bulk mr-2"></i>
                     openfloor@example.com
                   </a>
                 </div>
@@ -194,7 +186,7 @@ class Experience extends React.Component {
                     className="nav-link-style text-nowrap"
                     href="mailto:b.palson@example.com"
                   >
-                    <i class="la la-mail-bulk mr-2"></i>
+                    <i className="la la-mail-bulk mr-2"></i>
                     b.palson@example.com
                   </a>
                 </div>
@@ -215,7 +207,7 @@ class Experience extends React.Component {
                     className="nav-link-style text-nowrap"
                     href="mailto:w.smith@example.com"
                   >
-                    <i class="la la-mail-bulk mr-2"></i>
+                    <i className="la la-mail-bulk mr-2"></i>
                     w.smith@example.com
                   </a>
                 </div>
@@ -238,7 +230,7 @@ class Experience extends React.Component {
                     className="nav-link-style text-nowrap"
                     href="mailto:a.gallaher@example.com"
                   >
-                    <i class="la la-mail-bulk mr-2"></i>
+                    <i className="la la-mail-bulk mr-2"></i>
                     a.gallaher@example.com
                   </a>
                 </div>
@@ -261,7 +253,7 @@ class Experience extends React.Component {
                     className="nav-link-style text-nowrap"
                     href="mailto:b.miller@example.com"
                   >
-                    <i class="la la-mail-bulk mr-2"></i>
+                    <i className="la la-mail-bulk mr-2"></i>
                     b.miller@example.com
                   </a>
                 </div>
@@ -284,7 +276,7 @@ class Experience extends React.Component {
                     className="nav-link-style text-nowrap"
                     href="mailto:b.miller@example.com"
                   >
-                    <i class="la la-mail-bulk mr-2"></i>
+                    <i className="la la-mail-bulk mr-2"></i>
                     m.rodrigez@example.com
                   </a>
                 </div>

@@ -1,12 +1,11 @@
-import React, { Fragment } from 'react'
-import Head from 'next/head'
-import Header from './header'
-import Footer from './footer'
+import React, { Fragment } from "react"
+import Head from "next/head"
+import Header from "./header"
+import Footer from "./footer"
 // import Sidebar from './sidebar'
-import './styles/app.scss'
+import "./styles/app.scss"
 
-
-const Layout = props => (
+const Layout = (props) => (
   <Fragment>
     <Head>
       <meta
@@ -14,11 +13,11 @@ const Layout = props => (
         content="width=device-width, initial-scale=1, shrink-to-fit=no"
       />
       <link
-        href="https://fonts.googleapis.com/css?family=Lato:300,400,700&display=swap"
+        href="https://fonts.googleapis.com/css2?family=DM+Sans&display=swap"
         rel="stylesheet"
       />
       <link
-        href="https://fonts.googleapis.com/css?family=Gothic+A1:300,400,700&display=swap"
+        href="https://fonts.googleapis.com/css?family=Noto+Sans+KR&display=swap"
         rel="stylesheet"
       />
       <link
