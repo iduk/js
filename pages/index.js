@@ -17,12 +17,11 @@ class Index extends React.Component {
         <div className="index">
           {/* intro */}
           <section className="feature py-8">
-            <article className="container py-4 mt-4 mb-4">
+            <article className="container-fluid py-4 mt-8 mb-4">
               <div className="row">
-                <div className="col-12 text-center text-lg-left wow fadeIn">
-                  <h1 className="display-1 font-weight-bold pb-6">
-                    Openfloor <br />
-                    Makes Quality
+                <div className="col-12 text-center wow fadeInDown">
+                  <h1 className="display-2 font-weight-bold pb-6">
+                    Openfloor Makes Quality
                   </h1>
 
                   {/* <p className="pt-2">

@@ -6,8 +6,7 @@ import "./styles/app.scss"
 const MenuLink = (props) => (
   <li>
     <ActiveLink
-      href={`/${props.id}`}
-      as={`${process.env.BACKEND_URL}/${props.id}`}
+      href={`${process.env.BACKEND_URL}/${props.id}`}
       activeClassName="active"
       className="menuLink"
     >

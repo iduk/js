@@ -5,7 +5,7 @@ import { PageTransition } from "next-page-transitions"
 import Loader from "../components/Loader"
 import { Router } from "next/router"
 
-const TIMEOUT = 200
+const TIMEOUT = 150
 
 export default class MyApp extends App {
   static async getInitialProps({ Component, ctx }) {
