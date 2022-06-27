@@ -1,28 +1,27 @@
 // next.config.js
-const path = require('path')
-const withCSS = require('@zeit/next-css')
-const withSass = require('@zeit/next-sass')
-const withFonts = require('next-fonts')
-const withImages = require('next-images')
-const withPlugins = require('next-compose-plugins')
-const debug = process.env.NODE_ENV !== 'production'
-
-
+const path = require("path")
+const withCSS = require("@zeit/next-css")
+const withSass = require("@zeit/next-sass")
+const withFonts = require("next-fonts")
+const withImages = require("next-images")
+const withPlugins = require("next-compose-plugins")
+const debug = process.env.NODE_ENV !== "production"
 
 // analyzer
-const withBundleAnalyzer = require('@next/bundle-analyzer')({
-  enabled: process.env.ANALYZE === 'true',
+const withBundleAnalyzer = require("@next/bundle-analyzer")({
+  enabled: process.env.ANALYZE === "true",
 })
 module.exports = withBundleAnalyzer()
 
-
-
 module.exports = {
+  experimental: {
+    forceSwcTransforms: true,
+  },
   crossOrigin: "anonymous",
   pageExtensions: ["mdx", "jsx", "js"],
   assetPrefix: !debug ? "http://openfloor.kr" : "",
   exportTrailingSlash: true,
-  exportPathMap: function() {
+  exportPathMap: function () {
     return {
       "/": { page: "/" },
       "/Experience": { page: "/Experience" },
@@ -32,50 +31,44 @@ module.exports = {
   },
 }
 
-
-
 module.exports = {
-	webpack: (config, { dev }) => {
-		config.module.rules.push(
-			{
-				test: /\.scss$/,
-				use: [
-					{ loader: 'css-loader' },
-					{ loader: 'emit-raw-loader?output=/styles/[name].css' },
-					{ loader: 'sass-loader' },
-				]
-			},
-		)
-		return config
-	},
+  webpack: (config, { dev }) => {
+    config.module.rules.push({
+      test: /\.scss$/,
+      use: [
+        { loader: "css-loader" },
+        { loader: "emit-raw-loader?output=/styles/[name].css" },
+        { loader: "sass-loader" },
+      ],
+    })
+    return config
+  },
 }
-
-
 
 // Modules
 module.exports = withCSS(
-	withSass({
-		webpack(config, options) {
-			config.module.rules.push({
-				test: /\.(png|jpg|gif|svg|eot|ttf|woff|woff2)$/,
-				use: {
-					loader: 'url-loader',
-					options: {
-						limit: 100000,
-					},
-				},
-			})
-			return config
-		},
-	}),
-	withImages({
-		webpack(config, options) {
-			return config
-		},
-	}),
-	withFonts({
-		webpack(config, options) {
-			return config
-		},
-	})
+  withSass({
+    webpack(config, options) {
+      config.module.rules.push({
+        test: /\.(png|jpg|gif|svg|eot|ttf|woff|woff2)$/,
+        use: {
+          loader: "url-loader",
+          options: {
+            limit: 100000,
+          },
+        },
+      })
+      return config
+    },
+  }),
+  withImages({
+    webpack(config, options) {
+      return config
+    },
+  }),
+  withFonts({
+    webpack(config, options) {
+      return config
+    },
+  })
 )

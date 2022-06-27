@@ -17,11 +17,12 @@ class Index extends React.Component {
         <div className="index">
           {/* intro */}
           <section className="feature py-8">
-            <article className="container-fluid py-4 mt-8 mb-4">
+            <article className="container py-4 mt-8 mb-4">
               <div className="row">
-                <div className="col-12 text-center wow fadeInDown">
-                  <h1 className="display-2 font-weight-bold pb-6">
-                    Openfloor Makes Quality
+                <div className="col-12">
+                  <h1 className="display-1 pb-6">
+                    Openfloor
+                    <br /> Makes Quality.
                   </h1>
 
                   {/* <p className="pt-2">
@@ -106,7 +107,7 @@ class Index extends React.Component {
               </li>
             </ul>
           </section>
-          <section className="container my-8">
+          <section className="container-fluid my-8">
             <div className="row align-items-center">
               <article className="col-12 col-md-6 col-lg-7">
                 <div
@@ -114,7 +115,7 @@ class Index extends React.Component {
                   data-wow-delay="0s"
                 >
                   <img
-                    src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=3300&q=80"
+                    src="https://images.unsplash.com/photo-1656228538617-11e25f130bb1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=3269&q=80"
                     alt="..."
                     className="img-fluid rounded-lg float-right mr-md-6 mb-6 mb-md-0"
                   />
@@ -123,7 +124,6 @@ class Index extends React.Component {
 
               <article className="col-10 col-md-6 col-lg-5 mb-md-0 mb-4 mx-auto">
                 <div className="d-flex wow fadeInRight" data-wow-delay="0s">
-                  <i className="la la-3x la-share-alt"></i>
                   <div className="ml-4">
                     <h3>Experience for Various Field</h3>
                     <p className="text-gray-700 mb-6">
@@ -132,7 +132,6 @@ class Index extends React.Component {
                   </div>
                 </div>
                 <div className="d-flex wow fadeInRight" data-wow-delay="0.1s">
-                  <i className="la la-3x la-code-branch"></i>
                   <div className="ml-4">
                     <h3>Team Work for Long Time</h3>
                     <p className="text-gray-700 mb-6">
@@ -141,7 +140,6 @@ class Index extends React.Component {
                   </div>
                 </div>
                 <div className="d-flex wow fadeInRight" data-wow-delay="0.2s">
-                  <i className="la la-3x la-magic"></i>
                   <div className="ml-4">
                     <h3>Communication for High Value</h3>
                     <p className="text-gray-700 mb-0">
@@ -175,8 +173,8 @@ class Index extends React.Component {
                 style={{ height: "30em" }}
               >
                 <div className="text-center mx-auto p-6">
-                  <h3 className="display-4 pb-2">Future Business</h3>
-                  <blockquote className="blockquote font-weight-lighter">
+                  <h3 className="display-1 pb-2">Future Business</h3>
+                  <blockquote className="h2 font-weight-lighter">
                     Everything your platform could need.
                   </blockquote>
                 </div>
@@ -189,7 +187,9 @@ class Index extends React.Component {
             <div className="container">
               <div className="row">
                 <div className="col-12 mb-4">
-                  <h1 className="font-weight-bold">Our Performance</h1>
+                  <h1 className="display-3 font-weight-bold text-center">
+                    Our Performance
+                  </h1>
                 </div>
               </div>
               <div className="row justify-content-center">
@@ -202,7 +202,7 @@ class Index extends React.Component {
                       <i className="la la-3x la-check-circle"></i>
                     </span>
                     <div className="media-body">
-                      <h3 className="mt-0">Performance</h3>
+                      <h1 className="mt-0">Performance</h1>
                       <p>
                         Modernizr makes it easy to deliver tiered experiences:
                         make use of the latest and greatest features in browsers
@@ -221,7 +221,7 @@ class Index extends React.Component {
                       <i className="la la-3x la-check-circle"></i>
                     </span>
                     <div className="media-body">
-                      <h3 className="mt-0">Performance</h3>
+                      <h1 className="mt-0">Performance</h1>
                       <p>
                         All web developers come up against differences between
                         browsers and devices. That’s largely due to different
@@ -241,7 +241,7 @@ class Index extends React.Component {
                       <i className="la la-3x la-check-circle"></i>
                     </span>
                     <div className="media-body">
-                      <h3 className="mt-0">Performance</h3>
+                      <h1 className="mt-0">Performance</h1>
                       <p>
                         All web developers come up against differences between
                         browsers and devices. That’s largely due to different
@@ -261,7 +261,7 @@ class Index extends React.Component {
                       <i className="la la-3x la-check-circle"></i>
                     </span>
                     <div className="media-body">
-                      <h3 className="mt-0">Performance</h3>
+                      <h1 className="mt-0">Performance</h1>
                       <p>
                         It’s a collection of superfast tests – or “detects” as
                         we like to call them – which run as your web page loads,
@@ -280,7 +280,7 @@ class Index extends React.Component {
                       <i className="la la-3x la-check-circle"></i>
                     </span>
                     <div className="media-body">
-                      <h3 className="mt-0">Performance</h3>
+                      <h1 className="mt-0">Performance</h1>
                       <p>
                         It’s a collection of superfast tests – or “detects” as
                         we like to call them – which run as your web page loads,
@@ -299,7 +299,7 @@ class Index extends React.Component {
                       <i className="la la-3x la-check-circle"></i>
                     </span>
                     <div className="media-body">
-                      <h3 className="mt-0">Performance</h3>
+                      <h1 className="mt-0">Performance</h1>
                       <p>
                         It’s a collection of superfast tests – or “detects” as
                         we like to call them – which run as your web page loads,
@@ -314,7 +314,7 @@ class Index extends React.Component {
           </section>
 
           {/* review section */}
-          <section className="container-fluid bg-lighter py-8">
+          <section className="container-fluid bg-primary py-8 px-lg-8 px-4">
             <div className="row align-items-center justify-content-center">
               <div className="col-12 col-lg-4">
                 {/* review */}

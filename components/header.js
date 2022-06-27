@@ -48,9 +48,9 @@ const Header = (props) => {
             className="menuList collapse d-lg-flex"
           >
             <ul>
-              <MenuLink id="experience" />
-              <MenuLink id="projects" />
-              <MenuLink id="contact" />
+              <MenuLink id="Experience" />
+              <MenuLink id="Projects" />
+              <MenuLink id="Contact" />
             </ul>
           </div>
         </nav>
