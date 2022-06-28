@@ -8,7 +8,7 @@ class Experience extends React.Component {
     return (
       <Layout
         title="Experience"
-        theme="bg-dark"
+        theme="bg-danger"
         color="text-white"
         logo="/img/symbol-white.svg"
       >
@@ -40,7 +40,7 @@ class Experience extends React.Component {
                 {/* Image */}
                 <img
                   src="https://images.unsplash.com/photo-1574081105756-3c8d8ed70198?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=3450&q=80"
-                  className="img-fluid rounded shadow"
+                  className="img-fluid"
                   alt="img"
                 />
               </div>
@@ -59,7 +59,7 @@ class Experience extends React.Component {
                     <div className="row no-gutters align-items-center mb-md-5">
                       <div className="col-auto">
                         <h3>
-                          <span className="badge badge-pill badge-danger">
+                          <span className="badge badge-pill badge-black">
                             1
                           </span>
                         </h3>
@@ -86,7 +86,7 @@ class Experience extends React.Component {
                     <div className="row no-gutters align-items-center mb-md-5">
                       <div className="col-auto">
                         <h3>
-                          <span className="badge badge-pill badge-danger">
+                          <span className="badge badge-pill badge-black">
                             2
                           </span>
                         </h3>
@@ -115,7 +115,7 @@ class Experience extends React.Component {
                     <div className="row no-gutters align-items-center mb-md-5">
                       <div className="col-auto">
                         <h3>
-                          <span className="badge badge-pill badge-danger">
+                          <span className="badge badge-pill badge-black">
                             3
                           </span>
                         </h3>

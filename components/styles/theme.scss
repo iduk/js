@@ -21,18 +21,11 @@ $red: #b82e43;
 $yellow: #f3b816;
 $green: #62d8ae;
 $orange: #f67d18;
-$white: #fff;
 $cream: #ccccc0;
-
-$dark-soft: rgba(34, 33, 32, 0.5);
-$blue-soft: rgba(27, 42, 78, 0.5);
-$red-soft: rgba(234, 35, 64, 0.5);
-$yellow-soft: rgba(246, 203, 24, 0.5);
-$green-soft: rgba(107, 187, 5, 0.5);
-$white-soft: rgba(255, 255, 255, 0.5);
+$white: #fff;
+$black: #000;
 
 /* grayscales */
-$white: #fff;
 $gray-100: #ededed;
 $gray-200: #d2d2d2;
 $gray-300: #b7b7b7;
@@ -42,7 +35,6 @@ $gray-600: #434343;
 $gray-700: #2c2c2c;
 $gray-800: #212121;
 $gray-900: #161616;
-$black: #000;
 
 // grayscale map
 $grays: ();
@@ -69,7 +61,6 @@ $colors: map-merge(
     "orange": $orange,
     "yellow": $yellow,
     "green": $green,
-    "white": $white,
     "cream": $cream,
   ),
   $colors
@@ -86,13 +77,6 @@ $lighter: $gray-100;
 $gray: $gray-600;
 $gray-dark: $gray-700;
 $dark: $dark;
-// soft colors
-$primary-soft: $blue-soft;
-$secondary-soft: $red-soft;
-$info-soft: $blue-soft;
-$warning-soft: $yellow-soft;
-$success-soft: $green-soft;
-$white-soft: $white-soft;
 
 $theme-colors: ();
 // stylelint-disable-next-line scss/dollar-variable-default
@@ -109,12 +93,8 @@ $theme-colors: map-merge(
     "gray": $gray,
     "gray-dark": $gray-dark,
     "dark": $dark,
-    "primary-soft": $dark-soft,
-    "secondary-soft": $red-soft,
-    "info-soft": $blue-soft,
-    "warning-soft": $yellow-soft,
-    "success-soft": $green-soft,
-    "white-soft": $white-soft,
+    "black": $black,
+    "white": $white,
   ),
   $theme-colors
 );
@@ -330,7 +310,7 @@ $h6-font-size: $font-size-base;
 
 $headings-margin-bottom: $spacer / 2;
 $headings-font-family: null;
-$headings-font-weight: 500;
+$headings-font-weight: 600;
 $headings-line-height: 1.2;
 $headings-color: null;
 
@@ -339,10 +319,10 @@ $display2-size: 7rem;
 $display3-size: 6rem;
 $display4-size: 5rem;
 
-$display1-weight: 300;
-$display2-weight: 300;
-$display3-weight: 300;
-$display4-weight: 300;
+$display1-weight: 600;
+$display2-weight: 600;
+$display3-weight: 600;
+$display4-weight: 600;
 $display-line-height: $headings-line-height;
 
 $lead-font-size: $font-size-base * 1.25;

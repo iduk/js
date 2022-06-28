@@ -25,9 +25,9 @@ class Projects extends React.Component {
                 </p>
               </div>
 
-              <div className="col-12 col-md-4 text-center text-md-right">
+              {/* <div className="col-12 col-md-4 text-center text-md-right">
                 <MyModal />
-              </div>
+              </div> */}
             </div>
           </article>
         </section>
@@ -48,7 +48,7 @@ class Projects extends React.Component {
                         <img
                           src="/img/portfolio-item-1.jpg"
                           alt="project"
-                          className="rounded-lg mb-4 img-fluid shadow"
+                          className="rounded-lg mb-4 img-fluid"
                         />
                         <h4 className="font-weight-bold">
                           Project Sample Page
@@ -65,7 +65,7 @@ class Projects extends React.Component {
                         <img
                           src="/img/portfolio-item-2.jpg"
                           alt="project"
-                          className="rounded-lg mb-4 img-fluid shadow"
+                          className="rounded-lg mb-4 img-fluid "
                         />
                         <h4 className="font-weight-bold">
                           Project Sample Page
@@ -82,7 +82,7 @@ class Projects extends React.Component {
                         <img
                           src="/img/portfolio-item-3.jpg"
                           alt="project"
-                          className="rounded-lg mb-4 img-fluid shadow"
+                          className="rounded-lg mb-4 img-fluid "
                         />
                         <h4 className="font-weight-bold">
                           Project Sample Page
@@ -99,7 +99,7 @@ class Projects extends React.Component {
                         <img
                           src="/img/portfolio-item-4.jpg"
                           alt="project"
-                          className="rounded-lg mb-4 img-fluid shadow"
+                          className="rounded-lg mb-4 img-fluid "
                         />
                         <h4 className="font-weight-bold">
                           Project Sample Page
@@ -116,7 +116,7 @@ class Projects extends React.Component {
                         <img
                           src="/img/portfolio-item-5.jpg"
                           alt="project"
-                          className="rounded-lg mb-4 img-fluid shadow"
+                          className="rounded-lg mb-4 img-fluid "
                         />
                         <h4 className="font-weight-bold">
                           Project Sample Page
@@ -133,7 +133,7 @@ class Projects extends React.Component {
                         <img
                           src="/img/portfolio-item-6.jpg"
                           alt="project"
-                          className="rounded-lg mb-4 img-fluid shadow"
+                          className="rounded-lg mb-4 img-fluid "
                         />
                         <h4 className="font-weight-bold">
                           Project Sample Page
@@ -155,7 +155,7 @@ class Projects extends React.Component {
             <p>sdafasdf</p>
 					</div> */}
           <div
-            className="card bg-transparent border-0 shadow-light-lg accordion mb-5 mb-md-6"
+            className="card bg-transparent border-0 accordion mb-5 mb-md-6"
             id="faqAccrodion"
           >
             <div className="list-group list-group-flush">
