@@ -17,7 +17,7 @@
 /* colors */
 $dark: #262c40;
 $blue: #254da8;
-$red: #b82e43;
+$red: #dc2541;
 $yellow: #f3b816;
 $green: #62d8ae;
 $orange: #f67d18;
@@ -66,8 +66,8 @@ $colors: map-merge(
   $colors
 );
 
-$primary: black;
-$secondary: $red;
+$primary: $red;
+$secondary: $black;
 $info: $blue;
 $success: $green;
 $warning: $yellow;
@@ -210,7 +210,7 @@ $grid-breakpoints: (
   sm: 576px,
   md: 768px,
   lg: 992px,
-  xl: 1200px,
+  xl: 1400px,
 );
 
 @include _assert-ascending($grid-breakpoints, "$grid-breakpoints");
@@ -224,7 +224,7 @@ $container-max-widths: (
   sm: 540px,
   md: 720px,
   lg: 960px,
-  xl: 1140px,
+  xl: 1320px,
 );
 
 @include _assert-ascending($container-max-widths, "$container-max-widths");
@@ -295,8 +295,8 @@ $font-size-sm: $font-size-base * 0.875;
 $font-weight-lighter: lighter;
 $font-weight-light: 300;
 $font-weight-normal: 400;
-$font-weight-bold: 700;
-$font-weight-bolder: bolder;
+$font-weight-bold: 600;
+$font-weight-bolder: 900;
 
 $font-weight-base: $font-weight-normal;
 $line-height-base: 1.5;
@@ -311,13 +311,13 @@ $h6-font-size: $font-size-base;
 $headings-margin-bottom: $spacer / 2;
 $headings-font-family: null;
 $headings-font-weight: 600;
-$headings-line-height: 1.2;
+$headings-line-height: 1;
 $headings-color: null;
 
-$display1-size: 8rem;
-$display2-size: 7rem;
-$display3-size: 6rem;
-$display4-size: 5rem;
+$display1-size: 6rem;
+$display2-size: 5rem;
+$display3-size: 4rem;
+$display4-size: 3rem;
 
 $display1-weight: 600;
 $display2-weight: 600;

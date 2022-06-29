@@ -22,7 +22,7 @@ const Header = (props) => {
   return (
     <Fragment>
       <header className="headerNav">
-        <nav>
+        <nav className="container">
           {/* logo */}
           <Link href="/" as={process.env.BACKEND_URL + "/"}>
             <a className="brand-logo">

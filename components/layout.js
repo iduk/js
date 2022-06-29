@@ -13,7 +13,7 @@ const Layout = (props) => (
         content="width=device-width, initial-scale=1, shrink-to-fit=no"
       />
       <link
-        href="https://fonts.googleapis.com/css2?family=DM+Sans&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Poppins&display=swap"
         rel="stylesheet"
       />
       <link
