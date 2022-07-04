@@ -4071,6 +4071,11 @@ grid-index@^1.1.0:
   resolved "https://registry.yarnpkg.com/grid-index/-/grid-index-1.1.0.tgz#97f8221edec1026c8377b86446a7c71e79522ea7"
   integrity sha512-HZRwumpOGUrHyxO5bqKZL0B0GlUpwtCAzZ42sgxUPniu33R1LSFH5yrIcBCHjkctCAh3mtWKcKd9J4vDDdeVHA==
 
+gsap@^3.10.4:
+  version "3.10.4"
+  resolved "https://registry.yarnpkg.com/gsap/-/gsap-3.10.4.tgz#db89a6b8f6d5cb76e274eae822cbc1aa4d31e88f"
+  integrity sha512-6QatdkKxXCMfvCW4rM++0RqyLQAzFX5nwl3yHS0XPgkZBkiSEY3VZVbMltrdtsbER/xZonLtyHt684wRp4erlQ==
+
 gzip-size@^5.0.0:
   version "5.1.1"
   resolved "https://registry.yarnpkg.com/gzip-size/-/gzip-size-5.1.1.tgz#cb9bee692f87c0612b232840a873904e4c135274"
@@ -7341,6 +7346,13 @@ react-error-overlay@5.1.6:
   version "5.1.6"
   resolved "https://registry.yarnpkg.com/react-error-overlay/-/react-error-overlay-5.1.6.tgz#0cd73407c5d141f9638ae1e0c63e7b2bf7e9929d"
   integrity sha512-X1Y+0jR47ImDVr54Ab6V9eGk0Hnu7fVWGeHQSOXHf/C2pF9c6uy3gef8QUeuUiWlNb0i08InPSE5a/KJzNzw1Q==
+
+react-gsap@^3.2.1:
+  version "3.2.1"
+  resolved "https://registry.yarnpkg.com/react-gsap/-/react-gsap-3.2.1.tgz#15c7a0e06c4cdda6ac36ccfcd49f58ba6c3cfbc5"
+  integrity sha512-IX6XiN1a74hmU385yNZAYV1cFe3/Xmbg8eT99VCjmz7yzQq1qIsR47gkX5rkWeml9KmyEgiIzqArYaipPkKIbw==
+  dependencies:
+    react-is "^16.13.1"
 
 react-is@16.8.6:
   version "16.8.6"

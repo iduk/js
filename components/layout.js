@@ -35,13 +35,11 @@ const Layout = (props) => (
       <meta charSet="utf-8" />
     </Head>
 
-    <div id="wrap" className={`${props.theme}` + ` ${props.color}`}>
-      <Header src={props.logo} />
+    <div id="wrap">
+      <Header />
 
-      <main className="main">
-        {props.children}
-        <Footer />
-      </main>
+      <main className="main">{props.children}</main>
+      <Footer />
     </div>
   </Fragment>
 )

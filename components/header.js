@@ -1,32 +1,40 @@
-import React, { Fragment, useState } from "react"
+import React, { Fragment, useState, useEffect, useCallback } from "react"
 import ActiveLink from "./ActiveLink"
 import Link from "next/link"
+import { useRouter } from "next/router"
 import "./styles/app.scss"
-
-const MenuLink = (props) => (
-  <li>
-    <ActiveLink
-      href={`${process.env.BACKEND_URL}/${props.id}`}
-      activeClassName="active"
-      className="menuLink"
-    >
-      {props.id}
-    </ActiveLink>
-  </li>
-)
 
 const Header = (props) => {
   const [collapsed, setCollapsed] = useState(true)
   const toggleNavbar = () => setCollapsed(!collapsed)
 
+  // 스크롤시로고팽그르
+  const handleScrollEf = useCallback((e) => {
+    document.body.style.setProperty(
+      "--scroll",
+      window.pageYOffset / (document.body.offsetHeight - window.innerHeight)
+    )
+  })
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScrollEf)
+    return () => {
+      window.removeEventListener("scroll", handleScrollEf)
+    }
+  }, [])
+
   return (
     <Fragment>
       <header className="headerNav">
-        <nav className="container">
+        <nav>
           {/* logo */}
-          <Link href="/" as={process.env.BACKEND_URL + "/"}>
+          <Link href="/index">
             <a className="brand-logo">
-              <img src={props.src} alt="Openfloor Logo" className="img-fluid" />
+              <img
+                src="/img/symbol.svg"
+                alt="Openfloor Logo"
+                className="img-fluid"
+              />
             </a>
           </Link>
 
@@ -38,21 +46,11 @@ const Header = (props) => {
             data-target="#navbar"
             className="navbar-toggler d-inline-block d-lg-none m-0 menu-toggle"
           >
-            <i className="la"></i>
+            <img src={"/img/bandit.svg"} alt="" />
           </button>
 
           {/* Menu */}
-          <div
-            id="navbar"
-            // role="dialog"
-            className="menuList collapse d-lg-flex"
-          >
-            <ul>
-              <MenuLink id="Experience" />
-              <MenuLink id="Projects" />
-              <MenuLink id="Contact" />
-            </ul>
-          </div>
+          <Navs />
         </nav>
       </header>
     </Fragment>
@@ -60,3 +58,37 @@ const Header = (props) => {
 }
 
 export default Header
+
+// Global Nav
+const Navs = (props) => {
+  const router = useRouter()
+
+  const handleClick = (e) => {
+    e.preventDefault()
+    router.push(href)
+  }
+
+  const menulist = [
+    { pathname: "experience" },
+    { pathname: "projects" },
+    { pathname: "contact" },
+  ]
+
+  return (
+    <div
+      id="navbar"
+      // role="dialog"
+      className="menuList collapse d-lg-flex"
+    >
+      <ul>
+        {menulist.map((menu) => (
+          <li key={menu.pathname}>
+            <a href={`/${menu.pathname}`} className="menuLink">
+              {menu.pathname}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </div>
+  )
+}

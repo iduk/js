@@ -8,29 +8,11 @@ import "../components/styles/app.scss"
 class Projects extends React.Component {
   render() {
     return (
-      <Layout
-        title="Projects"
-        theme="bg-warning"
-        color="text-black"
-        logo={"/img/symbol.svg"}
-      >
-        <section className="py-6">
-          <article className="container">
-            <div className="row justify-content-between">
-              <div className="col-12 col-md-8 mb-5">
-                <h1>Projects</h1>
-                <p className="lead">
-                  Our products help startups, designers, and agencies working
-                  faster than ever before.
-                </p>
-              </div>
-
-              {/* <div className="col-12 col-md-4 text-center text-md-right">
-                <MyModal />
-              </div> */}
-            </div>
-          </article>
-        </section>
+      <Layout title="Projects">
+        <header>
+          <h1>OPEN_01</h1>
+          <p className="lead">못할것도없지</p>
+        </header>
 
         {/* Gallery */}
         <section>
@@ -48,97 +30,10 @@ class Projects extends React.Component {
                         <img
                           src="/img/portfolio-item-1.jpg"
                           alt="project"
-                          className="rounded-lg mb-4 img-fluid"
+                          className="img-fluid"
                         />
-                        <h4 className="font-weight-bold">
-                          Project Sample Page
-                        </h4>
+                        <h4>Project Sample Page</h4>
                         <p>Branding</p>
-                      </a>
-                    </li>
-
-                    <li className="col-6 col-lg-4 mb-2 p-3">
-                      <a
-                        data-fancybox="images"
-                        className="d-block position-relative"
-                      >
-                        <img
-                          src="/img/portfolio-item-2.jpg"
-                          alt="project"
-                          className="rounded-lg mb-4 img-fluid "
-                        />
-                        <h4 className="font-weight-bold">
-                          Project Sample Page
-                        </h4>
-                        <p>React</p>
-                      </a>
-                    </li>
-
-                    <li className="col-6 col-lg-4 mb-2 p-3">
-                      <a
-                        data-fancybox="images"
-                        className="d-block position-relative"
-                      >
-                        <img
-                          src="/img/portfolio-item-3.jpg"
-                          alt="project"
-                          className="rounded-lg mb-4 img-fluid "
-                        />
-                        <h4 className="font-weight-bold">
-                          Project Sample Page
-                        </h4>
-                        <p>Javascript, Sass</p>
-                      </a>
-                    </li>
-
-                    <li className="col-6 col-lg-4 mb-2 p-3">
-                      <a
-                        data-fancybox="images"
-                        className="d-block position-relative"
-                      >
-                        <img
-                          src="/img/portfolio-item-4.jpg"
-                          alt="project"
-                          className="rounded-lg mb-4 img-fluid "
-                        />
-                        <h4 className="font-weight-bold">
-                          Project Sample Page
-                        </h4>
-                        <p>Branding</p>
-                      </a>
-                    </li>
-
-                    <li className="col-6 col-lg-4 mb-2 p-3">
-                      <a
-                        data-fancybox="images"
-                        className="d-block position-relative"
-                      >
-                        <img
-                          src="/img/portfolio-item-5.jpg"
-                          alt="project"
-                          className="rounded-lg mb-4 img-fluid "
-                        />
-                        <h4 className="font-weight-bold">
-                          Project Sample Page
-                        </h4>
-                        <p>React</p>
-                      </a>
-                    </li>
-
-                    <li className="col-6 col-lg-4 mb-2 p-3">
-                      <a
-                        data-fancybox="images"
-                        className="d-block position-relative"
-                      >
-                        <img
-                          src="/img/portfolio-item-6.jpg"
-                          alt="project"
-                          className="rounded-lg mb-4 img-fluid "
-                        />
-                        <h4 className="font-weight-bold">
-                          Project Sample Page
-                        </h4>
-                        <p>Javascript, Sass</p>
                       </a>
                     </li>
                   </ul>

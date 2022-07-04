@@ -12,8 +12,10 @@
   "dependencies": {
     "animate.css": "^3.7.2",
     "bootstrap": "^4.3.1",
+    "gsap": "^3.10.4",
     "jquery": "^3.4.1",
     "popper.js": "^1.16.0",
+    "react-gsap": "^3.2.1",
     "react-map-gl": "^5.1.2",
     "wowjs": "^1.1.3"
   },

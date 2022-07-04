@@ -19,14 +19,15 @@ module.exports = {
   },
   crossOrigin: "anonymous",
   pageExtensions: ["mdx", "jsx", "js"],
-  assetPrefix: !debug ? "http://openfloor.kr" : "",
+  assetPrefix: !debug ? "http://openfloor.io/" : "",
   exportTrailingSlash: true,
   exportPathMap: function () {
     return {
       "/": { page: "/" },
-      "/Experience": { page: "/Experience" },
-      "/Projects": { page: "/Projects" },
-      "/Contact": { page: "/Contact" },
+      "*": { page: "/error" },
+      "/Experience": { page: "/experience" },
+      "/Projects": { page: "/projects" },
+      "/Contact": { page: "/contact" },
     }
   },
 }
