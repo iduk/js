@@ -36,7 +36,6 @@ const Layout = (props) => (
     </Head>
 
     <div id="wrap" className={`${props.theme}` + ` ${props.color}`}>
-      {/* <Sidebar theme="bg-dark" /> */}
       <Header src={props.logo} />
 
       <main className="main">
