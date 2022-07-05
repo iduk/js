@@ -3,6 +3,13 @@ import ActiveLink from "./ActiveLink"
 import Link from "next/link"
 import { useRouter } from "next/router"
 import "./styles/app.scss"
+import Sidebar from "./sidebar"
+
+const menulist = [
+  { pathname: "WORK" },
+  { pathname: "DEV" },
+  // { pathname: "contact" },
+]
 
 const Header = (props) => {
   const [collapsed, setCollapsed] = useState(true)
@@ -26,7 +33,7 @@ const Header = (props) => {
   return (
     <Fragment>
       <header className="headerNav">
-        <nav>
+        <nav className="container">
           {/* logo */}
           <Link href="/index">
             <a className="brand-logo">
@@ -43,16 +50,29 @@ const Header = (props) => {
             onClick={toggleNavbar}
             type="button"
             data-toggle="collapse"
-            data-target="#navbar"
+            data-target="#toggleNav"
             className="navbar-toggler d-inline-block d-lg-none m-0 menu-toggle"
           >
             <img src={"/img/bandit.svg"} alt="" />
           </button>
 
-          {/* Menu */}
+          {/* Desktop Menu */}
           <Navs />
         </nav>
       </header>
+
+      {/* SideDrawer 작업대기 */}
+      <aside id="toggleNav" className="collapse bg-white">
+        <ul>
+          {menulist.map((menu) => (
+            <li key={menu.pathname}>
+              <a href={`/${menu.pathname}`} className="menuLink">
+                {menu.pathname}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </aside>
     </Fragment>
   )
 }
@@ -68,17 +88,11 @@ const Navs = (props) => {
     router.push(href)
   }
 
-  const menulist = [
-    { pathname: "experience" },
-    { pathname: "projects" },
-    { pathname: "contact" },
-  ]
-
   return (
     <div
       id="navbar"
       // role="dialog"
-      className="menuList collapse d-lg-flex"
+      className="menuList d-lg-flex d-none"
     >
       <ul>
         {menulist.map((menu) => (

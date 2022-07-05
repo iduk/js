@@ -4,12 +4,11 @@
 // custom theme
 @import "./theme.scss";
 
-*,
 body {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  font-family: "Poppins", "Noto Sans KR", sans-serif;
+  font-family: "Mulish", "Noto Sans KR", sans-serif;
   font-size: calc(14px + 0.390625vw);
 }
 
@@ -33,6 +32,19 @@ a {
   color: inherit;
 }
 
+.row > [class*="col-"] {
+  overflow-wrap: break-word;
+}
+
+img {
+  filter: grayscale(100%);
+
+  &:hover,
+  &:focus {
+    filter: grayscale(0);
+  }
+}
+
 /********************* 
   Header 
   - 
@@ -43,8 +55,8 @@ a {
   left: 0;
   width: 100%;
   z-index: 1;
-  background-color: inherit;
-  // border-bottom: 4px solid black;
+  background-color: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(12px);
 
   > nav {
     position: relative;
@@ -67,8 +79,9 @@ a {
       width: var(--logo-size);
       height: var(--logo-size);
       transform-origin: calc(var(--logo-size) / 2);
+      transition-duration: 1s;
 
-      animation: rotate 0.5s linear infinite;
+      animation: rotate 2s linear infinite;
       animation-play-state: paused;
       animation-delay: calc(var(--scroll) * -0.8s);
       animation-iteration-count: 1;
@@ -76,7 +89,7 @@ a {
 
       @keyframes rotate {
         to {
-          transform: rotate(360deg) scale(1.2);
+          transform: rotate(360deg);
         }
       }
 
@@ -155,6 +168,7 @@ a {
   - 
 *********************/
 .footer {
+  padding: 3rem 0;
   .wrap {
     position: relative;
     color: inherit;
@@ -169,10 +183,15 @@ a {
         width: 100%;
       }
     }
-    .copyright {
-      font-weight: lighter;
-      vertical-align: middle;
-    }
+  }
+  .copyright {
+    font-weight: lighter;
+    vertical-align: middle;
+  }
+  .address-text {
+    margin-top: 0.5rem;
+    line-height: 1.25;
+    font-size: 2rem;
   }
 }
 
@@ -201,36 +220,76 @@ a {
 
 // img
 .feature {
-  position: relative;
-  width: 100%;
-  height: 40vh;
-  overflow: hidden;
-  border-bottom: 4px solid black;
-  display: flex;
-  align-items: flex-end;
   text-transform: uppercase;
 
-  &::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    // background-color: rgba(0, 0, 0, 0.5);
-    // background-color: #000;
-  }
+  &--header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 40vh;
+    overflow: hidden;
 
-  .typo-list {
-    width: 100%;
-    // overflow: hidden;
-
-    .typo-1 {
-      line-height: 0.8;
+    .headline {
+      font-size: 100px;
       font-weight: 900;
-      font-size: 7rem;
-      white-space: nowrap;
+      overflow-wrap: break-word;
     }
+
+    p {
+      line-height: 1;
+    }
+
+    .emblem-wrap {
+      z-index: -1;
+      position: absolute;
+      top: 0;
+      left: 0;
+      transform: translate(-50%, -50%);
+      svg#emblem-svg {
+        width: 140px;
+        height: 140px;
+        fill: currentColor;
+        color: black;
+        opacity: 0.2;
+
+        text {
+          font-family: inherit;
+          font-weight: 900;
+          font-size: 14px;
+        }
+      }
+    }
+
+    // heading mobile
+    @media (max-width: 991px) {
+      .headline {
+        font-size: 50px;
+      }
+    }
+  }
+}
+
+%boxing-style {
+  content: "";
+  position: absolute;
+  top: 0;
+  background-color: black;
+  width: 100%;
+  height: 1px;
+}
+
+.boxing {
+  position: relative;
+  padding-top: 1rem;
+
+  &::before {
+    @extend %boxing-style;
+    height: 3px;
+  }
+  &::after {
+    @extend %boxing-style;
+    top: -4px;
+    height: 1px;
   }
 }
 
@@ -338,64 +397,12 @@ a {
       height: 100%;
     }
   }
-
-  :root {
-    --white: #fff;
-    --black: #000;
-  }
-
-  /* Top Menu => mobile */
-  .menuList {
-    z-index: 10;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: calc(100vh);
-    color: black;
-    padding-top: 6em;
-    transition: left 0.15s linear;
-    background-color: rgba(255, 255, 255, 0.9);
-    backdrop-filter: blur(12px);
-
-    &.collapse:not(.show) {
-      display: block;
-      left: 100vw;
-    }
-
-    ul > li {
-      padding: 0;
-
-      .menuLink {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        padding: 0.5rem 1rem;
-        color: inherit;
-        font-size: 2.5rem;
-        // link focus,active
-        &.active,
-        &:focus,
-        &:hover {
-          transition: all 0.2s ease;
-          color: $danger;
-        }
-      }
-    }
-  }
 }
 
-/* Map */
-.navi-control {
-  position: absolute;
-  top: 1rem;
-  right: 1rem;
-}
-
-.partners {
+.slide-wrap {
   position: relative;
   width: 100%;
-  min-height: 15vh;
+  min-height: 20vh;
   display: grid;
   place-items: center;
   overflow: hidden;
@@ -425,25 +432,31 @@ a {
   }
 
   .logos {
-    width: calc(20vw * 6);
+    --logo-size: 20vw;
 
+    width: calc(var(--logo-size) * 6);
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
     flex-wrap: nowrap;
     align-items: center;
-    column-gap: 5vw;
-    animation: slideTrack 10s linear infinite;
+    column-gap: 2em;
+    animation: slideTrack 20s linear infinite running;
 
     > li {
+      width: var(--logo-size);
+      max-width: 160px;
       flex-shrink: 0;
-      display: flex;
+      display: inline-flex;
       justify-content: center;
       text-align: center;
       transition: 0.5s;
       white-space: nowrap;
-      width: 20vw;
-      max-width: 180px;
       cursor: pointer;
+
+      transition: transform 1.5s cubic-bezier(0.075, 0.82, 0.165, 1),
+        opacity 1.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+      transform: translateX(0);
+      transition-delay: 0.1s;
     }
 
     > li img {
@@ -451,7 +464,7 @@ a {
       place-items: center;
       transition: 0.5s;
       width: 100%;
-      height: auto;
+      height: 100%;
       filter: grayscale(100%);
       opacity: 0.6;
 
@@ -463,10 +476,10 @@ a {
 
   @keyframes slideTrack {
     0% {
-      transform: translateX(0);
+      transform: translate3d(0, 0, 0);
     }
     100% {
-      transform: translateX(calc(-20vw * 3));
+      transform: translate3d(-100%, 0, 0);
     }
   }
 }

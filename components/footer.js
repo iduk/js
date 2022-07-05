@@ -3,20 +3,25 @@ import Link from "next/link"
 import "./styles/app.scss"
 
 const Footer = () => (
-  <footer className="footer py-6 mt-n6">
-    <div className="wrap container pt-6">
-      <div className="row">
-        <div className="copyright col-12 col-md-6 text-center text-md-left">
-          <h4>OpenFloor.</h4>
-          <p>개발전문회사이다. 간간히 디자인+퍼블리싱</p>
-          <p>웬만하면 카톡주세요 😉</p>
+  <footer className="footer">
+    <div className="wrap container">
+      <article className="row justify-content-between align-items-baseline">
+        <div className="copyright col-12 col-lg-6">
+          <h1 className="display-4">Hm...</h1>
         </div>
-        <div className="col-12 col-md-6 text-center text-md-right pt-3 pt-md-0 font-weight-lighter">
-          <a href="mailto:by.lee@openfloor.kr" target="_blank">
-            <i className="la la-envelope pr-2"></i>by.lee@openfloor.kr
-          </a>
+
+        <div className="col-12 col-lg-4 offset-lg-2 pt-4 pt-lg-0">
+          <h1>CONTACT</h1>
+          <address className="address-text">
+            <p>lee@openfloor.kr</p>
+            <p>+82 10-1234-5678</p>
+          </address>
+          <p className="copyright mt-5">
+            <p>© Openfloor. ALL RIGHTS RESERVED, 2022.</p>
+            <p>A Rolling Stone Gathers No Moss.</p>
+          </p>
         </div>
-      </div>
+      </article>
     </div>
   </footer>
 )

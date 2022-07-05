@@ -234,7 +234,7 @@ $container-max-widths: (
 // Set the number of columns and specify the width of the gutters.
 
 $grid-columns: 12;
-$grid-gutter-width: 0;
+$grid-gutter-width: 32px;
 $grid-row-columns: 6;
 
 // Components
@@ -296,10 +296,10 @@ $font-weight-lighter: lighter;
 $font-weight-light: 300;
 $font-weight-normal: 400;
 $font-weight-bold: 600;
-$font-weight-bolder: 900;
+$font-weight-bolder: 800;
 
 $font-weight-base: $font-weight-normal;
-$line-height-base: 1.5;
+$line-height-base: 1.25;
 
 $h1-font-size: $font-size-base * 2.5;
 $h2-font-size: $font-size-base * 2;
@@ -310,8 +310,8 @@ $h6-font-size: $font-size-base;
 
 $headings-margin-bottom: $spacer / 2;
 $headings-font-family: null;
-$headings-font-weight: 600;
-$headings-line-height: 1;
+$headings-font-weight: 800;
+$headings-line-height: 1.25;
 $headings-color: null;
 
 $display1-size: 6rem;
@@ -319,14 +319,14 @@ $display2-size: 5rem;
 $display3-size: 4rem;
 $display4-size: 3rem;
 
-$display1-weight: 600;
-$display2-weight: 600;
-$display3-weight: 600;
-$display4-weight: 600;
+$display1-weight: 800;
+$display2-weight: 800;
+$display3-weight: 800;
+$display4-weight: 800;
 $display-line-height: $headings-line-height;
 
 $lead-font-size: $font-size-base * 1.25;
-$lead-font-weight: 300;
+$lead-font-weight: 400;
 
 $small-font-size: 80%;
 
