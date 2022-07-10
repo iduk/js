@@ -69,7 +69,7 @@ a {
 }
 
 .headerNav {
-  z-index: 20;
+  z-index: 10;
   position: sticky;
   top: 0;
   left: 0;
@@ -156,6 +156,9 @@ a {
       }
     }
   }
+}
+
+.drawerNav {
 }
 
 /********************* 
@@ -542,9 +545,10 @@ svg#logo-svg {
 }
 
 // topbar text slider
-
-.marquee {
+.topbar {
   z-index: 10;
+}
+.marquee {
   position: relative;
   overflow: hidden;
   background-color: $cream;
@@ -601,17 +605,13 @@ svg#logo-svg {
 
 /* Tablet & Mobile */
 @media (max-width: 991px) {
-  :root {
-    --nav-height-m: 72px;
-    --logo-size-m: 40px;
-  }
   #toggleNav {
+    z-index: 9;
     position: fixed;
-    top: 0;
+    top: 32px;
     left: 0;
     right: 0;
     bottom: 0;
-    z-index: 10;
     background-color: $primary;
     padding-top: var(--nav-height-m);
     transition: opacity 0.2s linear;
@@ -622,11 +622,19 @@ svg#logo-svg {
       opacity: 1;
       transform: translateY(0);
     }
+
+    .drawerNav {
+      padding-top: 100px;
+      li {
+        padding: 1rem;
+        font-size: 2rem;
+      }
+    }
   }
   /* Contents => hidden */
 
   .headerNav {
-    z-index: 20;
+    z-index: 10;
 
     nav {
       display: flex;
