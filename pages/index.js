@@ -1,22 +1,29 @@
 import React, { useRef, useEffect, useState, useMemo } from "react"
 import Layout from "../components/layout"
-import "../components/styles/app.scss"
 import ActiveLink from "../components/ActiveLink"
 import { loadGetInitialProps } from "next/dist/next-server/lib/utils"
-
-import { gsap, Power1, Power2, Power3, Power4 } from "gsap"
+import { gsap, Power1, ScrollTrigger } from "gsap"
 import { MotionPathPlugin } from "gsap/dist/MotionPathPlugin"
-import { Power0 } from "gsap/dist/gsap"
+import TextLoop from "react-text-loop"
+
+import axios from "axios"
+import posts from "../data/mock_data.json"
 
 gsap.registerPlugin(MotionPathPlugin)
 
 const Logos = [
   { id: "logo1", img: "/img/logo-amazon.svg", name: "amazon" },
   { id: "logo2", img: "/img/logo-oliveyoung.svg", name: "oliveyoung" },
-  { id: "logo3", img: "/img/logo-kia-motors.svg", name: "kia-motors" },
-  { id: "logo4", img: "/img/logo-slack.svg", name: "slack" },
-  { id: "logo5", img: "/img/logo-samsung.svg", name: "samsung" },
-  { id: "logo6", img: "/img/logo-nodejs.svg", name: "nodejs" },
+  { id: "logo3", img: "/img/logo-slack.svg", name: "slack" },
+  { id: "logo4", img: "/img/logo-samsung.svg", name: "samsung" },
+  { id: "logo5", img: "/img/logo-nodejs.svg", name: "nodejs" },
+]
+
+const imglist = [
+  { Img: "https://source.unsplash.com/XkKCui44iM0" },
+  { Img: "https://source.unsplash.com/zSpGWzwRFas" },
+  { Img: "https://source.unsplash.com/XkKCui44iM0" },
+  { Img: "https://source.unsplash.com/zSpGWzwRFas" },
 ]
 
 function useSelector() {
@@ -40,141 +47,156 @@ function Index() {
   }
 
   useEffect(() => {
-    // gsap.to(q(".typo-1"), {
-    //   x: 200,
-    //   stagger: 0.2,
-    // })
+    // timeline
+    //   .fromTo(
+    //     q(".img-list"),
+    //     {
+    //       stagger: 0.2,
+    //       xPercent: 0,
+    //       ease: "linear",
+    //     },
+    //     { duration: 50, xPercent: -100, repeat: -1 }
+    //   )
+    //   .totalProgress(0.5)
 
     gsap.to("#logo-svg", {
       duration: 1,
       rotation: 360,
-      repeat: 3,
-      ease: Power0.easeIn,
+      repeat: -1,
+      ease: "linear",
     })
 
     gsap.to("#emblem-svg", {
-      duration: 20,
-      rotation: 360,
+      duration: 10,
+      rotation: 180,
       repeat: -1,
-      ease: Power0.easeIn,
+      ease: Power1.easeInOut,
     })
   }, [])
 
   const list = [{ id: 0 }, { id: 1 }, { id: 2 }, { id: 3 }]
 
+  const postsList = posts.slice(0, 4)
+
   return (
     <Layout title="Openfloor">
       {/* index page */}
-      <div className="index">
+      <div className="index" ref={ref}>
         {/* intro */}
         <section className="feature">
-          <article className="feature--header">
-            <div className="container position-relative">
-              <div className="emblem-wrap">
-                <svg id="emblem-svg" viewBox="0 0 100 100">
-                  <defs>
-                    <path
-                      id="emblem-circle"
-                      d="M 50, 50
-                      m -37, 0
-                      a 37,37 0 1,1 74,0
-                      a 37,37 0 1,1 -74,0"
-                    />
-                  </defs>
-                  <text>
-                    <textPath xlinkHref="#emblem-circle">
-                      Openfloor Makes Quality
-                    </textPath>
-                  </text>
-                </svg>
-              </div>
-
-              <p className="headline">202X New Origin</p>
-              <p className="headline text-light">Performance Team</p>
-            </div>
-          </article>
-
-          <article className="feature--content pb-6">
-            <div className="container">
-              <div className="row justify-content-between align-items-start">
-                <div className="col-12 col-lg-3">
-                  <div className="boxing">
-                    <p className="h5">&#60;Intro &#47;&#62;</p>
-                    <p className="mb-4 mb-lg-0">
-                      OpenFloor <br />
-                      Makes Quality
+          <div className="feature--header">
+            <article className="container-fluid">
+              <div className="row">
+                <div className="col-12 col-lg-12">
+                  <p className="headline text-deco pb-4">Openfloor</p>
+                  <p className="headline">
+                    We can create anything with a variety of techniques.
+                  </p>
+                  <div className="headline pt-4 pt-lg-0">
+                    <p className="d-lg-inline d-block mr-lg-3">
+                      Feel free to make
+                    </p>
+                    <p className="bg-black text-light px-3 rounded-pill d-lg-inline-block d-md-block">
+                      <TextLoop mask={true}>
+                        <span className="font-weight-bolder">
+                          Multi-Platform
+                        </span>
+                        <span className="font-weight-bolder">
+                          Device Control
+                        </span>
+                        <span className="font-weight-bolder">IoT Service</span>
+                      </TextLoop>
+                      <span>.</span>
                     </p>
                   </div>
                 </div>
+              </div>
+            </article>
+          </div>
+        </section>
 
-                <div className="col-12 col-lg-9">
-                  <div className="boxing">
-                    <h5>
-                      It is a long established fact that a reader will be
-                      distracted by the readable content of a page when looking
-                      at its layout.
-                    </h5>
+        <section className="container-fluid">
+          <ul className="row align-content-stretch img-list">
+            <li
+              className="col-12 col-lg-12"
+              style={{
+                backgroundImage:
+                  "url(https://images.unsplash.com/photo-1647706531331-665b055c5a20?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=3270&q=80)",
+              }}
+            >
+              <div className="h-100 d-flex flex-column justify-content-center">
+                <div class="text-marquee">
+                  <div class="text-marquee--inner" aria-hidden="true">
+                    <span>Openfloor</span>
+                    <span>Openfloor</span>
+                    <span>Openfloor</span>
+                    <span>Openfloor</span>
                   </div>
                 </div>
               </div>
-            </div>
-          </article>
+            </li>
+          </ul>
         </section>
 
-        {/* Clients Logo */}
-        <section className="slide-wrap border-top border-black">
-          <ul className="logos">
-            {Logos.map((logo) => (
-              <li key={logo.id}>
-                <img src={logo.img} alt={logo.name} />
-              </li>
-            ))}
-            {Logos.map((logo) => (
-              <li key={logo.id}>
-                <img src={logo.img} alt={logo.name} />
+        <section className="container-fluid my-8">
+          <div className="row">
+            <div className="col-12 col-lg-12">
+              <div className="centered text-center rounded bg-light">
+                <p className="display-1 mb-4">Device Handling</p>
+                <p className="h1 font-weight-normal">
+                  <span className="badge badge-pill border mx-1">
+                    Multi-Platform
+                  </span>
+                  <span className="badge badge-pill border mx-1">
+                    Device Control
+                  </span>
+                  <span className="badge badge-pill border mx-1">
+                    IoT Service
+                  </span>
+                  <span className="badge badge-pill border mx-1">...</span>
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section className="container-fluid py-8">
+          <h1 className="headline mb-3">We are made up of a diverse team.</h1>
+          <ul className="row">
+            {postsList.map((item) => (
+              <li className="col-12 col-lg-3">
+                <img
+                  src="https://images.unsplash.com/photo-1637416067365-2b5e7e8fe8fa?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1635&q=80"
+                  className="img-fluid rounded mb-4"
+                  alt=""
+                />
+                <div>
+                  <span className="badge badge-pill border mb-2">
+                    {item.skill}
+                  </span>
+                  <h4>{item.title}</h4>
+                  <p className="text-gray">{item.desc}</p>
+                </div>
               </li>
             ))}
           </ul>
         </section>
 
-        <section className="bg-light py-8" style={{ minHeight: "90vh" }}>
-          <div className="container">
-            <div className="row">
-              <article className="col-12 col-lg-3">
-                <div className="boxing">
-                  <p className="h5">&#60;Intro &#47;&#62;</p>
-                  <p className="mb-4 mb-lg-0">
-                    OpenFloor <br />
-                    Makes Quality
-                  </p>
-                </div>
-              </article>
-
-              <article className="col-12 col-lg-9">
-                <div className="boxing">
-                  <ul>
-                    <li className="d-flex justify-content-between">
-                      <div className="w-80">
-                        <h4>consectetuer adipiscing elit.</h4>
-                        <small className="mt-2">Date. 1988-10-19</small>
-                        <p className="small">
-                          Nullam quis ante. Etiam sit amet orci eget eros
-                          faucibus tincidunt. Duis leo. Sed fringilla mauris sit
-                          amet nibh. Donec sodales sagittis magna. Sed
-                          consequat, leo eget bibendum sodales, augue velit
-                          cursus nunc,
-                        </p>
-                      </div>
-                      <img
-                        src="https://source.unsplash.com/random/280x200"
-                        alt=""
-                        className="img-fluid"
-                      />
-                    </li>
-                  </ul>
-                </div>
-              </article>
-            </div>
+        {/* Clients Logo */}
+        <section className="container-fluid">
+          <div className="slide-wrap border rounded">
+            <ul className="logos">
+              {Logos.map((logo) => (
+                <li key={logo.id}>
+                  <img src={logo.img} alt={logo.name} />
+                </li>
+              ))}
+              {Logos.map((logo) => (
+                <li key={logo.id}>
+                  <img src={logo.img} alt={logo.name} />
+                </li>
+              ))}
+            </ul>
           </div>
         </section>
       </div>

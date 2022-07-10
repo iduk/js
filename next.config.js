@@ -32,6 +32,15 @@ module.exports = {
   },
 }
 
+const nextConfig = {
+  reactStrictMode: true,
+  sassOptions: {
+    includePaths: [path.join(__dirname, "styles")],
+    prependData: `@import "./components/styles/app.scss"`,
+  },
+  cssModules: true,
+}
+
 module.exports = {
   webpack: (config, { dev }) => {
     config.module.rules.push({
