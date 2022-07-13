@@ -3,6 +3,7 @@ import App from "next/app"
 import { PageTransition } from "next-page-transitions"
 import Loader from "../components/Loader"
 import { Router } from "next/router"
+import "../styles/global.scss"
 
 const TIMEOUT = 150
 

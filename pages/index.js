@@ -54,17 +54,17 @@ function Index() {
           <div className="feature--header">
             <article className="container-fluid">
               <div className="row">
-                <div className="col-12 col-lg-12 text-gray">
+                <div className="col-12 col-lg-12">
                   {/* <p className="headline text-deco pb-4">Openfloor</p> */}
-                  <p className="headline font-weight-normal">
+                  <p className="headline font-weight-normal text-gray">
                     We can create anything.
                   </p>
-                  <p className="headline font-weight-normal">
+                  <p className="headline font-weight-normal text-gray">
                     with great great skill.
                   </p>
-                  <p className="headline font-weight-normal d-md-block">
-                    Feel free to make&nbsp;
-                    <span className="font-weight-bold text-black">
+                  <p className="headline font-weight-normal d-md-block ">
+                    <span className=" text-gray">Feel free to make&nbsp;</span>
+                    <span className="font-weight-bolder">
                       <TextLoop mask={true}>
                         <span>#Multi-Platform</span>
                         <span>#Control Devices</span>
@@ -80,16 +80,29 @@ function Index() {
         </section>
 
         <section className="container-fluid">
-          <ul className="row align-content-stretch">
-            <li className="col-12 col-lg-12">
+          <ul className="dense-row align-content-stretch">
+            <li className="col-12 col-lg-8">
               <div className="section-bg rounded-lg">
-                <div className="foreground">큰글자 옆으로 마퀴</div>
+                <div className="foreground">텍스트이펙트넣기</div>
+              </div>
+            </li>
+            <li className="col-12 col-lg-4 mt-4 mt-lg-0">
+              <div className="section-bg rounded-lg">
+                <div className="centered text-center rounded-lg bg-light">
+                  <p className="h4 mb-3">What we do.</p>
+                  <p className="display-2 font-weight-normal">
+                    <span className="badge badge-pill border m-1">
+                      TroubleShooter
+                    </span>
+                    <span className="badge badge-pill border m-1">Team</span>
+                  </p>
+                </div>
               </div>
             </li>
           </ul>
         </section>
 
-        <section className="container-fluid">
+        {/* <section className="container-fluid">
           <div className="row">
             <div className="col-12 col-lg-12">
               <div className="centered text-center rounded-lg bg-light">
@@ -103,18 +116,19 @@ function Index() {
               </div>
             </div>
           </div>
-        </section>
+        </section> */}
 
         <section className="container-fluid py-6">
           <div className="d-flex justify-content-between align-items-baseline mb-3">
             <h1 className="headline">Performance</h1>
-            <a href="#" className="flex-shrink-0">
-              <img src="/img/right-up.svg" width={40} alt="more" />
-            </a>
+            <a
+              href="#"
+              className="flex-shrink-0 headline font-weight-light link-arrow"
+            ></a>
           </div>
           <ul className="dense-row items-list">
             {postsList.map((item) => (
-              <li className="col-12 col-md-6 col-lg-3 item">
+              <li key={item.index} className="col-12 col-md-6 col-lg-3 item">
                 <div className="contents mb-4 mb-lg-0">
                   <span className="thumb mb-1">
                     <img
@@ -128,7 +142,7 @@ function Index() {
                     {item.skill}
                   </small>
                   <h4 className="subject">{item.title}</h4>
-                  <p className="text-gray">{item.desc}</p>
+                  <p>{item.desc}</p>
                 </div>
               </li>
             ))}

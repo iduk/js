@@ -1,12 +1,24 @@
 // layout(<main>) scss
 @charset 'utf-8';
 
+html,
 body {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
   -webkit-font-smoothing: antialiased;
-  // background-color: #fffcf6;
+  font-size: 16px;
+  color: $primary !important;
+}
+@include media-breakpoint-down(md) {
+  html {
+    font-size: calc(16px + 6 * ((100vw - 320px) / 680));
+  }
+}
+@include media-breakpoint-up(md) {
+  html {
+    font-size: 20px;
+  }
 }
 
 ::selection {
@@ -29,18 +41,26 @@ p {
 button > i {
   font-size: inherit;
 }
-.la {
-  color: inherit;
-}
+
 a {
   color: inherit;
   transition: all 0.3s ease;
 
   &:hover,
   &:focus {
-    color: $primary;
-    font-style: italic;
-    text-decoration: none;
+    opacity: 0.8;
+    text-decoration: underline wavy;
+    text-decoration-line: 1px;
+    text-underline-offset: 2px;
+  }
+}
+
+.link-arrow {
+  &::after {
+    content: "↗";
+    display: inline-block;
+    margin-left: 0.5rem;
+    font-size: inherit;
   }
 }
 
@@ -60,11 +80,11 @@ a {
   }
 }
 
-a.badge {
-  &:hover,
-  &:focus {
-    background-color: black;
-  }
+.badge {
+  border-color: $primary !important;
+  // &:hover,
+  // &:focus {
+  // }
 }
 
 .centered {
@@ -82,40 +102,6 @@ a.badge {
 }
 
 /********************* 
-  Footer
-  - 
-*********************/
-.footer {
-  position: relative;
-  color: inherit;
-  border-top-left-radius: $border-radius-lg;
-  border-top-right-radius: $border-radius-lg;
-  padding: 4vh 0;
-
-  .social-list {
-    li {
-      display: flex;
-
-      span {
-        flex-shrink: 0;
-        display: block;
-        font-weight: bold;
-        width: 100%;
-        max-width: 8vmin;
-        min-width: 100px;
-      }
-    }
-  }
-
-  .copyright {
-    font-size: 1rem;
-  }
-  .address {
-    font-size: 1.125rem;
-  }
-}
-
-/********************* 
   main
   -
 *********************/
@@ -124,7 +110,7 @@ a.badge {
   position: relative;
 }
 .main {
-  padding: 4vh 0;
+  padding: 2vh 0;
 }
 
 /********************* 
@@ -353,6 +339,8 @@ svg#logo-svg {
   position: relative;
   overflow: hidden;
   height: 80vh;
+  background-color: $primary;
+  background-blend-mode: screen;
   background-attachment: fixed;
   background-position: top center;
   background-repeat: no-repeat;
@@ -407,11 +395,13 @@ svg#logo-svg {
   line-height: 1;
 }
 
-.text-marquee {
+:root {
   --offset: 20vw;
   --move-initial: calc(-25% + var(--offset));
   --move-final: calc(-50% + var(--offset));
+}
 
+.text-marquee {
   position: relative;
   overflow: hidden;
   width: 100%;
@@ -467,6 +457,8 @@ svg#logo-svg {
     align-items: baseline;
     .thumb {
       display: block;
+      background-color: $primary;
+      border-radius: $border-radius;
     }
     .subject {
       font-weight: bold;

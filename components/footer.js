@@ -2,7 +2,7 @@ import React from "react"
 import Link from "next/link"
 
 const Footer = () => (
-  <footer className="footer">
+  <footer className="footer border-top">
     <div className="container-fluid">
       <article className="row justify-content-between">
         <div className="col-12 col-lg-4">

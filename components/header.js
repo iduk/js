@@ -13,8 +13,6 @@ import Marquee from "react-fast-marquee"
 import { gsap } from "gsap"
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger"
 gsap.registerPlugin(ScrollTrigger)
-
-import "../components/styles/global.scss"
 import { NavLink } from "react-router-dom"
 
 const menulist = [
