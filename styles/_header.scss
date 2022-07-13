@@ -11,7 +11,6 @@
 // topbar text slider
 .topbar {
   z-index: 30;
-  overflow: hidden;
   background-color: transparent;
 
   .mq-topbar {
@@ -21,6 +20,7 @@
     column-gap: 2vw;
     height: var(--top-h);
     font-size: var(--top-h);
+    overflow: hidden;
   }
 }
 
