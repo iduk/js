@@ -1,0 +1,222 @@
+/********************* 
+  Header 
+  - 
+*********************/
+:root {
+  --top-h: 1.8691588785046729vh;
+  --nav-h: 94px;
+  --logo-size: 54px;
+}
+
+// topbar text slider
+.topbar {
+  z-index: 30;
+  overflow: hidden;
+  background-color: transparent;
+
+  .mq-topbar {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    column-gap: 2vw;
+    height: var(--top-h);
+  }
+}
+
+.headerNav {
+  z-index: 20;
+  position: sticky;
+  top: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  box-sizing: border-box;
+  backdrop-filter: blur(20px);
+  background-color: rgba(white, 0.4);
+
+  &--active {
+    backdrop-filter: blur(0);
+    background-color: transparent;
+  }
+
+  .navWrap {
+    position: relative;
+    display: flex;
+    gap: 8vh;
+    justify-content: space-between;
+    align-items: center;
+    margin: auto;
+    text-align: center;
+    transition: all 0.2s ease;
+    height: var(--nav-h);
+
+    * {
+      transition: all 0.2s ease;
+    }
+
+    // header brand logo
+    .brand-logo {
+      flex-shrink: 0;
+      display: grid;
+      align-items: center;
+      justify-content: center;
+      padding: 0;
+      position: relative;
+      width: var(--logo-size);
+      height: var(--logo-size);
+
+      // logo
+      img,
+      svg {
+        width: 100%;
+        height: 100%;
+      }
+      // &:hover::after {
+      //   content: attr(title);
+      //   font-size: 5rem;
+      // }
+    }
+  }
+}
+
+.topNav {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  list-style: none;
+  margin-bottom: 0;
+  overflow: hidden;
+
+  // Desktop Nav
+  ol {
+    display: flex;
+    align-items: center;
+    column-gap: 2rem;
+    margin: 0;
+    height: 100%;
+
+    li {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+  .navLink {
+    height: 100%;
+    padding: 0 1vw;
+    font-size: 3vw;
+    line-height: 1;
+    color: inherit;
+    text-align: center;
+    font-weight: 300;
+    text-transform: uppercase;
+  }
+  .navLink.active {
+    color: $gray;
+    font-style: italic;
+  }
+}
+
+// toggle button
+.nav-toggle {
+  flex-shrink: 0;
+  appearance: none;
+  border: none;
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--logo-size);
+  height: var(--logo-size);
+
+  // hamburger
+  .hamburger {
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+
+    .bar {
+      display: block;
+      width: 100%;
+      height: 4px;
+      background-color: black;
+      margin: 3px 0;
+      -webkit-transition: all 0.3s ease-in-out;
+      transition: all 0.3s ease-in-out;
+
+      &:nth-child(2) {
+        width: 50%;
+      }
+    }
+
+    &.active .bar:nth-child(2) {
+      opacity: 0;
+    }
+    &.active .bar:nth-child(1) {
+      transform: translateY(10px) rotate(45deg);
+    }
+    &.active .bar:nth-child(3) {
+      transform: translateY(-10px) rotate(-45deg);
+    }
+  }
+}
+
+/********************* 
+  Header Mobile
+  - 
+*********************/
+// @include media-breakpoint-down(xs) { ... }
+// @include media-breakpoint-down(sm) { ... }
+// @include media-breakpoint-down(md) { ... }
+// @include media-breakpoint-down(lg) { ... }
+@include media-breakpoint-down(md) {
+  #toggleNav {
+    z-index: 10;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: $primary;
+    transition: opacity 0.2s linear;
+    transform: translateY(-100%);
+    opacity: 0;
+
+    &.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .drawerNav {
+      margin-top: calc(var(--nav-h) + var(--top-h));
+
+      // Mobile Nav
+      .navLink {
+        padding: 1rem;
+        font-size: 2rem;
+      }
+    }
+  }
+
+  .topNav {
+    display: none;
+  }
+
+  .headerNav {
+    .navWrap {
+      height: calc(var(--nav-h) / 1.5);
+
+      .brand-logo,
+      .nav-toggle {
+        width: calc(var(--logo-size) / 1.125);
+        height: calc(var(--logo-size) / 1.125);
+      }
+    }
+  }
+}
+
+// @media (max-width: 991px) and (orientation: portrait) {
+// mobile
+// }

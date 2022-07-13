@@ -24,9 +24,10 @@ class Custom_Document extends Document {
             }
             integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
           />
-          <script src={"/js/bootstrap.min.js"} />
+          {/* <script src={"/js/bootstrap.min.js"} /> */}
           <script src={"/js/jquery.fancybox.min.js"} />
           <script src={"/js/wow.min.js"} />
+          <script src="https://player.vimeo.com/api/player.js" />
           <script>new WOW().init();</script>
         </body>
       </Html>

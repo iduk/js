@@ -3,7 +3,6 @@ import Head from "next/head"
 import Link from "next/link"
 import PropTypes from "prop-types"
 import Layout from "../components/layout"
-import "../components/styles/app.scss"
 
 class Projects extends React.Component {
   render() {
@@ -11,14 +10,14 @@ class Projects extends React.Component {
       <Layout title="Projects">
         <div className="container-fluid">
           <div className="row">
-            <div className="col-12 col-lg-7">
+            <div className="col-12 col-lg-8">
               <p className="headline">Projects 2009/05 - 2022/07</p>
               <p>
                 The whale, be it observed, lies almost entirely submerged,
                 excepting the immediate parts operated upon.{" "}
               </p>
             </div>
-            <div className="col-12 col-lg-5">
+            <div className="col-12 col-lg-4">
               <img
                 src="/img/000041510005.jpg"
                 className="img-fluid rounded"

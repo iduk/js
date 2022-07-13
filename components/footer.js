@@ -1,40 +1,43 @@
 import React from "react"
 import Link from "next/link"
-import "./styles/app.scss"
 
 const Footer = () => (
   <footer className="footer">
     <div className="container-fluid">
       <article className="row justify-content-between">
-        <div className="col-12 col-lg-8">
-          <h1 className="text-deco">Openfloor</h1>
-          <p className="copyright mt-3">
-            <div className="d-flex">
-              <Link to="#">
-                <a>facebook</a>
-              </Link>
-              <Link to="#">
-                <a>Blog</a>
-              </Link>
-              <Link to="#">
-                <a>Instagram</a>
-              </Link>
-              <Link to="#">
-                <a>Slack</a>
-              </Link>
+        <div className="col-12 col-lg-4">
+          <h5 className="font-weight-bolder">CONTACT US</h5>
+        </div>
+
+        <div className="col-12 col-lg-4">
+          <p className="copyright">
+            <div className="social-list">
+              <li>
+                <span>Facebook</span>
+                <p>opf.facebook</p>
+              </li>
+              <li>
+                <span>Slack</span>
+                <p>openfloor.dev.slack.com</p>
+              </li>
+              <li>
+                <span>Instagram</span>
+                <p>@openfloor_dev</p>
+              </li>
             </div>
           </p>
         </div>
 
         <div className="col-12 col-lg-4 pt-4 pt-lg-0">
-          <h1>Contact Us</h1>
-          <address className="address-text">
+          <address className="address">
             <p>lee@openfloor.kr</p>
-            <p>+82 10-1234-5678</p>
+            <p>82 10-1234-5678</p>
           </address>
-          <p className="copyright mt-5">
-            <p>© Openfloor. ALL RIGHTS RESERVED, SINCE 2005</p>
-            <p>Grind hard, shine hard. - Dwayne Johnson</p>
+          <p className="copyright">
+            <p>
+              © <b>Openfloor, Inc.</b> ALL RIGHTS RESERVED.
+            </p>
+            <p>Grind hard, shine hard.</p>
           </p>
         </div>
       </article>

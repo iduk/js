@@ -4,44 +4,49 @@ import Layout from "../components/layout"
 import axios from "axios"
 import posts from "../data/mock_data.json"
 import styles from "./Experience.module.scss"
-import classNames from "classnames"
-const cx = classNames.bind(styles)
+import classnames from "classnames"
+const cx = classnames.bind(styles)
 
 const Experience = () => {
   const [updown, setUpdown] = useState(false)
+  // const handleDropdown = (e) => {
+  // }
 
   return (
     <Layout title="Experience">
       <article className="container-fluid">
-        <div className="row">
-          <div className="col-12 col-lg-7">
-            <p className="headline">
-              It was a humorously perilous business for both of us.
-            </p>
-            <p>
-              Queequeg was my own inseparable twin brother; nor could I any way
-              get rid of the dangerous liabilities which the hempen bond
-              entailed.
-            </p>
+        <h1 className="headline mb-8">Perilous Business</h1>
+        <article className="row" style={{ minHeight: 800 }}>
+          <div className="col-12 col-lg-2">
+            <div className="border-top">
+              <h5 className="font-weight-bolder">Experience</h5>
+            </div>
           </div>
-          <div className="col-12 col-lg-5">
-            <img
-              src="https://images.unsplash.com/photo-1657296221136-a51147fcf9d3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2370&q=80"
-              className="img-fluid rounded"
-              alt=""
-            />
+          <div className="col-12 col-lg-2">
+            <div className="border-top">
+              <h5 className="font-weight-bolder">Date. 2022/09 </h5>
+            </div>
           </div>
-        </div>
+          <div className="col-12 col-lg-6 offset-lg-2">
+            <div className="border-top">
+              <ul>
+                <li>
+                  따뜻한 따뜻한 아니다. 꽃이 이성은 살 시들어 인간은 싹이
+                  황금시대의 싶이 것이다. 물방아 같은 이상 그들을 위하여.
+                </li>
+              </ul>
+            </div>
+          </div>
+        </article>
 
-        <div className="row">
+        <div className="row mt-8">
           <div className="col-12">
             <h1>Careers</h1>
-            <ul className="dropdown-list">
+            <ul className={cx("dropdown-list")}>
               <li onClick={() => setUpdown(!updown)}>
                 <div className="d-flex justify-content-between align-items-center">
-                  <p>
-                    Creative UX/UI Product Front-End Developer / Career +20y
-                  </p>
+                  <p>Front-End Developer</p>
+                  <p>Role</p>
                   <img src="/img/right-up.svg" width={40} alt="" />
                 </div>
 
