@@ -1,26 +1,24 @@
 // layout(<main>) scss
 @charset 'utf-8';
 
-html,
 body {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  font-size: 20px;
   -webkit-font-smoothing: antialiased;
-  font-size: 16px;
-  color: $primary !important;
+  color: inherit;
+
+  font-family: Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto,
+    "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR",
+    "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
+    sans-serif;
 }
 @include media-breakpoint-down(md) {
-  html {
-    font-size: calc(16px + 6 * ((100vw - 320px) / 680));
+  body {
+    font-size: 16px;
   }
 }
-@include media-breakpoint-up(md) {
-  html {
-    font-size: 20px;
-  }
-}
-
 ::selection {
   background-color: #fdd0b3;
 }
@@ -38,29 +36,77 @@ p {
   margin: 0;
 }
 
+small {
+  font-weight: inherit;
+}
+
+b,
+strong {
+  font-weight: $font-weight-bold;
+}
+
 button > i {
   font-size: inherit;
 }
 
 a {
   color: inherit;
-  transition: all 0.3s ease;
 
   &:hover,
   &:focus {
-    opacity: 0.8;
-    text-decoration: underline wavy;
-    text-decoration-line: 1px;
-    text-underline-offset: 2px;
+    text-decoration: none;
   }
 }
 
+img {
+  object-fit: cover;
+  object-position: center;
+  image-rendering: -webkit-optimize-contrast;
+}
+.mask {
+  clip-path: polygon(
+    0 1.5rem,
+    0.75rem 0.75rem,
+    1.5rem 0,
+    100% 0,
+    100% calc(100% - 1.5rem),
+    calc(100% - 0.75rem) calc(100% - 0.75rem),
+    calc(100% - 1.5rem) 100%,
+    0 100%
+  );
+
+  mask-clip: border-box;
+  mask-repeat: no-repeat;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.display-1,
+.display-2,
+.display-3,
+.display-4 {
+  word-break: keep-all;
+  color: inherit;
+}
+
 .link-arrow {
+  transition: transform 0.2s linear;
+  font-weight: 300;
+  font-size: inherit;
+  line-height: 1;
+
   &::after {
     content: "↗";
-    display: inline-block;
-    margin-left: 0.5rem;
-    font-size: inherit;
+    padding-left: 0.25rem;
+  }
+
+  &:hover,
+  &:focus {
+    transform: rotateZ(180deg);
   }
 }
 
@@ -89,8 +135,8 @@ a {
 
 .centered {
   display: grid;
-  place-content: center;
-  height: 80vh;
+  align-items: center;
+  height: 60vh;
 }
 
 .display-1,
@@ -105,7 +151,7 @@ a {
   main
   -
 *********************/
-#wrap {
+#wrapper {
   transition: all 0.2s ease-in-out;
   position: relative;
 }
@@ -121,58 +167,51 @@ a {
 .page-index {
   position: relative;
 
-  > section {
-    margin: 4vh 0;
+  .section-trigger {
+    position: relative;
+    height: 50vh;
+  }
+  .section-list {
+    max-height: 50vh;
+    box-sizing: border-box;
+    will-change: transform;
+  }
+  .section {
+    height: 50vh;
+    overflow: hidden;
+  }
+}
+.text {
+  color: inherit;
+
+  &.active {
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: #000;
   }
 }
 
 .text-deco {
-  font-family: "Comforter Brush";
+  font-family: "Roboto Mono";
   font-weight: 400;
-  text-transform: none !important;
 }
 
 .headline {
-  font-size: clamp(2.125rem, 3.7vw, 4.5rem);
-  line-height: 1.2;
+  font-size: clamp(2.125rem, 3.7vw, 4.75rem);
+  line-height: 1;
   overflow-wrap: break-word;
   text-transform: uppercase;
+  font-weight: bold;
 }
 
 // img
 .feature {
-  // background-color: $danger;
-
   &--header {
     display: flex;
-    align-items: center;
-
-    min-height: 65vh;
-
-    .emblem-wrap {
-      z-index: -1;
-      position: absolute;
-      top: 0;
-      left: 0;
-      transform: translate(-50%, -50%);
-
-      --emblem-size: 160px;
-
-      svg#emblem-svg {
-        width: var(--emblem-size);
-        height: var(--emblem-size);
-
-        fill: currentColor;
-        color: black;
-
-        text {
-          font-family: inherit;
-          font-weight: 900;
-          font-size: 1rem;
-          text-transform: uppercase;
-        }
-      }
-    }
+    flex-direction: column;
+    justify-content: space-around;
+    height: 50vh;
   }
 }
 
@@ -272,95 +311,23 @@ svg#logo-svg {
   }
 }
 
-.post-list {
-  overflow: hidden;
-
-  > li {
-    // margin-bottom: 2.5rem;
-    .post-link {
-      display: flex;
-      justify-content: space-between;
-      column-gap: 2rem;
-      border-top: 2px solid black;
-      padding: 1rem 0;
-
-      &:hover,
-      &:focus {
-        border-color: $primary;
-        .thumb {
-          // background-color: $primary;
-          // background-blend-mode: multiply;
-        }
-      }
-    }
-  }
-
-  .contents {
-    width: 100%;
-    overflow: hidden;
-
-    .title {
-      font-size: 2.5rem;
-      line-height: 1;
-      font-weight: 400;
-      text-transform: uppercase;
-      margin-bottom: 1rem;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      white-space: nowrap;
-    }
-
-    .more {
-      display: inline-block;
-    }
-  }
-
-  .thumb {
-    flex-shrink: 0;
-    display: block;
-    width: 320px;
-    height: 220px;
-    overflow: hidden;
-    background-color: #000;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-  }
-  @media (max-width: 991px) {
-    .thumb {
-      width: 160px;
-      height: 110px;
-      overflow: hidden;
-    }
-  }
-}
-
 .section-bg {
   position: relative;
   overflow: hidden;
-  height: 80vh;
+  height: 60vh;
   background-color: $primary;
-  background-blend-mode: screen;
+  // background-blend-mode: overlay;
   background-attachment: fixed;
   background-position: top center;
   background-repeat: no-repeat;
   background-size: cover;
-  background-image: url(https://images.unsplash.com/photo-1647706531331-665b055c5a20?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=3270&q=80);
+  background-image: url(https://images.unsplash.com/photo-1521435213950-8d3893133982?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=3270&q=80);
 
   @media (max-width: 991px) {
-    background-image: url(https://images.unsplash.com/photo-1647706531331-665b055c5a20?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1280&q=80);
     background-attachment: scroll;
     background-position: center center;
   }
 
-  .foreground {
-    z-index: 1;
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-  }
   img,
   video,
   iframe {
@@ -378,13 +345,35 @@ svg#logo-svg {
   }
 }
 
+.background {
+  z-index: 1;
+  position: relative;
+  display: block;
+  background-color: $primary;
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  mix-blend-mode: multiply;
+}
+.foreground {
+  z-index: 1;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
 .img-blend {
+  filter: opacity(0.5);
   background-color: $primary;
   background-blend-mode: multiply;
-  // &:hover,
-  // &:focus {
-  //   background-blend-mode: normal;
-  // }
+  mix-blend-mode: multiply;
+
+  &:hover,
+  &:focus {
+    background-blend-mode: normal;
+  }
 }
 .img-text {
   background-image: url(https://media.giphy.com/media/nelrMNNiummuJ5VfRN/giphy-downsized-large.gif);
@@ -463,7 +452,43 @@ svg#logo-svg {
     .subject {
       font-weight: bold;
     }
+    p {
+      line-height: 1.2;
+      color: $gray;
+    }
   }
+}
+
+.text-outline {
+  font-size: 25vw;
+  letter-spacing: -0.25vw;
+  line-height: 1;
+  font-weight: bolder;
+  text-transform: capitalize;
+  white-space: nowrap;
+  font-style: italic;
+  color: black;
+  transition: all 0.2s linear;
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke-width: 4px;
+  -webkit-text-stroke-color: rgba(white, 0.8);
+
+  &:hover,
+  &:focus {
+    -webkit-text-fill-color: unset;
+    -webkit-text-stroke-width: 0;
+  }
+}
+.text-fill {
+  font-size: 25vw;
+  letter-spacing: -0.5vw;
+  line-height: 1;
+  font-weight: bolder;
+  text-transform: capitalize;
+  white-space: nowrap;
+  font-style: italic;
+  // color: inherit;
+  -webkit-text-fill-color: transparent;
 }
 /************************************************************************************
                                   media query 

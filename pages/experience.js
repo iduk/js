@@ -1,208 +1,293 @@
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
 import Link from "next/link"
 import Layout from "../components/layout"
 import axios from "axios"
 import posts from "../data/mock_data.json"
+import { gsap, Power1, Power2 } from "gsap"
+import { ScrollTrigger } from "gsap/dist/ScrollTrigger"
 
-const list = [
-  {
-    id: 1,
-    dataTitle: "올리브영 PDA 매장관리시스템",
-    dataTask: "Co-location",
-    client: "OliveYoung",
-  },
-  {
-    id: 2,
-    dataTitle: "SAMSUNG  Configuration Management System",
-    dataTask: "Co-location",
-    client: "SAMSUNG",
-  },
-  {
-    id: 3,
-    dataTitle: "Naver Webtoon Contents",
-    dataTask: "Co-location",
-    client: "NAVER",
-  },
-  {
-    id: 4,
-    dataTitle: "Suwon Water 통합솔루션개발",
-    dataTask: "Co-location",
-    client: "SUWON",
-  },
-  {
-    id: 5,
-    dataTitle: "OliveYoung PDA Integrated System",
-    dataTask: "Co-location",
-    client: "NAVER",
-  },
-]
+gsap.registerPlugin(ScrollTrigger)
 
 const Experience = () => {
-  const [updown, setUpdown] = useState(false)
-  // const handleDropdown = (e) => {
-  // }
+  const [visible, setVisible] = useState(null)
+
+  const handleToggle = (index) => {
+    if (visible === index) {
+      return setVisible(null)
+    }
+    setVisible(index)
+  }
+
+  useEffect(() => {
+    // test
+    // let fadeInTimeline = gsap.timeline({
+    //   scrollTrigger: {
+    //     trigger: ".gsap-intro",
+    //     start: "center 80%",
+    //     end: "center 50%",
+    //     toggleActions: "play reverse restart reverse",
+    //     scrub: true,
+    //     markers: true,
+    //   },
+    // })
+
+    // let fadeOutTimeline = gsap.timeline({
+    //   scrollTrigger: {
+    //     trigger: ".gsap-intro",
+    //     start: "center 30%",
+    //     end: "center -20%",
+    //     toggleActions: "play reverse restart reverse",
+    //     scrub: true,
+    //   },
+    // })
+
+    // fadeInTimeline.fromTo(
+    //   ".gsap-intro",
+    //   { y: "-20%", autoAlpha: 0 },
+    //   { y: "0%", autoAlpha: 1 }
+    // )
+
+    // fadeOutTimeline.fromTo(
+    //   ".gsap-intro",
+    //   { y: "0%", autoAlpha: 1 },
+    //   { y: "40%", autoAlpha: 0 }
+    // )
+
+    // gsap scrollTrigger
+
+    gsap.utils.toArray(".section-wrapper").forEach((section) => {
+      const elems = section.querySelectorAll("section")
+
+      gsap.set(elems, {
+        duration: 1,
+        y: 50,
+        opacity: 0,
+        ease: Power2,
+        overwrite: "auto",
+      })
+
+      ScrollTrigger.create({
+        trigger: section,
+        start: "top 60%",
+        // end: "bottom 90%",
+        yoyo: true,
+        markers: false,
+        pin: false,
+
+        onEnter: () =>
+          gsap.to(elems, {
+            y: 0,
+            opacity: 1,
+            stagger: 0.15,
+          }),
+        onLeave: () =>
+          gsap.to(elems, {
+            y: -100,
+            opacity: 0,
+            stagger: 0.15,
+          }),
+        onEnterBack: () =>
+          gsap.to(elems, {
+            y: 0,
+            opacity: 1,
+            stagger: -0.15,
+          }),
+        onLeaveBack: () =>
+          gsap.to(elems, {
+            y: 100,
+            opacity: 0,
+            stagger: -0.15,
+          }),
+      })
+    })
+  }, [])
 
   return (
-    <Layout title="Experience">
-      <section className="container-fluid page-experience">
-        <h1 className="display-1 mb-6">Openfloor Space</h1>
-
-        {/* Title */}
-        <div className="row">
-          <div className="col-12 col-lg-4">
-            <section className="mb-6">
-              <h6 className="border-bottom py-2">About</h6>
-              <p>
-                Art direction, Graphic design, Branding, Trend Forecasting,
-                Development TroubleShooting
-              </p>
-            </section>
-            <section className="mb-6">
-              <h6 className="border-bottom py-2">Role</h6>
-              <p className="mb-3">
-                Art direction, Graphic design, Branding, Trend Forecasting,
-                Development TroubleShooting
-              </p>
-
-              <div className="small" style={{ fontStyle: "italic" }}>
-                <p>- Creative Team</p>
-                <a className="mr-1" href="#">
-                  @Mr_Son
-                </a>
-                <a className="mx-1" href="#">
-                  @LimCharJang
-                </a>
-                <a className="mx-1" href="#">
-                  @SunJu_drink
-                </a>
-                <a className="mx-1" href="#">
-                  @Xenon
-                </a>
-                <a className="mx-1" href="#">
-                  @iDuk
-                </a>
-              </div>
-            </section>
-          </div>
-
-          <div className="col-12 col-lg-8">
-            <h6 className="border-bottom py-2">Client</h6>
-
-            <ul className="">
-              {list.map((item) => (
-                <li
-                  key={item.id}
-                  className="d-flex align-items-center border-bottom border-light py-2 text-left"
-                >
-                  <div className="flex-shrink-0 w-20">
-                    <b>{item.client}</b>
-                  </div>
-                  <div>
-                    <p className="display-4">{item.dataTitle}</p>
-                    <p>
-                      <small className="badges badge mr-1">#uxui</small>
-                      <small className="badges badge mr-1">#javascript</small>
-                    </p>
-                  </div>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </div>
-
-        {/* <div className="row mt-8">
-          <div className="col-12">
-            <h1>Careers</h1>
-            <ul className={"dropdown-list"}>
-              <li onClick={() => setUpdown(!updown)}>
-                <div className="d-flex justify-content-between align-items-center">
-                  <p>Front-End Developer</p>
-                  <p>Role</p>
-                  <img src="/img/right-up.svg" width={40} alt="" />
-                </div>
-
-                {updown ? (
-                  <div className="dropdown-content">
-                    <p>경력10년이상</p>
-                    <p>스킬 세부설명</p>
-                  </div>
-                ) : (
-                  ""
-                )}
-              </li>
-              <li onClick={() => setUpdown(!updown)}>
-                <div className="d-flex justify-content-between align-items-center">
-                  <p>
-                    Creative UX/UI Product Front-End Developer / Career +20y
-                  </p>
-                  <img src="/img/right-up.svg" width={40} alt="" />
-                </div>
-
-                {updown ? (
-                  <div className="dropdown-content">
-                    <p>경력10년이상</p>
-                    <p>스킬 세부설명</p>
-                  </div>
-                ) : (
-                  ""
-                )}
-              </li>
-              <li onClick={() => setUpdown(!updown)}>
-                <div className="d-flex justify-content-between align-items-center">
-                  <p>
-                    Creative UX/UI Product Front-End Developer / Career +20y
-                  </p>
-                  <img src="/img/right-up.svg" width={32} alt="" />
-                </div>
-
-                {updown ? (
-                  <div className="dropdown-content">
-                    <p>경력10년이상</p>
-                    <p>스킬 세부설명</p>
-                  </div>
-                ) : (
-                  ""
-                )}
-              </li>
-            </ul>
-          </div>
-        </div> */}
+    <Layout title="Experience" theme="experience">
+      <section className="container">
+        <h1 className="display-1 text-uppercase">Experience</h1>
       </section>
+
+      <div className="section-wrapper">
+        <section className="container mt-6">
+          <article className="row no-gutters justify-content-between">
+            <div className="col-6 col-lg-2 pb-4">
+              <h5 className="text-uppercase">Since</h5>
+              <p>2007/05/24</p>
+            </div>
+            <div className="col-6 col-lg-2 pb-4">
+              <h5 className="text-uppercase">Tech Stack</h5>
+              <p>Branding, Trend Forecasting, IoT/AoT</p>
+            </div>
+            <div className="col-12 col-lg-6 pb-4">
+              <h5 className="text-uppercase">What we do</h5>
+              <p>
+                급속도로 성장해나가고 있는 서비스를 밀착해서 지원하는 경영지원
+                업무는 루틴한 업무의 반복이 아니라 매순간의 창의성과 순발력을
+                필요로하는 업무입니다 언제나 새로움과 재미를 만나 팀과 함께
+                지속가능한 성장이 이루어지도록
+              </p>
+
+              {/* img */}
+              <div className="mt-6">
+                <img
+                  className="img-fluid mask"
+                  src="/img/000041510005.jpg"
+                  alt="img"
+                />
+                <small className="text-muted pt-1">
+                  © Photographer By. <span className="font-italic">iDuk</span>
+                </small>
+              </div>
+            </div>
+          </article>
+        </section>
+
+        {/* Intro */}
+        <section className="container mt-8">
+          <h6 className="text-uppercase">Goal Oriented</h6>
+          <article className="row no-gutters justify-content-between py-4 border-top">
+            <div className="col-12 col-lg-3">
+              <h2 className="pb-3 pb-lg-0">
+                Trend Forecasting, <br />
+                IT Industry Inc.
+              </h2>
+            </div>
+            <div className="col-12 col-lg-6">
+              <p>
+                사내공모제도 (Open Career Chance: OCC) 회사 내 다른 조직의
+                업무에 도전할 수 있는 기회를 열어 두고 있습니다. 개인에게는
+                새로운 커리어를 찾아 성장할 기회가, 회사로서는 새로운 시너지를
+                내는 기회가 됩니다. 충원이 필요한 조직이 모집 공고를 내면
+                지원자는 익명으로 서류 심사 및 면접을 통해 조직을 이동할 수
+                있습니다.
+              </p>
+            </div>
+          </article>
+        </section>
+
+        {/* Role */}
+        <section className="container mt-8">
+          <h6 className="text-uppercase">Build Up</h6>
+          <article className="row no-gutters justify-content-between py-4 border-top">
+            <div className="col-12 col-lg-3">
+              <h2 className="pb-3 pb-lg-0">
+                Fly me to the moon, Let me play among the stars
+              </h2>
+            </div>
+            <div className="col-12 col-lg-6">
+              <ul className="data-list">
+                {list.map((item) => (
+                  <li key={item.id} className="row no-gutters">
+                    <h6 className="col-3 col-lg-2">{item.date}</h6>
+                    <div className="col-9 col-lg-10 px-0 px-lg-auto text-md">
+                      <p>{item.content1}</p>
+                      <p>{item.content2}</p>
+                      <p>{item.content3}</p>
+                    </div>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </article>
+        </section>
+
+        {/* Careers */}
+        <section className="container my-6">
+          <h1 className="display-1">Careers</h1>
+          <article className="row no-gutters">
+            <div className="col-12 col-lg-12">
+              <ul className={"dropdown-wrap"}>
+                {careers.map((item, index) => (
+                  <li
+                    key={index}
+                    className={`row no-gutters align-items-baseline py-1 py-lg-3 ${
+                      visible === index ? "open" : ""
+                    }`}
+                    onClick={() => handleToggle(index)}
+                  >
+                    <div className="col-10 col-lg-6">
+                      <p className="m-0">{item.title}</p>
+                    </div>
+                    <div className="col-12 col-lg-6">
+                      <h6 className="m-0 p-0">{item.position}</h6>
+
+                      <div className="dropdown-content">
+                        <dl className="detail m-0">
+                          <dt className="pt-1">주요업무</dt>
+                          <dd>Java Spring Boot 기반 Restful API 설계</dd>
+                          <dd>
+                            mybatis 및 MS-SQL 쿼리/프로시저 개발 및 연동 경험
+                          </dd>
+                          <dd>서버개발 및 운영(DevOps)</dd>
+                        </dl>
+
+                        <hr />
+
+                        <dl className="detail m-0">
+                          <dt className="pt-1">우대사항</dt>
+                          <dd>
+                            구현과 문제 해결을 위한 다양한 고민과 R&D를 함께
+                            수행하실 분
+                          </dd>
+                          <dd>
+                            마이크로 서비스 아키텍처에 대한 높은 이해도를 가지신
+                            분
+                          </dd>
+                        </dl>
+                      </div>
+                    </div>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </article>
+        </section>
+      </div>
     </Layout>
   )
 }
 
 export default Experience
 
-// const PostList = () => {
-//   // 최근 5개
-//   const postsLatest = posts.slice(0, 4)
+const list = [
+  {
+    id: 1,
+    date: "2022",
+    content1: "올리브영 PDA 매장관리시스템",
+    content2: "SAMSUNG Configuration Management System",
+    content3: "Naver Webtoon Contents",
+    content4: "Suwon water 관망/관리시스템 고도화",
+  },
+  {
+    id: 2,
+    date: "2019",
+    content1: "KakaoBank 통합인증시스템 개선",
+    content2: "CarParking App Manager",
+    content3: "Naver Webtoon Contents",
+  },
+  {
+    id: 3,
+    date: "2017",
+    content1: "SmartFarm ioT System YANGDON",
+  },
+]
 
-//   return (
-//     <ol className="post-list">
-//       {postsLatest.map((post, index) => (
-//         <li key={post.id}>
-//           <a className="post-link" href="#">
-//             <span
-//               className="thumb"
-//               style={{
-//                 backgroundImage: `url(${post.thumbImg})`,
-//               }}
-//             />
-//             <div className="contents">
-//               <small className="mt-2">
-//                 {post.date} ⋅ {post.skill}
-//               </small>
-//               <h1 className="title">{post.title}</h1>
-//               <p className="desc small">{post.desc}</p>
-
-//               <div className="text-right">
-//                 <img src="/img/right-up.svg" width={24} alt="" />
-//               </div>
-//             </div>
-//           </a>
-//         </li>
-//       ))}
-//     </ol>
-//   )
-// }
+const careers = [
+  {
+    title: "2022 Software Development 채용",
+    position: "DevOps",
+  },
+  {
+    title: "iOS/aOS 운영 개발 채용",
+    position: "Back-End",
+  },
+  {
+    title: "2022 하반기 개발자 정규직 상시채용",
+    position: "PMO",
+  },
+  {
+    title: "2022 하반기 개발자 정규직 상시채용",
+    position: "UX/UI",
+  },
+]

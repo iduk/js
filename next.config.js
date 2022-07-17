@@ -72,11 +72,13 @@ module.exports = withCSS(
     },
   }),
   withImages({
+    name: "[name].[hash:base64:5].[ext]",
     webpack(config, options) {
       return config
     },
   }),
   withFonts({
+    name: "[name].[hash:base64:5].[ext]",
     webpack(config, options) {
       return config
     },

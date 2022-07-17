@@ -6,55 +6,46 @@ import React, {
   useEffect,
   useCallback,
 } from "react"
-import ActiveLink from "./ActiveLink"
 import Link from "next/link"
 import { useRouter } from "next/router"
-import Marquee from "react-fast-marquee"
-import { gsap } from "gsap"
-import { ScrollTrigger } from "gsap/dist/ScrollTrigger"
-gsap.registerPlugin(ScrollTrigger)
 import { NavLink } from "react-router-dom"
-
+import Marquee from "react-fast-marquee"
+import Logo from "../public/img/symbol.svg"
 const menulist = [
-  { id: "nav1", path: "/experience", title: "experience" },
-  { id: "nav2", path: "/projects", title: "projects" },
+  { id: "nav1", path: "/", title: "Index" },
+  { id: "nav2", path: "/experience", title: "experience" },
+  { id: "nav3", path: "/projects", title: "projects" },
   // { pathname: "contact" },
 ]
-
-function useSelector() {
-  const ref = useRef()
-  const q = useMemo(() => gsap.utils.selector(ref), [ref])
-  return [q, ref]
-}
 
 const Header = (props) => {
   const router = useRouter()
   const [collapsed, setCollapsed] = useState(false)
-  const [q, ref] = useSelector()
-  const [showBox, setShowBox] = useState(true)
-
   const toggleNavbar = () => setCollapsed(!collapsed)
 
-  const timeline = gsap.timeline({ yoyo: true })
+  // const [pagePos, setPagePos] = useState(window.pageYOffset)
+  // const [visible, setVisible] = useState(true)
 
-  useEffect(() => {
-    // ScrollTrigger.create({
-    //   start: "top -100",
-    //   end: 99999,
-    //   toggleClass: {
-    //     className: "navWrap--scroll",
-    //     targets: ".navWrap",
-    //   },
-    // })
-    // gsap.to(".navWrap", {
-    //   ease: "none",
-    // }) // gsap
-  }, [])
+  // useEffect(() => {
+  //   const handleScroll = () => {
+  //     let windowY = window.pageYOffset
+
+  //     setVisible(pagePos > windowY)
+  //     setPagePos(windowY)
+  //   }
+
+  //   window.addEventListener("scroll", handleScroll)
+  //   return () => {
+  //     window.removeEventListener("scroll", handleScroll)
+  //   }
+  // })
+
+  // const scrollVisible = visible ? "" : "hide"
 
   return (
     <Fragment>
-      <header className={`headerNav ${collapsed ? "headerNav--active" : ""}`}>
-        <div className={`topbar`}>
+      <header className={`globalNav ${collapsed ? "open" : ""}`}>
+        <div className={`topbar d-none`}>
           <Marquee gradient={false} speed={30}>
             <div className="mq-topbar bg-primary text-light">
               <span>Let's Get it Started!</span>
@@ -78,26 +69,20 @@ const Header = (props) => {
             </div>
           </Marquee>
         </div>
-
-        <div className="container-fluid">
+        <div className="container">
           <nav className="navWrap">
             {/* logo */}
             <Link href="/index">
               <a className="brand-logo" title="Openfloor">
-                <img src="/img/symbol.svg" alt="Openfloor Logo" />
+                <Logo />
               </a>
             </Link>
 
-            {/* Desktop Menu */}
-            <div id="navbar" className="topNav">
-              <Navs />
-            </div>
-
-            {/* Mobile > Menu Toggle */}
+            {/* Mobile Nav Toggle */}
             <button
-              onClick={() => toggleNavbar()}
               type="button"
-              className="d-inline-block d-lg-none m-0 nav-toggle"
+              onClick={() => toggleNavbar()}
+              className="btn nav-toggle"
             >
               <div className={`hamburger ${collapsed ? "active" : ""}`}>
                 <span className="bar"></span>
@@ -105,20 +90,14 @@ const Header = (props) => {
                 <span className="bar"></span>
               </div>
             </button>
+
+            {/* Desktop Menu */}
+            <div className="topNav">
+              <Navs />
+            </div>
           </nav>
         </div>
       </header>
-
-      {/* SideDrawer 작업대기 */}
-
-      <aside
-        id="toggleNav"
-        className={`d-lg-none ${collapsed ? "active" : ""}`}
-      >
-        <div className="drawerNav">
-          <Navs />
-        </div>
-      </aside>
     </Fragment>
   )
 }

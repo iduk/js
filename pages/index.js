@@ -2,14 +2,13 @@ import React, { useRef, useEffect, useState, useMemo } from "react"
 import Layout from "../components/layout"
 import ActiveLink from "../components/ActiveLink"
 import { loadGetInitialProps } from "next/dist/next-server/lib/utils"
-import { gsap, Power1, ScrollTrigger } from "gsap"
-import { MotionPathPlugin } from "gsap/dist/MotionPathPlugin"
 import TextLoop from "react-text-loop"
 import axios from "axios"
 import posts from "../data/mock_data.json"
 import Marquee from "react-fast-marquee"
-
-gsap.registerPlugin(MotionPathPlugin)
+import { gsap, Power1, Power2 } from "gsap"
+import { ScrollTrigger } from "gsap/dist/ScrollTrigger"
+gsap.registerPlugin(ScrollTrigger)
 
 const Logos = [
   { id: "logo1", img: "/img/logo-amazon.svg", name: "amazon" },
@@ -19,130 +18,186 @@ const Logos = [
   { id: "logo5", img: "/img/logo-nodejs.svg", name: "nodejs" },
 ]
 
-function useSelector() {
-  const ref = useRef()
-  const q = useMemo(() => gsap.utils.selector(ref), [ref])
-  return [q, ref]
-}
-
 // index
 function Index() {
-  const [q, ref] = useSelector()
-  const [showBox, setShowBox] = useState(true)
-
-  const timeline = gsap.timeline({ yoyo: true })
+  const list = [{ id: 0 }, { id: 1 }, { id: 2 }, { id: 3 }]
+  const postsList = posts.slice(0, 4)
 
   useEffect(() => {
-    gsap.to("#emblem-svg", {
-      duration: 10,
-      rotation: 180,
-      repeat: -1,
-      ease: Power1.easeInOut,
+    // gsap scrollTrigger
+    gsap.utils.toArray(".page-index").forEach((section) => {
+      const elems = section.querySelectorAll("section")
+
+      gsap.set(elems, {
+        y: 50,
+        opacity: 0,
+        duration: 1,
+        ease: "Power2.linear",
+        overwrite: "auto",
+      })
+
+      ScrollTrigger.create({
+        trigger: section,
+        start: "top 80%",
+        end: "bottom 10%",
+        yoyo: true,
+        markers: false,
+        pin: false,
+
+        onEnter: () =>
+          gsap.to(elems, {
+            y: 0,
+            opacity: 1,
+            stagger: 0.15,
+          }),
+        onLeave: () =>
+          gsap.to(elems, {
+            y: -100,
+            opacity: 0,
+            stagger: 0.15,
+          }),
+        onEnterBack: () =>
+          gsap.to(elems, {
+            y: 0,
+            opacity: 1,
+            stagger: -0.15,
+          }),
+        onLeaveBack: () =>
+          gsap.to(elems, {
+            y: 100,
+            opacity: 0,
+            stagger: -0.15,
+          }),
+      })
     })
   }, [])
-
-  const list = [{ id: 0 }, { id: 1 }, { id: 2 }, { id: 3 }]
-
-  const postsList = posts.slice(0, 4)
 
   return (
     <Layout title="Openfloor">
       {/* index page */}
-      <div className="page-index" ref={ref}>
+      <div className="page-index">
         {/* intro */}
         <section className="feature">
-          <div className="feature--header">
-            <article className="container-fluid">
-              <div className="row">
-                <div className="col-12 col-lg-12">
-                  {/* <p className="headline text-deco pb-4">Openfloor</p> */}
-                  <p className="headline font-weight-normal text-gray">
-                    We can create anything.
-                  </p>
-                  <p className="headline font-weight-normal text-gray">
-                    with great great skill.
-                  </p>
-                  <p className="headline font-weight-normal d-md-block ">
-                    <span className=" text-gray">Feel free to make&nbsp;</span>
-                    <span className="font-weight-bolder">
-                      <TextLoop mask={true}>
-                        <span>#Multi-Platform</span>
-                        <span>#Control Devices</span>
-                        <span>#IoT System</span>
-                        <span>#Troubleshoot</span>
-                      </TextLoop>
-                    </span>
-                  </p>
-                </div>
+          <div className="container">
+            <div className="feature--header">
+              {/* 1 */}
+              <div>
+                <p className="h5 text-uppercase">Award 2023</p>
+                <p className="headline text-uppercase">
+                  OPENFLOOR’s Webb Space Telescope Reveals Astounding,
+                  Unprecedented Views of the Universe
+                </p>
               </div>
-            </article>
+              {/* \\ */}
+
+              {/* 2 */}
+              <div className="py-2">
+                <h5>© New OPENFLOOR 2023 </h5>
+              </div>
+              {/* \\ */}
+            </div>
           </div>
         </section>
 
-        <section className="container-fluid">
-          <ul className="dense-row align-content-stretch">
-            <li className="col-12 col-lg-8">
-              <div className="section-bg rounded-lg">
-                <div className="foreground">텍스트이펙트넣기</div>
-              </div>
-            </li>
-            <li className="col-12 col-lg-4 mt-4 mt-lg-0">
-              <div className="section-bg rounded-lg">
-                <div className="centered text-center rounded-lg bg-light">
-                  <p className="h4 mb-3">What we do.</p>
-                  <p className="display-2 font-weight-normal">
-                    <span className="badge badge-pill border m-1">
-                      TroubleShooter
-                    </span>
-                    <span className="badge badge-pill border m-1">Team</span>
-                  </p>
+        {/* image list */}
+        <section className="container-fluid my-4">
+          <ul className="row align-content-stretch">
+            <li className="col-12 col-lg-12">
+              <div className="section-bg mask">
+                <div className="foreground text-center">
+                  <p className="text-outline">Openfloor Openfloor</p>
+                  <p className="text-fill">Openfloor</p>
                 </div>
               </div>
             </li>
           </ul>
         </section>
 
-        {/* <section className="container-fluid">
-          <div className="row">
-            <div className="col-12 col-lg-12">
-              <div className="centered text-center rounded-lg bg-light">
-                <p className="h4 mb-4">What we do.</p>
-                <p className="headline font-weight-normal">
-                  <span className="badge badge-pill border m-1">
-                    TroubleShooter
-                  </span>
-                  <span className="badge badge-pill border m-1">Team</span>
-                </p>
+        <section className="container-fluid my-4">
+          <article className="row no-gutters">
+            <div className="col-12 col-lg-4">
+              <div className="p-6 mask bg-black text-white">
+                <p className="h4">what we work.</p>
+                <div
+                  className="display-2 d-flex align-items-center"
+                  style={{ height: "35vh" }}
+                >
+                  <p className="display-2 text-center py-3">
+                    <span className="badge badge-pill border m-1">
+                      Technology
+                    </span>
+                    <span className="badge badge-pill border m-1">
+                      Innovation
+                    </span>
+                    <span className="badge badge-pill border m-1">
+                      Affection
+                    </span>
+                  </p>
+                  <p></p>
+                </div>
               </div>
             </div>
-          </div>
-        </section> */}
+            <div className="col-12 col-lg-4">
+              <div className="p-6 mask bg-black text-white">
+                <p className="h4">what we work.</p>
+                <div
+                  className="display-2 text-center d-flex align-items-center justify-content-center"
+                  style={{ height: "35vh" }}
+                >
+                  <p className="display-2 text-center py-3">
+                    <span className="badge badge-pill  border m-1">
+                      Technology
+                    </span>
+                    <span className="badge badge-pill border m-1">
+                      Innovation
+                    </span>
+                    <span className="badge badge-pill border m-1">
+                      Affection
+                    </span>
+                  </p>
+                  <p></p>
+                </div>
+              </div>
+            </div>
+            <div className="col-12 col-lg-4">
+              <div className="p-6 mask bg-black text-white">
+                <p className="h4">what we work.</p>
+                <div
+                  className="display-2 text-center d-flex align-items-center justify-content-center"
+                  style={{ height: "35vh" }}
+                >
+                  <p className="display-2 text-center py-3">
+                    <span className="badge badge-pill  border m-1">
+                      Technology
+                    </span>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </article>
+        </section>
 
-        <section className="container-fluid py-6">
-          <div className="d-flex justify-content-between align-items-baseline mb-3">
+        <section className="container py-8">
+          <header className="d-flex justify-content-between align-items-baseline mb-4 ">
             <h1 className="headline">Performance</h1>
-            <a
-              href="#"
-              className="flex-shrink-0 headline font-weight-light link-arrow"
-            ></a>
-          </div>
-          <ul className="dense-row items-list">
+          </header>
+
+          <ul className="row items-list">
             {postsList.map((item) => (
               <li key={item.index} className="col-12 col-md-6 col-lg-3 item">
                 <div className="contents mb-4 mb-lg-0">
-                  <span className="thumb mb-1">
+                  <span className="thumb mask mb-3">
                     <img
-                      sizes="(min-width: 1024px) 25vw, (min-width: 768px) 50vw, 100vw"
-                      src="https://images.unsplash.com/photo-1586953208270-767889fa9b0e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1920&q=80 1920w, https://images.unsplash.com/photo-1586953208270-767889fa9b0e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=640&q=80 640w"
-                      className="img-fluid rounded"
+                      src="https://picsum.photos/480/640?random"
+                      width={480}
+                      height={640}
+                      className="img-fluid"
                       alt=""
                     />
                   </span>
-                  <small className="badge badge-pill border my-2">
-                    {item.skill}
-                  </small>
                   <h4 className="subject">{item.title}</h4>
                   <p>{item.desc}</p>
+                  <small className="mt-4">#{item.skill}</small>
                 </div>
               </li>
             ))}

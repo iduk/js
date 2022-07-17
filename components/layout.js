@@ -12,9 +12,17 @@ const Layout = (props) => (
       />
 
       <link
+        rel="stylesheet"
+        as="style"
+        crossOrigin={true}
+        href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.4/dist/web/static/pretendard.css"
+      />
+
+      <link
         href="https://fonts.googleapis.com/css?family=Noto+Sans+KR:wght@300;400;500;700&display=swap"
         rel="stylesheet"
       />
+
       <link
         href="https://api.mapbox.com/mapbox-gl-js/v0.51.0/mapbox-gl.css"
         rel="stylesheet"
@@ -30,9 +38,8 @@ const Layout = (props) => (
       <meta charSet="utf-8" />
     </Head>
 
-    <div id="wrap">
+    <div id="wrapper" className={`page--${props.theme}`}>
       <Header />
-
       <main className="main">{props.children}</main>
       <Footer />
     </div>

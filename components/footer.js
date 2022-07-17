@@ -3,7 +3,7 @@ import Link from "next/link"
 
 const Footer = () => (
   <footer className="footer border-top">
-    <div className="container-fluid">
+    <div className="container">
       <article className="row justify-content-between">
         <div className="col-12 col-lg-4">
           <h5 className="font-weight-bolder">CONTACT US</h5>
@@ -35,7 +35,7 @@ const Footer = () => (
           </address>
           <p className="copyright">
             <p>
-              © <b>Openfloor, Inc.</b> ALL RIGHTS RESERVED.
+              © <strong>Openfloor, Inc.</strong> ALL RIGHTS RESERVED.
             </p>
             <p>Grind hard, shine hard.</p>
           </p>

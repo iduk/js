@@ -1,14 +1,15 @@
-const env = require('./env-config')
+const env = require("./env-config")
 
 module.exports = {
-  presets: ['next/babel'],
+  presets: ["next/babel"],
   plugins: [
-		['transform-define', env],
-		[
-			"wrap-in-js",
-			{
-				"extensions": ["css$"]
-			}
-		]
-	],
+    ["transform-define", env],
+    [
+      "wrap-in-js",
+      {
+        extensions: ["css$"],
+      },
+    ],
+    "inline-react-svg",
+  ],
 }

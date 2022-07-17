@@ -4,10 +4,11 @@ import { PageTransition } from "next-page-transitions"
 import Loader from "../components/Loader"
 import { Router } from "next/router"
 import "../styles/global.scss"
+import dynamic from "next/dynamic"
 
 const TIMEOUT = 150
 
-export default class MyApp extends App {
+class MyApp extends App {
   static async getInitialProps({ Component, ctx }) {
     let pageProps = {}
 
@@ -66,3 +67,7 @@ export default class MyApp extends App {
     )
   }
 }
+
+export default dynamic(() => Promise.resolve(App), {
+  ssr: false,
+})

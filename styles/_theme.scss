@@ -11,7 +11,7 @@
 /* colors */
 $dark: #262c40;
 $blue: #254da8;
-$red: #d33737;
+$red: #ce2323;
 $yellow: #f3b816;
 $green: #62d8ae;
 $orange: #f67d18;
@@ -60,7 +60,7 @@ $colors: map-merge(
   $colors
 );
 
-$primary: $red;
+$primary: $black;
 $secondary: $black;
 $info: $blue;
 $success: $green;
@@ -174,8 +174,8 @@ $sizes: map-merge(
 //
 // Settings for the `<body>` element.
 
-$body-bg: $white;
-$body-color: $gray-900;
+$body-bg: $light;
+$body-color: "";
 
 // Links
 //
@@ -203,42 +203,35 @@ $grid-breakpoints: (
   xs: 0,
   sm: 576px,
   md: 768px,
-  lg: 992px,
-  xl: 1400px,
+  lg: 1024px,
+  xl: 1500px,
 );
 
 @include _assert-ascending($grid-breakpoints, "$grid-breakpoints");
 @include _assert-starts-at-zero($grid-breakpoints, "$grid-breakpoints");
 
-// Grid containers
-//
-// Define the maximum width of `.container` for different screen sizes.
-
 $container-max-widths: (
   sm: 540px,
   md: 720px,
   lg: 960px,
-  xl: 1320px,
+  xl: 1420px,
 );
 
 @include _assert-ascending($container-max-widths, "$container-max-widths");
 
 // Grid columns
-//
-// Set the number of columns and specify the width of the gutters.
 
 $grid-columns: 12;
-$grid-gutter-width: 8vw;
+$grid-gutter-width: 2rem;
 $grid-row-columns: 6;
 
 // Components
-//
-// Define common padding and border radius sizes and more.
 
-$line-height-lg: 1.3;
-$line-height-sm: 1.3;
+$line-height-base: 1.5;
+$line-height-lg: 1.5;
+$line-height-sm: 1.5;
 
-$border-width: 2px;
+$border-width: 1px;
 $border-color: $primary;
 
 $border-radius: 1.5rem;
@@ -286,14 +279,12 @@ $font-size-base: 1rem; // Assumes the browser default, typically `16px`
 $font-size-lg: $font-size-base * 1.25;
 $font-size-sm: $font-size-base * 0.875;
 
+$font-weight-base: $font-weight-normal;
 $font-weight-lighter: lighter;
 $font-weight-light: 300;
 $font-weight-normal: 400;
-$font-weight-bold: 500;
-$font-weight-bolder: 700;
-
-$font-weight-base: $font-weight-normal;
-$line-height-base: 1.4;
+$font-weight-bold: 700;
+$font-weight-bolder: 900;
 
 $h1-font-size: $font-size-base * 2.5;
 $h2-font-size: $font-size-base * 2;
@@ -304,9 +295,9 @@ $h6-font-size: $font-size-base;
 
 $headings-margin-bottom: $spacer / 2;
 $headings-font-family: null;
-$headings-font-weight: 900;
-$headings-line-height: 1.3;
-$headings-color: $primary;
+$headings-font-weight: 700;
+$headings-line-height: 1.2;
+$headings-color: null;
 
 // 최소 기준점 최대
 $display1-size: clamp(50px, 3vw, 72px);
@@ -314,14 +305,14 @@ $display2-size: clamp(44px, 2.7vw, 64px);
 $display3-size: clamp(32px, 2.7vw, 48px);
 $display4-size: clamp(24px, 2.2vw, 20px);
 
-$display1-weight: 600;
-$display2-weight: 600;
-$display3-weight: 600;
-$display4-weight: 600;
+$display1-weight: 700;
+$display2-weight: 700;
+$display3-weight: 700;
+$display4-weight: 700;
 $display-line-height: $headings-line-height;
 
-$lead-font-size: $font-size-base * 1.25;
-$lead-font-weight: 400;
+$lead-font-size: $font-size-base * 1.5;
+$lead-font-weight: 500;
 
 $small-font-size: 80%;
 
@@ -329,7 +320,7 @@ $text-muted: $gray-500;
 
 $blockquote-small-color: $gray-600;
 $blockquote-small-font-size: $small-font-size;
-$blockquote-font-size: $font-size-base * 1.25;
+$blockquote-font-size: $font-size-base * 1.3;
 
 $hr-border-color: rgba($black, 0.1);
 $hr-border-width: $border-width;
