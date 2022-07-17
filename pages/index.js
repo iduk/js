@@ -116,7 +116,7 @@ function Index() {
         <section className="container-fluid my-4">
           <article className="row no-gutters">
             <div className="col-12 col-lg-4">
-              <div className="p-6 mask bg-black text-white">
+              <div className="p-4 mask bg-black text-white">
                 <p className="h4">what we work.</p>
                 <div
                   className="display-2 d-flex align-items-center"
@@ -138,7 +138,7 @@ function Index() {
               </div>
             </div>
             <div className="col-12 col-lg-4">
-              <div className="p-6 mask bg-black text-white">
+              <div className="p-4 mask bg-black text-white">
                 <p className="h4">what we work.</p>
                 <div
                   className="display-2 text-center d-flex align-items-center justify-content-center"
@@ -160,7 +160,7 @@ function Index() {
               </div>
             </div>
             <div className="col-12 col-lg-4">
-              <div className="p-6 mask bg-black text-white">
+              <div className="p-4 mask bg-black text-white">
                 <p className="h4">what we work.</p>
                 <div
                   className="display-2 text-center d-flex align-items-center justify-content-center"
