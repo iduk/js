@@ -4,9 +4,14 @@
 *********************/
 .footer {
   border-top: 1px solid $primary;
+  background-color: $primary;
   position: relative;
   color: inherit;
   padding: 4vh 0;
+
+  > * {
+    color: white;
+  }
 
   .social-list {
     li {
