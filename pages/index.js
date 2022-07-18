@@ -133,24 +133,24 @@ function Index() {
         </section>
 
         {/* image list */}
-        <section className="centered">
+        <section className="grid-50">
           {/* back */}
           <div className="container-fluid background my-6">
             <article className="row no-gutters">
               <div
-                className="col-12 col-md-6 border centered section-bg"
+                className="col-12 col-md-6 border grid-50 section-bg"
                 style={{
                   backgroundImage: "url(http://placebeard.it/1200/800)",
                 }}
               ></div>
-              <div className="col-12 col-md-6 border border-lg-left-0 centered"></div>
+              <div className="col-12 col-md-6 border grid-50"></div>
             </article>
           </div>
 
           {/* fore */}
           <div className="container foreground my-6">
             <ul className="row justify-content-between align-content-stretch">
-              <li className="col-12 col-md-6 centered">1</li>
+              <li className="col-12 col-md-6 grid-50 align-items-start">1</li>
               <li className="col-12 col-md-6">
                 <div className="p-lg-5 p-3">
                   <h3 className="pb-3">
