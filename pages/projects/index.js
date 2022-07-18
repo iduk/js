@@ -3,7 +3,7 @@ import Link from "next/link"
 import Layout from "../../components/layout"
 import { gsap, Power1, Power2 } from "gsap"
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger"
-import ProjectList from "./projectList"
+import ProjectList from "./ProjectList"
 
 gsap.registerPlugin(ScrollTrigger)
 
