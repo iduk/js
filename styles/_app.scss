@@ -384,6 +384,7 @@ svg#logo-svg {
   background-image: url(https://media.giphy.com/media/nelrMNNiummuJ5VfRN/giphy-downsized-large.gif);
   background-size: cover;
   color: transparent;
+  background-clip: text;
   -moz-background-clip: text;
   -webkit-background-clip: text;
   line-height: 1;
