@@ -180,9 +180,9 @@ function Index() {
         {/* card section */}
         <section className="container-fluid py-6">
           <article className="row">
-            <div className="col-12 col-lg-7 mx-auto">
+            <div className="col-12 col-md-12 col-lg-7 mx-auto">
               <article className="row no-gutters">
-                <div className="col-12 col-lg-4">
+                <div className="col-12 col-md-4">
                   <div className="p-4 mask bg-primary text-white">
                     <p className="h4 text-uppercase">Openfloor</p>
                     <div
@@ -199,7 +199,7 @@ function Index() {
                     </div>
                   </div>
                 </div>
-                <div className="col-12 col-lg-8">
+                <div className="col-12 col-md-8">
                   <div className="p-4 mask bg-secondary text-white">
                     <p className="h4">what we work.</p>
                     <div
