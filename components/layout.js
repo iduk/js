@@ -39,9 +39,13 @@ const Layout = (props) => (
     </Head>
 
     <div id="wrapper" className={`page--${props.theme}`}>
-      <Header />
+      <header>
+        <Header />
+      </header>
       <main className="main">{props.children}</main>
-      <Footer />
+      <footer>
+        <Footer />
+      </footer>
     </div>
   </Fragment>
 )

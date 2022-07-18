@@ -66,7 +66,7 @@ $info: $blue;
 $success: $green;
 $warning: $yellow;
 $danger: $red;
-$light: #f9f9f9;
+$light: $gray-200;
 $lighter: $gray-100;
 $gray: $gray-400;
 $gray-dark: $gray-700;
@@ -174,8 +174,8 @@ $sizes: map-merge(
 //
 // Settings for the `<body>` element.
 
-$body-bg: $light;
-$body-color: "";
+$body-bg: white;
+$body-color: $primary;
 
 // Links
 //

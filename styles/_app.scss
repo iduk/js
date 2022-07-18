@@ -7,7 +7,6 @@ body {
   box-sizing: border-box;
   font-size: 20px;
   -webkit-font-smoothing: antialiased;
-  color: var(--primary);
 
   font-family: Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto,
     "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR",
@@ -113,30 +112,21 @@ h6,
 .row > [class*="col-"] {
   overflow-wrap: break-word;
 }
-.dense-row {
-  display: flex;
-  flex-wrap: wrap;
-  margin-right: -$form-grid-gutter-width / 2;
-  margin-left: -$form-grid-gutter-width / 2;
-
-  > .col,
-  > [class*="col-"] {
-    padding-right: $form-grid-gutter-width / 0.8;
-    padding-left: $form-grid-gutter-width / 0.8;
-  }
-}
-
-.badge {
-  border-color: $primary !important;
-  // &:hover,
-  // &:focus {
-  // }
-}
 
 .grid-50 {
   display: grid;
   align-items: center;
-  min-height: 50vh;
+  height: 50vh;
+}
+
+.grid-80 {
+  display: grid;
+  align-items: center;
+  height: 80vh;
+
+  @include media-breakpoint-down(md) {
+    height: 60vh;
+  }
 }
 
 .display-1,
@@ -145,6 +135,10 @@ h6,
 .display-4 {
   // text-transform: uppercase;
   line-height: 1.1;
+}
+
+.outline {
+  outline: 1px solid $primary;
 }
 
 /********************* 
@@ -157,6 +151,9 @@ h6,
 }
 .main {
   padding: 2vh 0;
+}
+.subpage-header {
+  height: 10vh;
 }
 
 /********************* 
@@ -280,7 +277,7 @@ h6,
       flex-shrink: 0;
       display: inline-flex;
       width: 25vw;
-      max-width: 200px;
+      max-width: 160px;
       margin: 0 1rem;
 
       transition: all 0.3s ease;
@@ -446,8 +443,6 @@ svg#logo-svg {
 }
 
 .items-list {
-  overflow: hidden;
-
   .contents {
     display: flex;
     flex-direction: column;
@@ -482,7 +477,7 @@ svg#logo-svg {
   white-space: nowrap;
   transition: all 0.2s linear;
   -webkit-text-fill-color: transparent;
-  -webkit-text-stroke-width: 4px;
+  -webkit-text-stroke-width: 1px;
   -webkit-text-stroke-color: rgba(white, 0.8);
 
   &:hover,

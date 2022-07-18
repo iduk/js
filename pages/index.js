@@ -22,7 +22,7 @@ const Logos = [
 // index
 function Index() {
   const list = [{ id: 0 }, { id: 1 }, { id: 2 }, { id: 3 }]
-  const postsList = posts.slice(0, 4)
+  const postsList = posts.slice(0, 3)
 
   useEffect(() => {
     // document.addEventListener("DOMContentLoaded", function () {
@@ -97,30 +97,28 @@ function Index() {
       {/* index page */}
       <div className="page-index">
         {/* intro */}
-        <section className="feature">
-          <div className="container">
+        <section className="container">
+          <div className="feature">
             <div className="feature--header">
-              {/* 1 */}
-              <div>
-                {/* <p className="h5 text-uppercase">Award 2023</p> */}
-                <div className="headline text-uppercase">
-                  <Link href="/">
-                    <a>OPENFLOOR</a>
-                  </Link>
-                  <Link href="/">
-                    <a>Multi-Platform</a>
-                  </Link>
-                  <Link href="/">
-                    <a>Data to Information</a>
-                  </Link>
-                  <Link href="/">
-                    <a>Device Handling</a>
-                  </Link>
-                  <Link href="/">
-                    <a>Everyday Coding</a>
-                  </Link>
-                </div>
+              {/* <p className="h5 text-uppercase">Award 2023</p> */}
+              <div className="headline text-uppercase">
+                <Link href="/">
+                  <a>OPENFLOOR</a>
+                </Link>
+                <Link href="/">
+                  <a>Multi-Platform</a>
+                </Link>
+                <Link href="/">
+                  <a>Data to Information</a>
+                </Link>
+                <Link href="/">
+                  <a>Device Handling</a>
+                </Link>
+                <Link href="/">
+                  <a>Everyday Coding</a>
+                </Link>
               </div>
+
               {/* \\ */}
 
               {/* 2 */}
@@ -132,26 +130,31 @@ function Index() {
           </div>
         </section>
 
-        {/* image list */}
-        <section className="grid-50">
+        {/* intro content */}
+        <section>
           {/* back */}
-          <div className="container-fluid background my-6">
-            <article className="row no-gutters">
+          <div className="container-fluid background">
+            <article className="row">
               <div
-                className="col-12 col-md-6 border grid-50 section-bg"
+                className="col-8 col-md-2 outline grid-80 section-bg"
                 style={{
-                  backgroundImage: "url(http://placebeard.it/1200/800)",
+                  backgroundImage: "url(http://placebeard.it/800/800)",
                 }}
               ></div>
-              <div className="col-12 col-md-6 border grid-50"></div>
+              <div
+                className="col-4 col-md-4 outline grid-80 section-bg"
+                style={{
+                  backgroundImage: "url(http://placebeard.it/800/800)",
+                }}
+              ></div>
+              <div className="col-12 col-md-6 outline grid-80"></div>
             </article>
           </div>
-
           {/* fore */}
-          <div className="container foreground my-6">
+          <div className="container foreground">
             <ul className="row justify-content-between align-content-stretch">
-              <li className="col-12 col-md-6 grid-50 align-items-start">1</li>
-              <li className="col-12 col-md-6">
+              <li className="col-6 col-md-6 grid-80 align-items-start"></li>
+              <li className="col-12 col-md-6 grid-80">
                 <div className="p-lg-5 p-3">
                   <h3 className="pb-3">
                     People with similar interests and goals come together to
@@ -174,89 +177,86 @@ function Index() {
           </div>
         </section>
 
-        <section className="container-fluid py-6 bg-gray">
-          <div className="container my-4">
-            <article className="row">
-              <div className="col-12 col-md-4">
-                <div className="p-4 mask bg-black text-white">
-                  <p className="h4">what we work.</p>
-                  <div
-                    className="display-2 d-flex align-items-center"
-                    style={{ height: "35vh" }}
-                  >
-                    <p className="display-2 text-center py-3">
-                      Inderstrial Design
-                    </p>
+        {/* card section */}
+        <section className="container-fluid py-6">
+          <article className="row">
+            <div className="col-12 col-lg-7 mx-auto">
+              <article className="row no-gutters">
+                <div className="col-12 col-lg-4">
+                  <div className="p-4 mask bg-primary text-white">
+                    <p className="h4 text-uppercase">Openfloor</p>
+                    <div
+                      className="d-flex flex-column justify-content-between"
+                      style={{ height: "50vh" }}
+                    >
+                      <p className="display-2">오픈플로어</p>
+                      <p>
+                        못하다 끝까지 끓는 안고, 두기 그들의 쓸쓸한 투명하되
+                        것이다. 이것이야말로 미묘한 얼음 그것을 관현악이며,
+                        생명을 이것을 속잎나고, 말이다. 보이는 피어나는 뭇 싶이
+                        칼이다. 이상, 영락과 것은 보라.
+                      </p>
+                    </div>
                   </div>
                 </div>
-              </div>
-              <div className="col-12 col-md-4">
-                <div className="p-4 mask bg-light">
-                  <p className="h4">what we work.</p>
-                  <div
-                    className="display-2 text-center d-flex align-items-center justify-content-center"
-                    style={{ height: "35vh" }}
-                  >
-                    <p className="display-2 text-center py-3">
-                      <span className="badge badge-pill  border m-1">
-                        Technology
-                      </span>
-                      <span className="badge badge-pill border m-1">
-                        Innovation
-                      </span>
-                      <span className="badge badge-pill border m-1">
-                        Affection
-                      </span>
-                    </p>
-                    <p></p>
+                <div className="col-12 col-lg-8">
+                  <div className="p-4 mask bg-secondary text-white">
+                    <p className="h4">what we work.</p>
+                    <div
+                      className="display-2 d-flex align-items-end"
+                      style={{ height: "50vh" }}
+                    >
+                      <p className="display-3">
+                        <span className="badge badge-pill border border-white m-1">
+                          Technology
+                        </span>
+                        <span className="badge badge-pill border border-white m-1">
+                          Innovation
+                        </span>
+                        <span className="badge badge-pill border border-white m-1">
+                          Affection
+                        </span>
+                      </p>
+                      <p></p>
+                    </div>
                   </div>
                 </div>
-              </div>
-              <div className="col-12 col-md-4">
-                <div className="p-4 mask bg-black text-white">
-                  <p className="h4">what we work.</p>
-                  <div
-                    className="display-2 text-center d-flex align-items-center justify-content-center"
-                    style={{ height: "35vh" }}
-                  >
-                    <p className="display-2 text-center py-3">
-                      <span className="badge badge-pill  border m-1">
-                        Technology
-                      </span>
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </article>
-          </div>
+              </article>
+            </div>
+          </article>
         </section>
 
-        <section className="container py-8">
-          <header className="d-flex justify-content-between align-items-baseline mb-4 ">
-            <h1 className="headline">Performance</h1>
-          </header>
-
-          <ul className="row items-list">
-            {postsList.map((item) => (
-              <li key={item.index} className="col-12 col-md-6 col-lg-3 item">
-                <div className="contents mb-4 mb-lg-0">
-                  <span className="thumb mask mb-3">
-                    <img
-                      src="https://picsum.photos/480/640?random"
-                      width={480}
-                      height={640}
-                      className="img-fluid"
-                      alt=""
-                    />
-                  </span>
-                  <h4 className="subject">{item.title}</h4>
-                  <p>{item.desc}</p>
-                  <small className="mt-4">#{item.skill}</small>
-                </div>
-              </li>
-            ))}
-          </ul>
-        </section>
+        {/* latest */}
+        {/* <section className="container-fluid py-6">
+          <article className="row">
+            <div className="col-12 col-lg-7 mx-auto">
+              <h1 className="display-2 pb-4 text-uppercase">Project Latest</h1>
+              <ul className="row items-list">
+                {postsList.map((item) => (
+                  <li
+                    key={item.index}
+                    className="col-12 col-md-6 col-lg-4 item"
+                  >
+                    <div className="contents mb-4 mb-lg-0">
+                      <span className="thumb mask mb-3">
+                        <img
+                          src="https://picsum.photos/360/240?random"
+                          width={360}
+                          height={240}
+                          className="img-fluid"
+                          alt=""
+                        />
+                      </span>
+                      <h4 className="subject">{item.title}</h4>
+                      <p className="small">{item.desc}</p>
+                      <small className="mt-4">#{item.skill}</small>
+                    </div>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </article>
+        </section> */}
 
         {/* Clients Logo */}
         <section className="container-fluid">

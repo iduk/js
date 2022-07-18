@@ -32,7 +32,8 @@
   margin: auto;
   box-sizing: border-box;
   transition: transform 0.2s ease;
-  background-color: transparent;
+  background-color: white;
+  border-bottom: 1px solid $primary;
 
   &.hide {
     transform: translateY(-100%);

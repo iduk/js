@@ -67,18 +67,15 @@ const Projects = () => {
 
   return (
     <Layout title="Projects" theme="projects">
-      <section className="container">
-        <h1 className="display-1 text-uppercase">Projects</h1>
-      </section>
-
-      <div className="section-wrapper">
-        <section className="container">
-          <article className="row no-gutters my-8">
-            <div className="col-12 col-lg-12">
+      <div className="container-fluid">
+        <article className="row justify-content-center">
+          <div className="col-12 col-lg-7">
+            <h1 className="display-1 text-uppercase">Projects</h1>
+            <div className="section-wrapper mt-6">
               <ProjectList />
             </div>
-          </article>
-        </section>
+          </div>
+        </article>
       </div>
     </Layout>
   )

@@ -43,62 +43,64 @@ const Header = (props) => {
   // const scrollVisible = visible ? "" : "hide"
 
   return (
-    <Fragment>
-      <header className={`globalNav ${collapsed ? "open" : ""}`}>
-        <div className={`topbar d-none`}>
-          <Marquee gradient={false} speed={30}>
-            <div className="mq-topbar bg-primary text-light">
-              <span>Let's Get it Started!</span>
-              <span>Openfloor</span>
-              <span>Troubleshooter</span>
-              <span>Back-End Developer</span>
-              <span>Front-End Developer</span>
-              <span>UX/UI Design</span>
-              <span>Application</span>
-              <span>ioT Service</span>
-              <span>Techniques</span>
-              <span>Multi-Platform</span>
-              <span>Application</span>
-              <span>ioT Service</span>
-              <span>Techniques</span>
-              <span>Multi-Platform</span>
-              <span>Application</span>
-              <span>ioT Service</span>
-              <span>Techniques</span>
-              <span>Multi-Platform</span>
-            </div>
-          </Marquee>
-        </div>
-        <div className="container">
-          <nav className="navWrap">
-            {/* logo */}
-            <Link href="/index">
-              <a className="brand-logo" title="Openfloor">
-                <Logo />
-              </a>
-            </Link>
+    <div className={`globalNav ${collapsed ? "open" : ""}`}>
+      <div className={`topbar d-none`}>
+        <Marquee gradient={false} speed={30}>
+          <div className="mq-topbar bg-primary text-light">
+            <span>Let's Get it Started!</span>
+            <span>Openfloor</span>
+            <span>Troubleshooter</span>
+            <span>Back-End Developer</span>
+            <span>Front-End Developer</span>
+            <span>UX/UI Design</span>
+            <span>Application</span>
+            <span>ioT Service</span>
+            <span>Techniques</span>
+            <span>Multi-Platform</span>
+            <span>Application</span>
+            <span>ioT Service</span>
+            <span>Techniques</span>
+            <span>Multi-Platform</span>
+            <span>Application</span>
+            <span>ioT Service</span>
+            <span>Techniques</span>
+            <span>Multi-Platform</span>
+          </div>
+        </Marquee>
+      </div>
+      <div className="container-fluid">
+        <article className="row justify-content-center">
+          <div className="col-12 col-lg-7">
+            <nav className="navWrap">
+              {/* logo */}
+              <Link href="/index">
+                <a className="brand-logo" title="Openfloor">
+                  <Logo />
+                </a>
+              </Link>
 
-            {/* Mobile Nav Toggle */}
-            <button
-              type="button"
-              onClick={() => toggleNavbar()}
-              className="btn nav-toggle"
-            >
-              <div className={`hamburger ${collapsed ? "active" : ""}`}>
-                <span className="bar"></span>
-                <span className="bar"></span>
-                <span className="bar"></span>
+              {/* Mobile Nav Toggle */}
+              <button
+                type="button"
+                onClick={() => toggleNavbar()}
+                className="btn nav-toggle"
+              >
+                <div className={`hamburger ${collapsed ? "active" : ""}`}>
+                  <span className="bar"></span>
+                  <span className="bar"></span>
+                  <span className="bar"></span>
+                </div>
+              </button>
+
+              {/* Desktop Menu */}
+              <div className="topNav">
+                <Navs />
               </div>
-            </button>
-
-            {/* Desktop Menu */}
-            <div className="topNav">
-              <Navs />
-            </div>
-          </nav>
-        </div>
-      </header>
-    </Fragment>
+            </nav>
+          </div>
+        </article>
+      </div>
+    </div>
   )
 }
 
