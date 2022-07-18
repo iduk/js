@@ -72,6 +72,7 @@
     overflow: hidden;
     height: 56px;
     width: 56px;
+    color: var(--primary);
 
     // logo
     img,
@@ -84,6 +85,7 @@
     &:hover,
     &:focus {
       // opacity: 0.5;
+      color: var(--black);
     }
   }
 }
@@ -187,7 +189,7 @@
       .bar {
         width: 100%;
         height: 4px;
-        background-color: $primary;
+        background-color: var(--primary);
         margin: 3px 0;
         -webkit-transition: all 0.3s ease-in-out;
         transition: all 0.3s ease-in-out;
