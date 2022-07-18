@@ -93,10 +93,10 @@ function Index() {
   }, [])
 
   return (
-    <Layout title="Openfloor">
+    <Layout theme={"index"}>
       {/* index page */}
-      <div className="page-index">
-        {/* intro */}
+      <div>
+        {/* feature */}
         <section className="container">
           <div className="feature">
             <div className="feature--header">
@@ -130,24 +130,24 @@ function Index() {
           </div>
         </section>
 
-        {/* intro content */}
-        <section>
+        {/* intro */}
+        <section className="position-relative">
           {/* back */}
-          <div className="container-fluid background">
-            <article className="row">
+          <div className="container-fluid">
+            <article className="row grid-outline">
               <div
-                className="col-8 col-md-2 outline grid-80 section-bg"
+                className="col-8 col-md-2 grid-80 background"
                 style={{
                   backgroundImage: "url(http://placebeard.it/800/800)",
                 }}
               ></div>
               <div
-                className="col-4 col-md-4 outline grid-80 section-bg"
+                className="col-4 col-md-4 grid-80 background"
                 style={{
                   backgroundImage: "url(http://placebeard.it/800/800)",
                 }}
               ></div>
-              <div className="col-12 col-md-6 outline grid-80"></div>
+              <div className="col-12 col-md-6 grid-80"></div>
             </article>
           </div>
           {/* fore */}

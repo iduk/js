@@ -32,8 +32,8 @@ const Experience = () => {
 
       ScrollTrigger.create({
         trigger: section,
-        start: "top 60%",
-        // end: "bottom 90%",
+        start: "top 80%",
+        end: "bottom 20%",
         yoyo: true,
         markers: false,
         pin: false,
@@ -67,25 +67,25 @@ const Experience = () => {
   }, [])
 
   return (
-    <Layout title="Experience" theme="experience">
+    <Layout theme="experience">
       <section className="container-fluid">
         <div className="row justify-content-center">
           <div className="col-12 col-lg-7">
             <div className="subpage-header">
-              <h1 className="display-1 text-uppercase">Experience</h1>
+              <h1 className="display-1">Experience</h1>
             </div>
             <section className="mt-6">
               <article className="row no-gutters justify-content-between">
                 <div className="col-6 col-lg-2 pb-4">
-                  <h5 className="text-uppercase">Since</h5>
+                  <h5 className="">Since</h5>
                   <p>2007/05/24</p>
                 </div>
                 <div className="col-6 col-lg-2 pb-4">
-                  <h5 className="text-uppercase">Tech Stack</h5>
+                  <h5 className="">Tech Stack</h5>
                   <p>Branding, Trend Forecasting, IoT/AoT</p>
                 </div>
                 <div className="col-12 col-lg-6 pb-4">
-                  <h5 className="text-uppercase">What we do</h5>
+                  <h5 className="">What we do</h5>
                   <p>
                     급속도로 성장해나가고 있는 서비스를 밀착해서 지원하는
                     경영지원 업무는 루틴한 업무의 반복이 아니라 매순간의
@@ -103,7 +103,7 @@ const Experience = () => {
         <article className="row justify-content-center">
           <div className="col-12 col-lg-7">
             {/* Goal */}
-            <h6 className="text-uppercase">Goal Oriented</h6>
+            <h6 className="">Goal Oriented</h6>
             <article className="row no-gutters justify-content-between">
               <div className="col-12 col-lg-3">
                 <h2 className="pb-3 pb-lg-0">
@@ -131,7 +131,7 @@ const Experience = () => {
           {/* main column */}
           <div className="col-12 col-lg-7">
             {/* Role */}
-            <h6 className="text-uppercase">Build Up</h6>
+            <h6 className="">Build Up</h6>
             <article className="row no-gutters justify-content-between">
               <div className="col-12 col-lg-3">
                 <h2 className="pb-3 pb-lg-0">

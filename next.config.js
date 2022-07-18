@@ -21,15 +21,14 @@ module.exports = {
   pageExtensions: ["mdx", "jsx", "js"],
   assetPrefix: !debug ? "http://openfloor.io/" : "",
   exportTrailingSlash: true,
-  // exportPathMap: function () {
-  //   return {
-  //     "/": { page: "/" },
-  //     "*": { page: "/error" },
-  //     "/Experience": { page: "/experience" },
-  //     "/Projects": { page: "/projects" },
-  //     "/Contact": { page: "/contact" },
-  //   }
-  // },
+  exportPathMap: function () {
+    return {
+      "/": { page: "/" },
+      "*": { page: "/error" },
+      "/Experience": { page: "/experience", query: { title: "experience" } },
+      "/Projects": { page: "/projects" },
+    }
+  },
 }
 
 const nextConfig = {

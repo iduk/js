@@ -11,12 +11,6 @@ import { useRouter } from "next/router"
 import { NavLink } from "react-router-dom"
 import Marquee from "react-fast-marquee"
 import Logo from "../public/img/symbol.svg"
-const menulist = [
-  { id: "nav1", path: "/", title: "Index" },
-  { id: "nav2", path: "/experience", title: "experience" },
-  { id: "nav3", path: "/projects", title: "projects" },
-  // { pathname: "contact" },
-]
 
 const Header = (props) => {
   const router = useRouter()
@@ -106,6 +100,12 @@ const Header = (props) => {
 
 export default Header
 
+export const navlinks = [
+  { path: "/", title: "Index" },
+  { path: "/experience", title: "experience" },
+  { path: "/projects", title: "projects" },
+]
+
 // Global Nav
 const Navs = () => {
   const router = useRouter()
@@ -114,19 +114,19 @@ const Navs = () => {
     e.preventDefault()
     router.push(menu.path)
   }
-
   return (
     <ol>
-      {menulist.map((menu) => (
-        <li key={menu.id}>
-          <a
-            href={menu.path}
-            className={`navLink ${
-              router.pathname === menu.path ? "active" : ""
-            }`}
-          >
-            {menu.title}
-          </a>
+      {navlinks.map((menu) => (
+        <li key={menu.postId}>
+          <Link href={menu.path}>
+            <a
+              className={`navLink ${
+                router.pathname === menu.path ? "active" : ""
+              }`}
+            >
+              {menu.title}
+            </a>
+          </Link>
         </li>
       ))}
     </ol>
