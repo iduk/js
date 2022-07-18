@@ -95,7 +95,7 @@
           display: flex;
           justify-content: space-between;
           column-gap: 1.5rem;
-          padding: 1rem 0;
+          // padding: 1rem 0;
           border-bottom: 1px solid $gray-100;
           transition: all 0.2s linear;
 
@@ -125,6 +125,7 @@
 
       @include media-breakpoint-down(sm) {
         li {
+          margin-bottom: 2rem;
           .post-link {
             flex-direction: column;
             .thumb {
@@ -148,7 +149,7 @@
         .title {
           font-weight: 500;
           text-transform: uppercase;
-          margin-bottom: 1rem;
+          margin-bottom: 0.5rem;
           overflow: hidden;
           text-overflow: ellipsis;
           white-space: nowrap;

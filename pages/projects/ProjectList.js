@@ -9,11 +9,11 @@ const ProjectList = () => {
         <li key={post.id}>
           <Link href={"#"}>
             <a className="post-link">
-              <div className="contents">
-                <small className="mt-2">
+              <div className="contents py-3">
+                <p className="display-3 title">{post.title}</p>
+                <small>
                   {post.date} ⋅ {post.skill}
                 </small>
-                <p className="display-3 title">{post.title}</p>
                 <p className="desc small">{post.desc}</p>
               </div>
               <span
