@@ -118,7 +118,7 @@ const Navs = () => {
     <ol>
       {navlinks.map((menu) => (
         <li key={menu.postId}>
-          <Link href={menu.path}>
+          <Link href={menu.path} onClick={handleClick}>
             <a
               className={`navLink ${
                 router.pathname === menu.path ? "active" : ""

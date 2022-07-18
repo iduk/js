@@ -1,13 +1,6 @@
 // Required
 @charset 'utf-8';
 
-/* Custom Scss, variables */
-:root {
-  @each $theme-colors, $color in $colors {
-    --#{$theme-colors}: #{$color};
-  }
-}
-
 /* colors */
 $dark: #262c40;
 $blue: #254da8;
@@ -15,7 +8,7 @@ $red: #cc3a3a;
 $yellow: #f3b816;
 $green: #62d8ae;
 $orange: #f67d18;
-$cream: #f2f0ea;
+$cream: #f5f4f0;
 $white: #fff;
 $black: #000;
 

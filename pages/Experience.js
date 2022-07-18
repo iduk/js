@@ -2,10 +2,8 @@ import React, { useState, useEffect } from "react"
 import Link from "next/link"
 import Layout from "../components/layout"
 import axios from "axios"
-import posts from "../data/mock_data.json"
 import { gsap, Power1, Power2 } from "gsap"
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger"
-
 gsap.registerPlugin(ScrollTrigger)
 
 const Experience = () => {
