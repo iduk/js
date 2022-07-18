@@ -19,43 +19,7 @@ const Experience = () => {
   }
 
   useEffect(() => {
-    // test
-    // let fadeInTimeline = gsap.timeline({
-    //   scrollTrigger: {
-    //     trigger: ".gsap-intro",
-    //     start: "center 80%",
-    //     end: "center 50%",
-    //     toggleActions: "play reverse restart reverse",
-    //     scrub: true,
-    //     markers: true,
-    //   },
-    // })
-
-    // let fadeOutTimeline = gsap.timeline({
-    //   scrollTrigger: {
-    //     trigger: ".gsap-intro",
-    //     start: "center 30%",
-    //     end: "center -20%",
-    //     toggleActions: "play reverse restart reverse",
-    //     scrub: true,
-    //   },
-    // })
-
-    // fadeInTimeline.fromTo(
-    //   ".gsap-intro",
-    //   { y: "-20%", autoAlpha: 0 },
-    //   { y: "0%", autoAlpha: 1 }
-    // )
-
-    // fadeOutTimeline.fromTo(
-    //   ".gsap-intro",
-    //   { y: "0%", autoAlpha: 1 },
-    //   { y: "40%", autoAlpha: 0 }
-    // )
-
-    // gsap scrollTrigger
-
-    gsap.utils.toArray(".section-wrapper").forEach((section) => {
+    gsap.utils.toArray(".page--experience").forEach((section) => {
       const elems = section.querySelectorAll("section")
 
       gsap.set(elems, {
@@ -135,7 +99,7 @@ const Experience = () => {
         </div>
       </section>
 
-      <div className="container-fluid border-top py-8">
+      <section className="container-fluid border-top py-8">
         <article className="row justify-content-center">
           <div className="col-12 col-lg-7">
             {/* Goal */}
@@ -160,9 +124,9 @@ const Experience = () => {
             </article>
           </div>
         </article>
-      </div>
+      </section>
 
-      <div className="container-fluid border-top py-8">
+      <section className="container-fluid border-top py-8">
         <article className="row justify-content-center">
           {/* main column */}
           <div className="col-12 col-lg-7">
@@ -192,9 +156,9 @@ const Experience = () => {
           </div>
           {/* \\ main column */}
         </article>
-      </div>
+      </section>
 
-      <div className="container-fluid border-top py-8">
+      <section className="container-fluid border-top py-8">
         <article className="row justify-content-center">
           {/* main column */}
           <div className="col-12 col-lg-7">
@@ -246,7 +210,7 @@ const Experience = () => {
           </div>
           {/* \\ main column */}
         </article>
-      </div>
+      </section>
     </Layout>
   )
 }
