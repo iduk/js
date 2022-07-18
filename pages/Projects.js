@@ -61,11 +61,13 @@ const Projects = () => {
   }, [])
 
   return (
-    <Layout title="Projects" theme="projects">
+    <Layout theme="projects">
       <div className="container-fluid">
         <article className="row justify-content-center">
           <div className="col-12 col-lg-7">
-            <h1 className="display-1 text-uppercase">Projects</h1>
+            <div className="subpage-header">
+              <h1 className="display-1">Projects</h1>
+            </div>
             <div className="section-wrapper mt-6">
               <ProjectList />
             </div>
