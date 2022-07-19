@@ -15,7 +15,7 @@ body {
 }
 @include media-breakpoint-down(md) {
   body {
-    font-size: 16px;
+    font-size: 14px;
   }
 }
 ::selection {
@@ -64,13 +64,13 @@ img {
 }
 .mask {
   clip-path: polygon(
-    0 1.5rem,
-    0.75rem 0.75rem,
-    1.5rem 0,
+    0 1rem,
+    0.5rem 0.5rem,
+    1rem 0,
     100% 0,
-    100% calc(100% - 1.5rem),
-    calc(100% - 0.75rem) calc(100% - 0.75rem),
-    calc(100% - 1.5rem) 100%,
+    100% calc(100% - 1rem),
+    calc(100% - 0.5rem) calc(100% - 0.5rem),
+    calc(100% - 1rem) 100%,
     0 100%
   );
 
@@ -125,17 +125,17 @@ h6,
 .grid-50 {
   display: grid;
   align-items: center;
-  height: 50vh;
+  height: 35.97122302158273vh;
 }
 
 .grid-80 {
   display: grid;
   align-items: center;
-  height: 80vh;
+  min-height: 71.94244604316546vh;
 
-  @include media-breakpoint-down(md) {
-    height: 60vh;
-  }
+  // @include media-breakpoint-down(md) {
+  //   min-height: 60vh;
+  // }
 }
 
 .display-1,
@@ -158,11 +158,12 @@ h6,
   transition: all 0.2s ease-in-out;
   position: relative;
 }
-.main {
-  // padding: 2vh 0;
-}
+// .main {
+//   padding: 2vh 0;
+// }
 .subpage-header {
-  height: 10vh;
+  padding-top: 2vh;
+  height: 12em;
 }
 
 /********************* 

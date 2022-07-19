@@ -72,7 +72,7 @@ const Experience = () => {
             <div className="subpage-header">
               <h1 className="display-1">Experience</h1>
             </div>
-            <section className="mt-6">
+            <section>
               <article className="row no-gutters justify-content-between">
                 <div className="col-6 col-lg-2 pb-4">
                   <h5 className="">Since</h5>
@@ -104,10 +104,10 @@ const Experience = () => {
             <h6 className="">Goal Oriented</h6>
             <article className="row no-gutters justify-content-between">
               <div className="col-12 col-lg-3">
-                <h2 className="pb-3 pb-lg-0">
+                <h1 className="pb-3 pb-lg-0">
                   Trend Forecasting, <br />
                   IT Industry Inc.
-                </h2>
+                </h1>
               </div>
               <div className="col-12 col-lg-6">
                 <p>
@@ -132,15 +132,15 @@ const Experience = () => {
             <h6 className="">Build Up</h6>
             <article className="row no-gutters justify-content-between">
               <div className="col-12 col-lg-3">
-                <h2 className="pb-3 pb-lg-0">
-                  Fly me to the moon, Let me play among the stars
-                </h2>
+                <h1 className="pb-3 pb-lg-0">That's good enough?</h1>
               </div>
               <div className="col-12 col-lg-6">
                 <ul className="data-list">
                   {list.map((item) => (
                     <li key={item.id} className="row no-gutters">
-                      <p className="col-3 col-lg-2">{item.date}</p>
+                      <p className="col-3 col-lg-2 font-weight-bold">
+                        {item.date}
+                      </p>
                       <div className="col-9 col-lg-10 px-0 px-lg-auto text-md">
                         <p>{item.content1}</p>
                         <p>{item.content2}</p>

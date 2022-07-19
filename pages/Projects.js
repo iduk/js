@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react"
 import { useRouter } from "next/router"
 import Link from "next/link"
 import Layout from "../components/layout"
-import { gsap, Power1, Power2 } from "gsap"
+import { gsap, Power1, Power2, Power3 } from "gsap"
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger"
 gsap.registerPlugin(ScrollTrigger)
 
@@ -21,15 +21,15 @@ const Projects = () => {
       const elems = layer.querySelectorAll("li")
 
       gsap.set(elems, {
-        y: 50,
-        opacity: 0,
         duration: 1,
-        ease: "Power2.linear",
+        y: 0,
+        opacity: 0,
+        ease: Power2,
         overwrite: "auto",
       })
 
       ScrollTrigger.create({
-        trigger: ".section-wrapper",
+        trigger: ".page--projects",
         start: "top 80%",
         end: "bottom 20%",
         yoyo: true,
@@ -68,9 +68,8 @@ const Projects = () => {
             <div className="subpage-header">
               <h1 className="display-1">Projects</h1>
             </div>
-            <div className="section-wrapper mt-6">
-              <ProjectList />
-            </div>
+
+            <ProjectList />
           </div>
         </article>
       </div>
@@ -93,7 +92,7 @@ const ProjectList = () => {
           <li key={post.postId}>
             <Link href={`/projects/${post.postId}`}>
               <a className="post-link">
-                <div className="contents py-3">
+                <div className="contents py-lg-3">
                   <p className="display-3 title">{post.title}</p>
                   <small>
                     {post.date} ⋅ {post.skill}

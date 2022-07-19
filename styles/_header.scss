@@ -263,12 +263,12 @@
     // mobile nav
     .topNav {
       position: absolute;
-      top: var(--nav-h-m);
+      top: calc(var(--nav-h-m) + 50vh);
       left: 0;
       right: 0;
-      color: $light;
+      transform: translateY(-25vh);
+      color: white;
       display: flex;
-      padding-top: 100px;
 
       ol {
         width: 100%;
@@ -285,7 +285,7 @@
       .navLink {
         display: inline-flex;
         padding: 0.5rem 0;
-        font-size: 10vw;
+        font-size: 12vw;
 
         &::before {
           background-color: white;
