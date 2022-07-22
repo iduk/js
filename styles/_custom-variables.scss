@@ -1,0 +1,431 @@
+// Variables
+//
+// Variables should follow the `$component-state-property-size` formula for
+// consistent naming. Ex: $nav-link-disabled-color and $modal-content-box-shadow-xs.
+
+// Color system
+
+// scss-docs-start gray-color-variables
+$white: #fff;
+$gray-100: #f8f9fa;
+$gray-200: #e9ecef;
+$gray-300: #dee2e6;
+$gray-400: #ced4da;
+$gray-500: #adb5bd;
+$gray-600: #6c757d;
+$gray-700: #495057;
+$gray-800: #343a40;
+$gray-900: #212529;
+$black: #000;
+// scss-docs-end gray-color-variables
+
+// fusv-disable
+// scss-docs-start gray-colors-map
+$grays: (
+  "100": $gray-100,
+  "200": $gray-200,
+  "300": $gray-300,
+  "400": $gray-400,
+  "500": $gray-500,
+  "600": $gray-600,
+  "700": $gray-700,
+  "800": $gray-800,
+  "900": $gray-900,
+);
+// scss-docs-end gray-colors-map
+// fusv-enable
+
+// scss-docs-start color-variables
+$blue: #0d6efd;
+$indigo: #6610f2;
+$purple: #6f42c1;
+$pink: #d63384;
+$red: #cc3a3a;
+$orange: #fd7e14;
+$yellow: #ffc107;
+$green: #198754;
+$teal: #20c997;
+$cyan: #0dcaf0;
+
+// scss-docs-end color-variables
+
+// scss-docs-start colors-map
+$colors: (
+  "blue": $blue,
+  "indigo": $indigo,
+  "purple": $purple,
+  "pink": $pink,
+  "red": $red,
+  "orange": $orange,
+  "yellow": $yellow,
+  "green": $green,
+  "teal": $teal,
+  "cyan": $cyan,
+  "black": $black,
+  "white": $white,
+  "gray": $gray-600,
+  "gray-dark": $gray-800,
+);
+// scss-docs-end colors-map
+
+// The contrast ratio to reach against white, to determine if color changes from "light" to "dark". Acceptable values for WCAG 2.0 are 3, 4.5 and 7.
+// See https://www.w3.org/TR/WCAG20/#visual-audio-contrast-contrast
+$min-contrast-ratio: 4.5;
+
+// Customize the light and dark text colors for use in our color contrast function.
+$color-contrast-dark: $black;
+$color-contrast-light: $white;
+
+// scss-docs-start theme-color-variables
+$primary: $red;
+$secondary: $gray-600;
+$success: $green;
+$info: $cyan;
+$warning: $yellow;
+$danger: $red;
+$light: $gray-100;
+$dark: $gray-900;
+$gray: $gray-600;
+// scss-docs-end theme-color-variables
+
+// scss-docs-start theme-colors-map
+$theme-colors: (
+  "primary": $primary,
+  "secondary": $secondary,
+  "success": $success,
+  "info": $info,
+  "warning": $warning,
+  "danger": $danger,
+  "light": $light,
+  "dark": $dark,
+  "gray": $gray-600,
+);
+// scss-docs-end theme-colors-map
+
+// Characters which are escaped by the escape-svg function
+$escaped-characters: (
+  ("<", "%3c"),
+  (">", "%3e"),
+  ("#", "%23"),
+  ("(", "%28"),
+  (")", "%29")
+);
+
+// Options
+//
+// Quickly modify global styling by enabling or disabling optional features.
+
+$enable-caret: true;
+$enable-rounded: true;
+$enable-shadows: false;
+$enable-gradients: false;
+$enable-transitions: true;
+$enable-reduced-motion: true;
+$enable-smooth-scroll: true;
+$enable-grid-classes: true;
+$enable-container-classes: true;
+$enable-cssgrid: false;
+$enable-button-pointers: true;
+$enable-rfs: true;
+$enable-validation-icons: true;
+$enable-negative-margins: false;
+$enable-deprecation-messages: true;
+$enable-important-utilities: true;
+
+// Prefix for :root CSS variables
+
+$variable-prefix: bs-; // Deprecated in v5.2.0 for the shorter `$prefix`
+$prefix: $variable-prefix;
+
+// Gradient
+//
+// The gradient which is added to components if `$enable-gradients` is `true`
+// This gradient is also added to elements with `.bg-gradient`
+// scss-docs-start variable-gradient
+$gradient: linear-gradient(180deg, rgba($white, 0.15), rgba($white, 0));
+// scss-docs-end variable-gradient
+
+// Spacing
+//
+// Control the default styling of most Bootstrap elements by modifying these
+// variables. Mostly focused on spacing.
+// You can add more entries to the $spacers map, should you need more variation.
+
+// scss-docs-start spacer-variables-maps
+$spacer: 1rem;
+$spacers: (
+  0: 0,
+  1: $spacer * 0.25,
+  2: $spacer * 0.5,
+  3: $spacer,
+  4: $spacer * 1.5,
+  5: $spacer * 3,
+  6: $spacer * 3.5,
+  7: $spacer * 4,
+  8: $spacer * 4.5,
+  9: $spacer * 5,
+  10: $spacer * 5.5,
+  11: $spacer * 6,
+  12: $spacer * 6.5,
+  13: $spacer * 7.5,
+  14: $spacer * 8,
+  15: $spacer * 8.5,
+  16: $spacer * 9,
+);
+// scss-docs-end spacer-variables-maps
+
+// Position
+//
+// Define the edge positioning anchors of the position utilities.
+
+// scss-docs-start position-map
+$position-values: (
+  0: 0,
+  50: 50%,
+  100: 100%,
+);
+// scss-docs-end position-map
+
+// Body
+//
+// Settings for the `<body>` element.
+
+$body-bg: $white;
+$body-color: $primary;
+$body-text-align: null;
+
+// Links
+//
+// Style anchor elements.
+
+$link-color: $black;
+$link-decoration: none;
+$link-shade-percentage: 20%;
+$link-hover-color: shift-color($link-color, $link-shade-percentage);
+$link-hover-decoration: null;
+
+$stretched-link-pseudo-element: after;
+$stretched-link-z-index: 1;
+
+// Paragraphs
+//
+// Style p element.
+
+$paragraph-margin-bottom: 1rem;
+
+// Grid breakpoints
+//
+// Define the minimum dimensions at which your layout will change,
+// adapting to different screen sizes, for use in media queries.
+
+// scss-docs-start grid-breakpoints
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1400px,
+  xxl: 1600px,
+);
+// scss-docs-end grid-breakpoints
+
+@include _assert-ascending($grid-breakpoints, "$grid-breakpoints");
+@include _assert-starts-at-zero($grid-breakpoints, "$grid-breakpoints");
+
+// Grid containers
+//
+// Define the maximum width of `.container` for different screen sizes.
+
+// scss-docs-start container-max-widths
+$container-max-widths: (
+  sm: 100%,
+  md: 100%,
+  lg: 960px,
+  xl: 1320px,
+  xxl: 1520px,
+);
+// scss-docs-end container-max-widths
+
+@include _assert-ascending($container-max-widths, "$container-max-widths");
+
+// Grid columns
+//
+// Set the number of columns and specify the width of the gutters.
+
+$grid-columns: 12;
+$grid-gutter-width: 1.5rem;
+$grid-row-columns: 6;
+
+// Container padding
+
+$container-padding-x: $grid-gutter-width;
+
+// Components
+//
+// Define common padding and border radius sizes and more.
+
+// scss-docs-start border-variables
+$border-width: 1px;
+$border-widths: (
+  1: 1px,
+  2: 2px,
+  3: 3px,
+  4: 4px,
+  5: 5px,
+);
+
+$border-style: solid;
+$border-color: $primary;
+$border-color-translucent: rgba($black, 0.175);
+// scss-docs-end border-variables
+
+// scss-docs-start border-radius-variables
+$border-radius: 0.375rem;
+$border-radius-sm: 0.25rem;
+$border-radius-lg: 0.5rem;
+$border-radius-xl: 1rem;
+$border-radius-2xl: 2rem;
+$border-radius-pill: 50rem;
+// scss-docs-end border-radius-variables
+
+// scss-docs-start box-shadow-variables
+$box-shadow: 0 0.5rem 1rem rgba($black, 0.15);
+$box-shadow-sm: 0 0.125rem 0.25rem rgba($black, 0.075);
+$box-shadow-lg: 0 1rem 3rem rgba($black, 0.175);
+$box-shadow-inset: inset 0 1px 2px rgba($black, 0.075);
+// scss-docs-end box-shadow-variables
+
+$component-active-color: $white;
+$component-active-bg: $primary;
+
+// scss-docs-start caret-variables
+$caret-width: 0.3em;
+$caret-vertical-align: $caret-width * 0.85;
+$caret-spacing: $caret-width * 0.85;
+// scss-docs-end caret-variables
+
+$transition-base: all 0.2s ease-in-out;
+$transition-fade: opacity 0.15s linear;
+// scss-docs-start collapse-transition
+$transition-collapse: height 0.35s ease;
+$transition-collapse-width: width 0.35s ease;
+// scss-docs-end collapse-transition
+
+// stylelint-disable function-disallowed-list
+// scss-docs-start aspect-ratios
+$aspect-ratios: (
+  "1x1": 100%,
+  "4x3": calc(3 / 4 * 100%),
+  "16x9": calc(9 / 16 * 100%),
+  "21x9": calc(9 / 21 * 100%),
+);
+// scss-docs-end aspect-ratios
+// stylelint-enable function-disallowed-list
+
+// Typography
+//
+// Font, line-height, and color for body text, headings, and more.
+
+// scss-docs-start font-variables
+// stylelint-disable value-keyword-case
+$font-family-sans-serif: "Pretendard", system-ui, -apple-system, "Segoe UI",
+  Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif,
+  "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+$font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas,
+  "Liberation Mono", "Courier New", monospace;
+// stylelint-enable value-keyword-case
+$font-family-base: var(--#{$prefix}font-sans-serif);
+$font-family-code: var(--#{$prefix}font-monospace);
+
+// $font-size-root affects the value of `rem`, which is used for as well font sizes, paddings, and margins
+// $font-size-base affects the font size of the body text
+$font-size-root: null;
+$font-size-base: 1rem; // Assumes the browser default, typically `16px`
+$font-size-sm: $font-size-base * 0.875;
+$font-size-lg: $font-size-base * 1.25;
+
+$font-weight-lighter: lighter;
+$font-weight-light: 300;
+$font-weight-normal: 400;
+$font-weight-semibold: 500;
+$font-weight-bold: 700;
+$font-weight-bolder: 900;
+
+$font-weight-base: $font-weight-normal;
+
+$line-height-base: 1.3;
+$line-height-sm: 1.25;
+$line-height-lg: 2;
+
+$h1-font-size: $font-size-base * 2.5;
+$h2-font-size: $font-size-base * 2;
+$h3-font-size: $font-size-base * 1.75;
+$h4-font-size: $font-size-base * 1.5;
+$h5-font-size: $font-size-base * 1.25;
+$h6-font-size: $font-size-base;
+// scss-docs-end font-variables
+
+// scss-docs-start font-sizes
+$font-sizes: (
+  1: $h1-font-size,
+  2: $h2-font-size,
+  3: $h3-font-size,
+  4: $h4-font-size,
+  5: $h5-font-size,
+  6: $h6-font-size,
+);
+// scss-docs-end font-sizes
+
+// scss-docs-start headings-variables
+$headings-margin-bottom: $spacer * 0.5;
+$headings-font-family: null;
+$headings-font-style: null;
+$headings-font-weight: 700;
+$headings-line-height: 1.1;
+$headings-color: null;
+// scss-docs-end headings-variables
+
+// scss-docs-start display-headings
+$display-font-sizes: (
+  1: clamp(56px, 3vw, 72px),
+  2: clamp(44px, 2.7vw, 64px),
+  3: clamp(32px, 2.7vw, 48px),
+  4: clamp(24px, 2.2vw, 40px),
+  5: 3rem,
+  6: 2.5rem,
+);
+
+$display-font-family: null;
+$display-font-style: null;
+$display-font-weight: 600;
+$display-line-height: $headings-line-height;
+// scss-docs-end display-headings
+
+// scss-docs-start type-variables
+$lead-font-size: $font-size-base * 1.25;
+$lead-font-weight: 400;
+
+$small-font-size: 0.875em;
+
+$sub-sup-font-size: 0.75em;
+
+$text-muted: $gray-600;
+
+$initialism-font-size: $small-font-size;
+
+$blockquote-margin-y: $spacer;
+$blockquote-font-size: $font-size-base * 1.25;
+$blockquote-footer-color: $gray-600;
+$blockquote-footer-font-size: $small-font-size;
+
+$hr-margin-y: $spacer;
+$hr-color: inherit;
+
+// fusv-disable
+$hr-bg-color: null; // Deprecated in v5.2.0
+$hr-height: null; // Deprecated in v5.2.0
+// fusv-enable
+
+$hr-border-color: $primary; // Allows for inherited colors
+$hr-border-width: $border-width;
+$hr-opacity: 0.25;

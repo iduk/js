@@ -3,9 +3,9 @@ import Link from "next/link"
 
 const Footer = () => (
   <section className="footer mask">
-    <div className="container-fluid">
+    <div className="container">
       <article className="row justify-content-center">
-        <div className="col-12 col-lg-7">
+        <div className="col-12">
           {/* content column */}
           <article className="row justify-content-between">
             <div className="col-12 col-lg-4">

@@ -62,9 +62,9 @@ const Projects = () => {
 
   return (
     <Layout theme="projects">
-      <div className="container-fluid">
+      <div className="container">
         <article className="row justify-content-center">
-          <div className="col-12 col-lg-7">
+          <div className="col-12">
             <div className="subpage-header">
               <h1 className="display-1">Projects</h1>
             </div>
@@ -104,7 +104,7 @@ const ProjectList = () => {
                   style={{
                     backgroundImage: `url(${post.thumbImg})`,
                   }}
-                />
+                ></span>
               </a>
             </Link>
           </li>

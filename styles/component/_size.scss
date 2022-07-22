@@ -1,0 +1,73 @@
+$ratio: ();
+$ratio: map-merge(
+  (
+    "16-9": 56.25%,
+    "16-10": 62.5%,
+    "4-3": 75%,
+    "3-4": 133.3333%,
+    "2-1": 50%,
+    "1-2": 200%,
+    "1-1": 100%,
+  ),
+  $ratio
+);
+
+// equal
+%equal {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -webkit-transform: translate3d(0, 0, 0);
+  -moz-transform: translate3d(0, 0, 0);
+
+  &::before {
+    display: block;
+    content: "";
+    width: 100%;
+    padding-top: 100%;
+  }
+
+  @each $breakpoint in map-keys($grid-breakpoints) {
+    @include media-breakpoint-up($breakpoint) {
+      $infix: breakpoint-infix($breakpoint, $grid-breakpoints);
+
+      @each $name, $size in $ratio {
+        &.equal#{$infix}-#{$name} {
+          &::before {
+            padding-top: $size;
+          }
+        }
+      }
+    }
+  }
+}
+
+.equal {
+  @extend %equal;
+
+  .centered {
+    transform: translate(-50%, -50%);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+  }
+}
+
+// vertical height
+$height-list: (10, 20, 25, 30, 40, 50, 60, 70, 75, 80, 90, 100);
+
+@each $breakpoint in map-keys($grid-breakpoints) {
+  @include media-breakpoint-up($breakpoint) {
+    $infix: breakpoint-infix($breakpoint, $grid-breakpoints);
+
+    @each $value in $height-list {
+      .vh#{$infix}-#{$value} {
+        box-sizing: border-box;
+        min-height: #{$value}vh;
+        height: 100% !important;
+      }
+    }
+  }
+}

@@ -66,9 +66,9 @@ const Experience = () => {
 
   return (
     <Layout theme="experience">
-      <section className="container-fluid">
+      <section className="container">
         <div className="row justify-content-center">
-          <div className="col-12 col-lg-7">
+          <div className="col-12">
             <div className="subpage-header">
               <h1 className="display-1">Experience</h1>
             </div>
@@ -97,9 +97,9 @@ const Experience = () => {
         </div>
       </section>
 
-      <section className="container-fluid border-top py-8">
+      <section className="container border-top py-8">
         <article className="row justify-content-center">
-          <div className="col-12 col-lg-7">
+          <div className="col-12">
             {/* Goal */}
             <h6 className="">Goal Oriented</h6>
             <article className="row no-gutters justify-content-between">
@@ -124,10 +124,10 @@ const Experience = () => {
         </article>
       </section>
 
-      <section className="container-fluid border-top py-8">
+      <section className="container border-top py-8">
         <article className="row justify-content-center">
           {/* main column */}
-          <div className="col-12 col-lg-7">
+          <div className="col-12">
             {/* Role */}
             <h6 className="">Build Up</h6>
             <article className="row no-gutters justify-content-between">
@@ -156,12 +156,12 @@ const Experience = () => {
         </article>
       </section>
 
-      <section className="container-fluid border-top py-8">
+      <section className="container border-top py-8">
         <article className="row justify-content-center">
           {/* main column */}
-          <div className="col-12 col-lg-7">
+          <div className="col-12">
             {/* Careers */}
-            <h1 className="display-1">Careers</h1>
+            <h1 className="display-1 pb-5">Careers</h1>
             <ul className={"dropdown-wrap"}>
               {careers.map((item, index) => (
                 <li

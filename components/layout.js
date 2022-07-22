@@ -35,8 +35,7 @@ const Layout = ({ children, theme }) => {
 
         <link rel="shortcut icon" href="/favicon.ico" />
         <link href="/css/line-awesome.min.css" rel="stylesheet" />
-        <link href="/css/animate.min.css" rel="stylesheet" />
-        <link href="/css/jquery.fancybox.min.css" rel="stylesheet" />
+        <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 
         <title>{pageTitle}</title>
 

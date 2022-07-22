@@ -62,9 +62,9 @@ const Header = (props) => {
           </div>
         </Marquee>
       </div>
-      <div className="container-fluid">
+      <div className="container">
         <article className="row justify-content-center">
-          <div className="col-12 col-lg-7">
+          <div className="col-12">
             <nav className="navWrap">
               {/* logo */}
               <Link href="/index">

@@ -7,15 +7,10 @@ body {
   box-sizing: border-box;
   font-size: 20px;
   -webkit-font-smoothing: antialiased;
-
-  font-family: Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto,
-    "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR",
-    "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
-    sans-serif;
 }
 @include media-breakpoint-down(md) {
   body {
-    font-size: 14px;
+    font-size: 16px;
   }
 }
 ::selection {
@@ -122,22 +117,22 @@ h6,
   }
 }
 
-.grid-50 {
+.vh-half {
   display: grid;
-  align-items: center;
-  height: 35.97122302158273vh;
+  min-height: 80vh;
+
+  @include media-breakpoint-down(md) {
+    min-height: 50vh;
+  }
 }
 
-.grid-80 {
-  display: grid;
-  align-items: center;
-  min-height: 71.94244604316546vh;
-
-  // @include media-breakpoint-down(md) {
-  //   min-height: 60vh;
-  // }
+.display-0 {
+  font-size: clamp(72px, 10vw, 140px);
+  line-height: 1;
+  overflow-wrap: break-word;
+  text-transform: uppercase;
+  font-weight: bold;
 }
-
 .display-1,
 .display-2,
 .display-3,
@@ -148,6 +143,12 @@ h6,
 
 .outline {
   outline: 1px solid $primary;
+}
+
+.text-trans {
+  transform-origin: top;
+  transform: rotate(90deg);
+  font-size: 10vw;
 }
 
 /********************* 
@@ -162,7 +163,7 @@ h6,
 //   padding: 2vh 0;
 // }
 .subpage-header {
-  padding-top: 2vh;
+  padding-top: 2em;
   height: 12em;
 }
 
@@ -203,35 +204,19 @@ svg#logo-svg {
 .background {
   z-index: 0;
   position: relative;
-  display: block;
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
-
-  img,
-  video,
-  iframe {
-    z-index: 1;
-    width: 100vw;
-    height: 56.25vw;
-    min-height: 100vh;
-    min-width: 177.77vh;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    opacity: 1;
-    transition: opacity 0.2s ease-in 0s;
-  }
 }
 .foreground {
-  z-index: 1;
+  z-index: -1;
   position: absolute;
   top: 0;
   right: 0;
   bottom: 0;
   left: 0;
-  // mix-blend-mode: multiply;
+  width: auto;
+  overflow: hidden;
 }
 
 .img-blend {

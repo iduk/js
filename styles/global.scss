@@ -1,15 +1,34 @@
-@import "./theme/functions";
-@import "./theme/variables";
-@import "./theme/mixins";
-@import "./theme/utilities";
-@import "./theme/reboot";
+// bootstrap core
+@import "../node_modules/bootstrap/scss/functions";
+@import "../node_modules/bootstrap/scss/variables";
 
 // custom
-@import "./theme";
-@import "./theme/bootstrap";
+@import "_custom-variables";
+
+// includes
+@import "../node_modules/bootstrap/scss/maps";
+@import "../node_modules/bootstrap/scss/mixins";
+@import "../node_modules/bootstrap/scss/root";
+
+// using components
+@import "../node_modules/bootstrap/scss/utilities";
+@import "../node_modules/bootstrap/scss/reboot";
+@import "../node_modules/bootstrap/scss/type";
+@import "../node_modules/bootstrap/scss/images";
+@import "../node_modules/bootstrap/scss/containers";
+@import "../node_modules/bootstrap/scss/grid";
+@import "../node_modules/bootstrap/scss/helpers";
+@import "../node_modules/bootstrap/scss/buttons";
+@import "../node_modules/bootstrap/scss/placeholders";
+@import "../node_modules/bootstrap/scss/transitions";
+@import "../node_modules/bootstrap/scss/utilities/api";
 
 // my
 @import "./app";
 @import "./header";
 @import "./footer";
 @import "./pages";
+
+// add
+@import "./component/spacing";
+@import "./component/size";

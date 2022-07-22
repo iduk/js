@@ -1,14 +1,14 @@
 import React, { useRef, useEffect, useState, useMemo } from "react"
 import Layout from "../components/layout"
-import ActiveLink from "../components/ActiveLink"
+import Link from "next/link"
 import { loadGetInitialProps } from "next/dist/next-server/lib/utils"
 import TextLoop from "react-text-loop"
 import axios from "axios"
 import posts from "../data/mock_data.json"
 import Marquee from "react-fast-marquee"
-import { gsap, Power1, Power2 } from "gsap"
+import { gsap, Power1, Power2, TimelineMax } from "gsap"
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger"
-import Link from "next/link"
+gsap.registerPlugin(TimelineMax)
 gsap.registerPlugin(ScrollTrigger)
 
 const Logos = [
@@ -25,41 +25,26 @@ function Index() {
   const postsList = posts.slice(0, 3)
 
   useEffect(() => {
-    // document.addEventListener("DOMContentLoaded", function () {
-    //   gsap.utils.toArray(".text-outline").forEach(function (textLayer) {
-    //     hide(textLayer)
-
-    //     ScrollTrigger.create({
-    //       trigger: textLayer,
-    //       onEnter: function () {
-    //         animateFrom(textLayer)
-    //       },
-    //       onEnterBack: function () {
-    //         animateFrom(textLayer, -1)
-    //       },
-    //       onLeave: function () {
-    //         hide(textLayer)
-    //       },
-    //     })
-    //   })
-    // })
-
+    //
+    //
+    //
+    //
     // gsap scrollTrigger
-    gsap.utils.toArray(".page-index").forEach((section) => {
+    gsap.utils.toArray(".page--index").forEach((section) => {
       const elems = section.querySelectorAll("section")
 
       gsap.set(elems, {
+        duration: 1,
         y: 50,
         opacity: 0,
-        duration: 1,
-        ease: "Power2.linear",
+        ease: Power2,
         overwrite: "auto",
       })
 
       ScrollTrigger.create({
         trigger: section,
         start: "top 80%",
-        end: "bottom 10%",
+        end: "bottom 20%",
         yoyo: true,
         markers: false,
         pin: false,
@@ -130,55 +115,142 @@ function Index() {
           </div>
         </section>
 
+        {/* section */}
+        <section className="container-fluid bg-danger text-white background">
+          {/* img transition */}
+          <div className="foreground">
+            <div className="row justify-content-end">
+              <div className="col-8 col-lg-5 px-0">
+                <ul className="film h-100 d-flex gap-2 gap-lg-4 img-blend">
+                  <li className="slide1 d-flex flex-column gap-2 gap-lg-4">
+                    <img
+                      src="https://source.unsplash.com/800x590/?coding"
+                      alt="Project Image"
+                      className="img-fluid"
+                    />
+                    <img
+                      src="https://source.unsplash.com/800x480/?app"
+                      alt="Project Image"
+                      className="img-fluid"
+                    />
+                    <img
+                      src="https://source.unsplash.com/800x800/?coding"
+                      alt="Project Image"
+                      className="img-fluid"
+                    />
+                  </li>
+                  <li className="slide2 d-flex flex-column gap-2 gap-lg-4">
+                    <img
+                      src="https://source.unsplash.com/800x500/?startup"
+                      alt="Project Image"
+                      className="img-fluid"
+                    />
+                    <img
+                      src="https://source.unsplash.com/800x450/?technical"
+                      alt="Project Image"
+                      className="img-fluid"
+                    />
+                    <img
+                      src="https://source.unsplash.com/800x800/?office"
+                      alt="Project Image"
+                      className="img-fluid"
+                    />
+                    <img
+                      src="https://source.unsplash.com/800x650/?mobile"
+                      alt="Project Image"
+                      className="img-fluid"
+                    />
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          {/* \\.img */}
+          <div className="container flim-trigger">
+            <div className="row flex-wrap">
+              <div className="col-12 col-md-10 col-lg-9 vh-half">
+                <div className="py-6 p-4 d-flex flex-column justify-content-between">
+                  <div>
+                    <h1 className="display-0 mb-4">Dev</h1>
+                    <h5>Give your product team a unique marketing tool.</h5>
+                    <p>
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                      sed do eiusmod tempor incididunt ut labore et dolore magna
+                      aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                      ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                    </p>
+                  </div>
+
+                  <div className="d-flex gap-lg-3 gap-2 flex-wrap display-3 pt-6">
+                    <span className="badge rounded-pill border px-3 py-1 border-white">
+                      ConsultingDigital
+                    </span>
+                    <span className="badge rounded-pill border px-3 py-1 border-white">
+                      Transformation
+                    </span>
+                    <span className="badge rounded-pill border px-3 py-1 border-white">
+                      Strategy
+                    </span>
+                    <span className="badge rounded-pill border px-3 py-1 border-white">
+                      WebApp
+                    </span>
+                    <span className="badge rounded-pill border px-3 py-1 border-white">
+                      Platform
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* intro */}
         <section className="position-relative">
           {/* back */}
           <div className="container-fluid">
-            <article className="row grid-outline">
+            <article className="row grid-outline flex-wrap">
               <div
-                className="col-8 col-md-2 grid-80 background"
+                className="col-8 col-lg-2 vh-half background"
                 style={{
-                  backgroundImage: "url(http://placebeard.it/800/800)",
+                  backgroundImage: "url(http://placebeard.it/600/800)",
                 }}
               ></div>
               <div
-                className="col-4 col-md-4 grid-80 background"
+                className="col-4 col-lg-4 vh-half background"
                 style={{
-                  backgroundImage: "url(http://placebeard.it/800/800)",
+                  backgroundImage: "url(http://placebeard.it/600/800)",
                 }}
               ></div>
-              <div className="col-12 col-md-6 grid-80"></div>
-            </article>
-          </div>
-          {/* fore */}
-          <div className="container foreground">
-            <ul className="row justify-content-between align-content-stretch">
-              <li className="col-6 col-md-6 grid-80 align-items-start"></li>
-              <li className="col-12 col-md-6 grid-80">
-                <div className="p-lg-5 p-3">
-                  <h3 className="pb-3">
+              <div className="col-12 col-lg-6 vh-half">
+                <div className="p-lg-5 py-4 d-flex flex-column justify-content-between">
+                  <h1 className="display-2 pb-4">
                     People with similar interests and goals come together to
                     change the world for the better.
-                  </h3>
-                  <p>
-                    시들어 무엇을 기관과 싶이 얼음과 봄바람이다. 가진 타오르고
-                    속잎나고, 힘차게 과실이 것이다. 원대하고, 미묘한 가는 피가
-                    아니다. 목숨이 것은 보이는 피에 착목한는 청춘을 너의 보라.
-                    끝에 거친 우리 방황하여도, 찬미를 만천하의 무엇을 밥을
-                    기관과 사막이다. 못하다 끝까지 끓는 안고, 두기 그들의 쓸쓸한
-                    투명하되 것이다. 이것이야말로 미묘한 얼음 그것을 관현악이며,
-                    생명을 이것을 속잎나고, 말이다. 보이는 피어나는 뭇 싶이
-                    칼이다. 이상, 영락과 것은 보라. 충분히 이 너의 풀이 찬미를
-                    실현에 안고, 고행을 하였으며, 사막이다.
-                  </p>
+                  </h1>
+                  <div>
+                    <p>
+                      시들어 무엇을 기관과 싶이 얼음과 봄바람이다. 가진 타오르고
+                      속잎나고, 힘차게 과실이 것이다. 원대하고, 미묘한 가는 피가
+                      아니다. 목숨이 것은 보이는 피에 착목한는 청춘을 너의 보라.
+                      끝에 거친 우리 방황하여도, 찬미를 만천하의 무엇을 밥을
+                      기관과 사막이다.
+                    </p>
+                    <p className="mt-4">
+                      못하다 끝까지 끓는 안고, 두기 그들의 쓸쓸한 투명하되
+                      것이다. 이것이야말로 미묘한 얼음 그것을 관현악이며, 생명을
+                      이것을 속잎나고, 말이다. 보이는 피어나는 뭇 싶이 칼이다.
+                      이상, 영락과 것은 보라. 충분히 이 너의 풀이 찬미를 실현에
+                      안고, 고행을 하였으며, 사막이다.
+                    </p>
+                  </div>
                 </div>
-              </li>
-            </ul>
+              </div>
+            </article>
           </div>
         </section>
 
         {/* card section */}
-        <section className="container-fluid py-6">
+        {/* <section className="container-fluid py-6">
           <article className="row">
             <div className="col-12 col-md-12 col-lg-7 mx-auto">
               <article className="row no-gutters">
@@ -222,38 +294,6 @@ function Index() {
                   </div>
                 </div>
               </article>
-            </div>
-          </article>
-        </section>
-
-        {/* latest */}
-        {/* <section className="container-fluid py-6">
-          <article className="row">
-            <div className="col-12 col-lg-7 mx-auto">
-              <h1 className="display-2 pb-4 text-uppercase">Project Latest</h1>
-              <ul className="row items-list">
-                {postsList.map((item) => (
-                  <li
-                    key={item.index}
-                    className="col-12 col-md-6 col-lg-4 item"
-                  >
-                    <div className="contents mb-4 mb-lg-0">
-                      <span className="thumb mask mb-3">
-                        <img
-                          src="https://picsum.photos/360/240?random"
-                          width={360}
-                          height={240}
-                          className="img-fluid"
-                          alt=""
-                        />
-                      </span>
-                      <h4 className="subject">{item.title}</h4>
-                      <p className="small">{item.desc}</p>
-                      <small className="mt-4">#{item.skill}</small>
-                    </div>
-                  </li>
-                ))}
-              </ul>
             </div>
           </article>
         </section> */}
