@@ -73,7 +73,7 @@ const Experience = () => {
               <h1 className="display-1">Experience</h1>
             </div>
             <section>
-              <article className="row no-gutters justify-content-between">
+              <article className="row justify-content-between">
                 <div className="col-6 col-lg-2 pb-4">
                   <h5 className="">Since</h5>
                   <p>2007/05/24</p>

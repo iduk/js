@@ -16,6 +16,8 @@ const Layout = ({ children, theme }) => {
           content="width=device-width, initial-scale=1, shrink-to-fit=no"
         />
 
+        <meta name="theme-color" content="var(--bs-primary)" />
+
         <link
           rel="stylesheet"
           as="style"

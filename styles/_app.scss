@@ -6,6 +6,7 @@ body {
   margin: 0;
   box-sizing: border-box;
   font-size: 20px;
+  background-color: $body-bg;
   -webkit-font-smoothing: antialiased;
 }
 @include media-breakpoint-down(md) {

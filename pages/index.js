@@ -103,11 +103,10 @@ function Index() {
                   <a>Everyday Coding</a>
                 </Link>
               </div>
-
               {/* \\ */}
 
               {/* 2 */}
-              <div className="py-2">
+              <div className="pt-6">
                 <h5>© New OPENFLOOR 2023 </h5>
               </div>
               {/* \\ */}
@@ -116,11 +115,11 @@ function Index() {
         </section>
 
         {/* section */}
-        <section className="container-fluid bg-danger text-white background">
+        <section className="container-fluid bg-danger text-white background mask">
           {/* img transition */}
           <div className="foreground">
             <div className="row justify-content-end">
-              <div className="col-8 col-lg-5 px-0">
+              <div className="col-9 col-lg-5 px-0">
                 <ul className="film h-100 d-flex gap-2 gap-lg-4 img-blend">
                   <li className="slide1 d-flex flex-column gap-2 gap-lg-4">
                     <img
@@ -168,20 +167,22 @@ function Index() {
           {/* \\.img */}
           <div className="container flim-trigger">
             <div className="row flex-wrap">
-              <div className="col-12 col-md-10 col-lg-9 vh-half">
-                <div className="py-6 p-4 d-flex flex-column justify-content-between">
+              <div className="col-12 d-md-none vh-20"></div>
+              <div className="col-12 col-md-8 col-lg-6 vh-half">
+                <div className="py-6 d-flex flex-column justify-content-between">
                   <div>
                     <h1 className="display-0 mb-4">Dev</h1>
-                    <h5>Give your product team a unique marketing tool.</h5>
+                    <h5>커리어의 기회를 만들어주는곳</h5>
                     <p>
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                      sed do eiusmod tempor incididunt ut labore et dolore magna
-                      aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                      ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                      오픈플로어는 수천개의 채용공고 및 아웃소싱 프로젝트 경험을
+                      통해 데이터 기반 인공지능 기술을 연구하고, 이를 활용한
+                      응용 서비스 및 솔루션을 개발합니다. 기술에 대한 이해를
+                      기반으로, 다양한 비즈니스 영역의 데이터를 만나는 것을
+                      환영합니다.
                     </p>
                   </div>
 
-                  <div className="d-flex gap-lg-3 gap-2 flex-wrap display-3 pt-6">
+                  <div className="d-flex gap-lg-3 gap-2 flex-wrap display-4 pt-8">
                     <span className="badge rounded-pill border px-3 py-1 border-white">
                       ConsultingDigital
                     </span>
@@ -210,39 +211,36 @@ function Index() {
           <div className="container-fluid">
             <article className="row grid-outline flex-wrap">
               <div
-                className="col-8 col-lg-2 vh-half background"
+                className="col-12 col-lg-6 vh-half background bg-black"
                 style={{
-                  backgroundImage: "url(http://placebeard.it/600/800)",
-                }}
-              ></div>
-              <div
-                className="col-4 col-lg-4 vh-half background"
-                style={{
-                  backgroundImage: "url(http://placebeard.it/600/800)",
+                  backgroundImage:
+                    "url(https://source.unsplash.com/900x900/?programming)",
                 }}
               ></div>
               <div className="col-12 col-lg-6 vh-half">
-                <div className="p-lg-5 py-4 d-flex flex-column justify-content-between">
+                <div className="p-lg-5 py-6 d-flex flex-column justify-content-between">
                   <h1 className="display-2 pb-4">
-                    People with similar interests and goals come together to
-                    change the world for the better.
+                    더 유연하고 더 효율적인 소프트웨어를 개발하는 개인과 팀,
+                    프로세스를 고민합니다
                   </h1>
-                  <div>
-                    <p>
-                      시들어 무엇을 기관과 싶이 얼음과 봄바람이다. 가진 타오르고
-                      속잎나고, 힘차게 과실이 것이다. 원대하고, 미묘한 가는 피가
-                      아니다. 목숨이 것은 보이는 피에 착목한는 청춘을 너의 보라.
-                      끝에 거친 우리 방황하여도, 찬미를 만천하의 무엇을 밥을
-                      기관과 사막이다.
-                    </p>
-                    <p className="mt-4">
-                      못하다 끝까지 끓는 안고, 두기 그들의 쓸쓸한 투명하되
-                      것이다. 이것이야말로 미묘한 얼음 그것을 관현악이며, 생명을
-                      이것을 속잎나고, 말이다. 보이는 피어나는 뭇 싶이 칼이다.
-                      이상, 영락과 것은 보라. 충분히 이 너의 풀이 찬미를 실현에
-                      안고, 고행을 하였으며, 사막이다.
-                    </p>
-                  </div>
+                  <ul className="col-xl-8">
+                    <li className="mt-5">
+                      <h4>what we do</h4>
+                      <p>
+                        작은 개인이 한계를 넘어 다양성의 가치를 인정받고,
+                        개개인의 성공들이 모여 우리 경제에 분수 효과를
+                        가져오기를 기대합니다.
+                      </p>
+                    </li>
+                    <li className="mt-5">
+                      <h4>Experience</h4>
+                      <p>
+                        다양한 경험과 기술, 데이터를 기반으로 최적의 비즈니스가
+                        가능한 환경을 제공하며, 파트너들의 성공적인 창업과
+                        지속가능한 사업을 위해 노력합니다.
+                      </p>
+                    </li>
+                  </ul>
                 </div>
               </div>
             </article>
