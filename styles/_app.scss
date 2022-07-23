@@ -60,13 +60,13 @@ img {
 }
 .mask {
   clip-path: polygon(
-    0 1rem,
-    0.5rem 0.5rem,
-    1rem 0,
+    0 1.5rem,
+    0.75rem 0.75rem,
+    1.5rem 0,
     100% 0,
-    100% calc(100% - 1rem),
-    calc(100% - 0.5rem) calc(100% - 0.5rem),
-    calc(100% - 1rem) 100%,
+    100% calc(100% - 1.5rem),
+    calc(100% - 0.75rem) calc(100% - 0.75rem),
+    calc(100% - 1.5rem) 100%,
     0 100%
   );
 
@@ -329,6 +329,7 @@ svg#logo-svg {
   // color: inherit;
   -webkit-text-fill-color: transparent;
 }
+
 /************************************************************************************
                                   media query 
 ************************************************************************************/

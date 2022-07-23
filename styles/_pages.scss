@@ -131,6 +131,67 @@
         border-top: 1px solid $gray-200;
       }
     }
+    // Careers
+    .dropdown-wrap {
+      li {
+        border-bottom: 1px solid;
+        border-color: $gray-200;
+        cursor: pointer;
+        position: relative;
+
+        &::after {
+          content: "↗";
+          position: absolute;
+          top: 1rem;
+          right: 1rem;
+          font-size: inherit;
+          transition: transform 0.2s linear;
+          transform: rotateZ(0);
+        }
+
+        &.open,
+        &:focus,
+        &:hover {
+          &::after {
+            transform: rotateZ(180deg);
+          }
+        }
+
+        .dropdown-content {
+          visibility: hidden;
+          box-sizing: border-box;
+          opacity: 0;
+          height: 0;
+          transform-origin: top;
+          transition: all 0.3s ease-out;
+
+          .detail {
+            > dd {
+              margin-bottom: 0;
+              line-height: 1.5;
+            }
+          }
+        }
+        &.open,
+        &:hover,
+        &:focus {
+          border-color: $primary;
+        }
+
+        &.open {
+          transition: all 0.2s ease;
+          max-height: fit-content;
+          // font-weight: bold;
+
+          .dropdown-content {
+            visibility: visible;
+            opacity: 1;
+            height: auto;
+            padding: 0.5rem 0;
+          }
+        }
+      }
+    }
   }
 
   &--projects {
@@ -231,65 +292,3 @@
     background-color: $light;
   }
 } // .page--*
-
-// Careers
-.dropdown-wrap {
-  li {
-    border-bottom: 1px solid;
-    border-color: $gray-200;
-    cursor: pointer;
-    position: relative;
-
-    &::after {
-      content: "↗";
-      position: absolute;
-      top: 1rem;
-      right: 0;
-      font-size: inherit;
-      transition: transform 0.2s linear;
-      transform: rotateZ(0);
-    }
-
-    &.open,
-    &:focus,
-    &:hover {
-      &::after {
-        transform: rotateZ(180deg);
-      }
-    }
-
-    .dropdown-content {
-      visibility: hidden;
-      box-sizing: border-box;
-      opacity: 0;
-      height: 0;
-      transform-origin: top;
-      transition: all 0.3s ease-out;
-
-      .detail {
-        > dd {
-          margin-bottom: 0;
-          line-height: 1.5;
-        }
-      }
-    }
-    &.open,
-    &:hover,
-    &:focus {
-      border-color: $primary;
-    }
-
-    &.open {
-      transition: all 0.2s ease;
-      max-height: fit-content;
-      // font-weight: bold;
-
-      .dropdown-content {
-        visibility: visible;
-        opacity: 1;
-        height: auto;
-        padding: 0.5rem 0;
-      }
-    }
-  }
-}
