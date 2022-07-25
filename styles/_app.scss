@@ -6,6 +6,7 @@ body {
   margin: 0;
   box-sizing: border-box;
   font-size: 20px;
+  letter-spacing: -0.04em;
   background-color: $body-bg;
   -webkit-font-smoothing: antialiased;
 }
@@ -221,8 +222,7 @@ svg#logo-svg {
 }
 
 .img-blend {
-  filter: opacity(0.5);
-  background-color: $primary;
+  filter: opacity(0.3);
   background-blend-mode: multiply;
   mix-blend-mode: multiply;
 

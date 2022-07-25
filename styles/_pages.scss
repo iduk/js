@@ -107,15 +107,33 @@
       }
     }
 
-    .film > li {
-      transition: all 0.2s ease-in-out;
+    .film {
+      > li {
+        transition: all 0.2s ease;
 
-      // &:nth-child(1) {
-      //   transform: translateY(-10%);
-      // }
-      // &:nth-child(2) {
-      //   transform: translateY(0);
-      // }
+        &:nth-child(1) {
+          animation: toUp 30s infinite linear;
+        }
+        &:nth-child(2) {
+          animation: toDown 30s infinite linear;
+        }
+      }
+    }
+    @keyframes toUp {
+      0% {
+        transform: translate3d(0, 0, 0);
+      }
+      100% {
+        transform: translate3d(0, -15%, 0);
+      }
+    }
+    @keyframes toDown {
+      0% {
+        transform: translate3d(0, -15%, 0);
+      }
+      100% {
+        transform: translate3d(0, 0, 0);
+      }
     }
   }
 

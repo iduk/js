@@ -115,12 +115,13 @@ function Index() {
         </section>
 
         {/* section */}
-        <section className="container-fluid bg-danger text-white background mask">
+        <section className="container-fluid bg-danger text-white background">
           {/* img transition */}
           <div className="foreground">
             <div className="row justify-content-end">
-              <div className="col-9 col-lg-5 px-0">
-                <ul className="film h-100 d-flex gap-2 gap-lg-4 img-blend">
+              <div className="col-12 d-lg-none px-0 vh-30"></div>
+              <div className="col-12 col-lg-5 px-0 vh-half overflow-hidden">
+                <ul className="film vh-half d-flex gap-2 gap-lg-4 img-blend">
                   <li className="slide1 d-flex flex-column gap-2 gap-lg-4">
                     <img
                       src="https://source.unsplash.com/800x590/?coding"
@@ -134,6 +135,16 @@ function Index() {
                     />
                     <img
                       src="https://source.unsplash.com/800x800/?coding"
+                      alt="Project Image"
+                      className="img-fluid"
+                    />
+                    <img
+                      src="https://source.unsplash.com/800x480/?app"
+                      alt="Project Image"
+                      className="img-fluid"
+                    />
+                    <img
+                      src="https://source.unsplash.com/800x500/?design"
                       alt="Project Image"
                       className="img-fluid"
                     />
@@ -159,6 +170,11 @@ function Index() {
                       alt="Project Image"
                       className="img-fluid"
                     />
+                    <img
+                      src="https://source.unsplash.com/800x450/?technical"
+                      alt="Project Image"
+                      className="img-fluid"
+                    />
                   </li>
                 </ul>
               </div>
@@ -167,8 +183,7 @@ function Index() {
           {/* \\.img */}
           <div className="container flim-trigger">
             <div className="row flex-wrap">
-              <div className="col-12 d-md-none vh-20"></div>
-              <div className="col-12 col-md-8 col-lg-6 vh-half">
+              <div className="col-12 col-lg-6 vh-half">
                 <div className="py-6 d-flex flex-column justify-content-between">
                   <div>
                     <h1 className="display-0 mb-4">Dev</h1>
@@ -182,7 +197,7 @@ function Index() {
                     </p>
                   </div>
 
-                  <div className="d-flex gap-lg-3 gap-2 flex-wrap display-4 pt-8">
+                  <div className="d-flex gap-lg-3 gap-2 flex-wrap display-6">
                     <span className="badge rounded-pill border px-3 py-1 border-white">
                       ConsultingDigital
                     </span>
@@ -201,6 +216,7 @@ function Index() {
                   </div>
                 </div>
               </div>
+              <div className="col-12 d-lg-none vh-20"></div>
             </div>
           </div>
         </section>
