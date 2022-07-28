@@ -5,7 +5,7 @@ body {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  font-size: 20px;
+  font-size: 22px;
   letter-spacing: -0.04em;
   background-color: $body-bg;
   -webkit-font-smoothing: antialiased;
@@ -28,7 +28,8 @@ dl {
   list-style: none;
 }
 
-p {
+p,
+figure {
   margin: 0;
 }
 
@@ -51,6 +52,9 @@ a {
   &:hover,
   &:focus {
     text-decoration: none;
+    img {
+      transform: scale(1.1);
+    }
   }
 }
 
@@ -58,6 +62,8 @@ img {
   object-fit: cover;
   object-position: center;
   image-rendering: -webkit-optimize-contrast;
+  transform: scale(1);
+  transition: all 0.3s ease;
 }
 .mask {
   clip-path: polygon(
@@ -120,7 +126,6 @@ h6,
 }
 
 .vh-half {
-  display: grid;
   min-height: 80vh;
 
   @include media-breakpoint-down(md) {
@@ -129,11 +134,12 @@ h6,
 }
 
 .display-0 {
-  font-size: clamp(72px, 10vw, 140px);
+  font-size: clamp(56px, 11vw, 132px);
   line-height: 1;
   overflow-wrap: break-word;
   text-transform: uppercase;
   font-weight: bold;
+  overflow: hidden;
 }
 .display-1,
 .display-2,
@@ -145,12 +151,6 @@ h6,
 
 .outline {
   outline: 1px solid $primary;
-}
-
-.text-trans {
-  transform-origin: top;
-  transform: rotate(90deg);
-  font-size: 10vw;
 }
 
 /********************* 
@@ -182,11 +182,6 @@ h6,
     -webkit-text-stroke-width: 1px;
     -webkit-text-stroke-color: #000;
   }
-}
-
-.text-deco {
-  font-family: "Roboto Mono";
-  font-weight: 400;
 }
 
 // test
@@ -222,9 +217,9 @@ svg#logo-svg {
 }
 
 .img-blend {
-  filter: opacity(0.3);
+  // mix-blend-mode: lighten;
   background-blend-mode: multiply;
-  mix-blend-mode: multiply;
+  opacity: 0.4;
 
   &:hover,
   &:focus {
@@ -300,34 +295,37 @@ svg#logo-svg {
   line-height: 1;
 }
 
-.text-outline {
-  display: inline-block;
-  font-style: italic;
-  color: black;
-  font-weight: bolder;
-  text-transform: capitalize;
-  white-space: nowrap;
-  transition: all 0.2s linear;
-  -webkit-text-fill-color: transparent;
-  -webkit-text-stroke-width: 1px;
-  -webkit-text-stroke-color: rgba(white, 0.8);
+.text-list {
+  transition: all 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-items: center;
 
-  &:hover,
-  &:focus {
-    -webkit-text-fill-color: unset;
-    -webkit-text-stroke-width: 0;
+  .text-outline {
+    font-size: clamp(72px, 25vw, 200px);
+    line-height: 1;
+    text-transform: uppercase;
+    letter-spacing: -0.5vw;
   }
 }
-.text-fill {
-  font-size: 25vw;
-  letter-spacing: -0.5vw;
-  line-height: 1;
-  font-weight: bolder;
-  text-transform: capitalize;
+
+.text-outline {
   white-space: nowrap;
+  transition: all 0.2s ease;
   font-style: italic;
-  // color: inherit;
+  font-weight: bolder;
   -webkit-text-fill-color: transparent;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: $primary;
+
+  // &:hover,
+  // &:focus,
+  &.active {
+    transition: all 0.2s ease;
+    -webkit-text-fill-color: $primary;
+    -webkit-text-stroke-width: 0;
+  }
 }
 
 /************************************************************************************

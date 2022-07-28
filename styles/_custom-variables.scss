@@ -238,7 +238,7 @@ $grid-breakpoints: (
 
 // scss-docs-start container-max-widths
 $container-max-widths: (
-  sm: 552px,
+  sm: 544px,
   md: 752px,
   lg: 960px,
   xl: 1320px,
@@ -253,7 +253,7 @@ $container-max-widths: (
 // Set the number of columns and specify the width of the gutters.
 
 $grid-columns: 12;
-$grid-gutter-width: 1.5rem;
+$grid-gutter-width: 2rem;
 $grid-row-columns: 6;
 
 // Container padding
@@ -381,16 +381,16 @@ $headings-margin-bottom: $spacer * 0.5;
 $headings-font-family: null;
 $headings-font-style: null;
 $headings-font-weight: 700;
-$headings-line-height: 1.1;
+$headings-line-height: 1.2;
 $headings-color: null;
 // scss-docs-end headings-variables
 
 // scss-docs-start display-headings
 $display-font-sizes: (
-  1: clamp(56px, 3vw, 72px),
-  2: clamp(44px, 2.7vw, 64px),
-  3: clamp(32px, 2.7vw, 48px),
-  4: clamp(24px, 2.2vw, 40px),
+  1: clamp(40px, 2.7vw, 80px),
+  2: clamp(36px, 2.7vw, 72px),
+  3: clamp(32px, 2.7vw, 56px),
+  4: clamp(24px, 2.2vw, 44px),
   5: 3rem,
   6: 2.5rem,
 );
@@ -402,7 +402,7 @@ $display-line-height: $headings-line-height;
 // scss-docs-end display-headings
 
 // scss-docs-start type-variables
-$lead-font-size: $font-size-base * 1.25;
+$lead-font-size: $font-size-base * 1.5;
 $lead-font-weight: 400;
 
 $small-font-size: 0.875em;
